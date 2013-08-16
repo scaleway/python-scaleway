@@ -34,7 +34,7 @@ class ApiClient(object):
     def wait_for_task(self, task_id, sleep_time=.2):
         while True:
             ret = self.request('/tasks/%s' % task_id)
-            print('ret', ret)
+            #print('ret', ret)
             if int(ret.get('progress', 0)) >= 100:
                 return ret
             time.sleep(sleep_time)
