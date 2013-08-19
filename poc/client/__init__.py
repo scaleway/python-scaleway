@@ -2,6 +2,7 @@
 
 import time
 import requests
+import json
 
 
 class ApiClient(object):
@@ -20,8 +21,12 @@ class ApiClient(object):
     def request(self, path, method='GET', params=None, data=None, blocking=False):
         path = path.lstrip('/')
         url = '%s://%s/%s' % ('http', self.endpoint, path)
-        print('%-6s %s' % (method, url))
-        r = requests.request(method, url, params=params, data=data)
+        print('\n%-6s %s' % (method, url))
+        headers = {}
+        if data:
+            data = json.dumps(data)
+            headers['content-type'] = 'application/json'
+        r = requests.request(method, url, params=params, data=data, headers=headers)
         if r.status_code in (500, 405):
             print(r.text)
             return False
@@ -34,7 +39,7 @@ class ApiClient(object):
     def wait_for_task(self, task_id, sleep_time=.2):
         while True:
             ret = self.request('/tasks/%s' % task_id)
-            #print('ret', ret)
+            print('ret', ret)
             if int(ret.get('progress', 0)) >= 100:
                 return ret
             time.sleep(sleep_time)
