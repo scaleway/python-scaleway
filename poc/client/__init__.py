@@ -21,7 +21,7 @@ class ApiClient(object):
     def request(self, path, method='GET', params=None, data=None, blocking=False):
         path = path.lstrip('/')
         url = '%s://%s/%s' % ('http', self.endpoint, path)
-        print('\n%-6s %s' % (method, url))
+        print('\n%-6s %s data=%s' % (method, url, data))
         headers = {}
         if data:
             data = json.dumps(data)
