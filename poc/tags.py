@@ -24,10 +24,33 @@ client.request('/tags/%s/metadatas/%s' % (tag_id, 'test'),
 				data={'value': 'bisous de bisounours'},
 				blocking=True)
 
+raw_input('====> creating & getting serv [press a key]')
+server = client.request('/servers/', method='POST', blocking=True)
+print('server', server)
+
 raw_input('====> getting tag [press a key]')
 tag = client.request('/tags/%s' % tag_id,
 						method='GET')
 print('tag', tag)
+
+raw_input('====> attaching tag to serv [press a key]')
+client.request('/servers/%s/tags/' % server['server_id'],
+				method='POST',
+				data={'tag': tag_id},
+				blocking=True)
+
+raw_input('====> getting serv [press a key]')
+srv = client.request('/servers/%s' % server['server_id'])
+print('server', srv)
+
+raw_input('====> detaching tag from serv [press a key]')
+client.request('/servers/%s/tags/%s' % (server['server_id'], tag_id),
+				method='DELETE',
+				blocking=True)
+
+raw_input('====> getting serv [press a key]')
+srv = client.request('/servers/%s' % server['server_id'])
+print('server', srv)
 
 raw_input('====> deleting "test" key [press a key]')
 client.request('/tags/%s/metadatas/%s' % (tag_id, 'test'),
