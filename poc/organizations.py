@@ -11,7 +11,7 @@ def main():
         'administrative_contacts': ('11', '12', '13'),
         'billing_contacts': ('11', '12', '13'),
     }
-    print client.request('/organizations/', method='POST', data=data)
+    print client.request('/organizations/', method='POST', data=data, blocking=True)
 
 if __name__ == '__main__':
     main()
