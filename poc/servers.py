@@ -12,7 +12,7 @@ from random import randrange
 client = ApiClient('access_key', 'secret_key')
 
 raw_input('====> creating serv [press a key]')
-server_id = client.request('/servers/', method='POST', blocking=True)['server_id']
+server_id = client.request('/servers/', method='POST', blocking=True)['result']
 print('server_id', server_id)
 
 raw_input('====> getting serv [press a key]')

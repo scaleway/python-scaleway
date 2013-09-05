@@ -14,7 +14,7 @@ client = ApiClient('access_key', 'secret_key')
 for i in range(1, 19):
 	print('====> creating serv %02d ' % i)
 
-	server_id = client.request('/servers/', method='POST', blocking=True)['server_id']
+	server_id = client.request('/servers/', method='POST', blocking=True)['result']
 
 	server = client.request('/servers/%s' % server_id)
 

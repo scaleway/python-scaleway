@@ -12,20 +12,20 @@ from random import randrange
 client = ApiClient('access_key', 'secret_key')
 
 raw_input('====> creating serv [press a key]')
-server_id = client.request('/servers/', method='POST', blocking=True)['server_id']
+server_id = client.request('/servers/', method='POST', blocking=True)['result']
 print('server_id', server_id)
 
 raw_input('====> creating tag [press a key]')
 tag_id = client.request('/tags/',
 						method='POST',
 						data={'name': 'tagname'+str(randrange(10)), 'metadata': {'test': 'bisou', 'commande': 'rm -rf *'}},
-						blocking=True)['tag_id']
+						blocking=True)['result']
 
 raw_input('====> creating tag [press a key]')
 second_tag_id = client.request('/tags/',
 								method='POST',
 								data={'name': str(randrange(10)), 'metadata': {'super2': 'chouette', 'helloworld': 'echo "hello, world!";'}},
-								blocking=True)['tag_id']
+								blocking=True)['result']
 
 raw_input('====> switching on server (and thus creating session) [press a key]')
 client.request('/servers/%s/action/' % server_id, method='POST', data={'action':'powerOn'})

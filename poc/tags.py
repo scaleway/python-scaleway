@@ -15,7 +15,7 @@ raw_input('====> creating tag [press a key]')
 tag_id = client.request('/tags/',
 						method='POST',
 						data={'name': 'tagname'+str(randrange(10)), 'metadata': {'test': 'bisou', 'commande': 'rm -rf *'}},
-						blocking=True)['tag_id']
+						blocking=True)['result']
 print('tag_id', tag_id)
 
 raw_input('====> updating tag metadata "test" key [press a key]')
