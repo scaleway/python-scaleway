@@ -34,22 +34,22 @@ tag = client.request('/tags/%s' % tag_id,
 print('tag', tag)
 
 raw_input('====> attaching tag to serv [press a key]')
-client.request('/servers/%s/tags/' % server['server_id'],
+client.request('/servers/%s/tags/' % server['result'],
 				method='POST',
 				data={'tag': tag_id},
 				blocking=True)
 
 raw_input('====> getting serv [press a key]')
-srv = client.request('/servers/%s' % server['server_id'])
+srv = client.request('/servers/%s' % server['result'])
 print('server', srv)
 
 raw_input('====> detaching tag from serv [press a key]')
-client.request('/servers/%s/tags/%s' % (server['server_id'], tag_id),
+client.request('/servers/%s/tags/%s' % (server['result'], tag_id),
 				method='DELETE',
 				blocking=True)
 
 raw_input('====> getting serv [press a key]')
-srv = client.request('/servers/%s' % server['server_id'])
+srv = client.request('/servers/%s' % server['result'])
 print('server', srv)
 
 raw_input('====> deleting "test" key [press a key]')
