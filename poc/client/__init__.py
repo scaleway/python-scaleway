@@ -36,7 +36,7 @@ class ApiClient(object):
         else:
             return r.json()['response']
 
-    def wait_for_task(self, task_id, sleep_time=.2):
+    def wait_for_task(self, task_id, sleep_time=.5):
         while True:
             ret = self.request('/tasks/%s' % task_id)
             print('ret', ret)
