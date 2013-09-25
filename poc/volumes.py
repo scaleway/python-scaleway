@@ -2,6 +2,9 @@
 
 # -*- coding: utf-8 -*-
 
+from __future__ import print_function
+from os.path import expanduser
+
 import argparse
 from pprint import pprint
 
@@ -10,15 +13,17 @@ from client import ApiClient
 client = ApiClient('access_key', 'secret_key')
 
 def test():
+    with open(expanduser('~/.base_volume'), 'r') as f:
+        base_vol = f.read()
     volume0_id = client.request(
         '/volumes/',
         method='POST',
         data={'disk_type': 'qcow2',
-              "base_volume":'Volume-cff0cdcf-5436-49aa-80a4-5274fa664425'},
+              "base_volume": base_vol},
         blocking=True
     )['result']
-    print('clone_volume_id', volume0_id)
-    
+    print('Successfully cloned volume {} : {}', base_vol, volume0_id)
+
     volume1_id = client.request(
         '/volumes/',
         method='POST',
@@ -37,7 +42,7 @@ def test():
     print('server_id', server_id)
     
     act_on_server('powerOn', server_id)
-    act_on_server('powerOff', server_id)
+#    act_on_server('powerOff', server_id)
 
 def act_on_server(action, server_id):
     client.request(
