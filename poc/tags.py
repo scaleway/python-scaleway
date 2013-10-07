@@ -18,6 +18,18 @@ tag_id = client.request('/tags/',
 						blocking=True)['result']
 print('tag_id', tag_id)
 
+raw_input('====> updating tag [press a key]')
+client.request('/tags/%s' % tag_id,
+				method='PUT',
+				data={'name': 'UPDATED-tagname'+str(randrange(10)), 'metadata': {'test': 'bisouEDITED', 'commandeEDITED': 'rm -rf *'}},
+				blocking=True)['result']
+print('tag_id', tag_id)
+
+raw_input('====> getting tag [press a key]')
+tag = client.request('/tags/%s' % tag_id,
+						method='GET')
+print('tag', tag)
+
 raw_input('====> updating tag metadata "test" key [press a key]')
 client.request('/tags/%s/metadatas/%s' % (tag_id, 'test'),
 				method='PUT',
