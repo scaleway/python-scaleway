@@ -23,6 +23,9 @@ class ApiClient(object):
         url = '%s://%s/%s' % ('http', self.endpoint, path)
         print('\n%-6s %s data=%s' % (method, url, data))
         headers = {}
+        headers['X-Organization'] = 'Organization-0'
+        headers['X-User-id'] = 'User-0'
+
         if data:
             data = json.dumps(data)
             headers['content-type'] = 'application/json'
