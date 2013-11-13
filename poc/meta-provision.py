@@ -2,19 +2,14 @@
 
 # -*- coding: utf-8 -*-
 
-import time
-
 from client import ApiClient
-from printr import printr
-
-from random import randrange
 
 client = ApiClient('access_key', 'secret_key')
 
 for i in range(1, 19):
 	print('====> creating serv %02d ' % i)
 
-	server_id = client.request('/servers/', method='POST', blocking=True)['result']
+	server_id = client.request('/servers/', method='POST', blocking=True, data={'name':'srv'+str(i)})['result']
 
 	server = client.request('/servers/%s' % server_id)
 
