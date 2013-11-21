@@ -2,10 +2,7 @@
 
 # -*- coding: utf-8 -*-
 
-import time
-
 from client import ApiClient
-from pprint import pprint
 
 from random import randrange
 
