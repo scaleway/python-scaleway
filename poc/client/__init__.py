@@ -1,8 +1,11 @@
 # -*- coding: utf-8 -*-
 
+from __future__ import print_function
+
 import time
 import requests
 import json
+import sys
 
 
 class ApiClient(object):
@@ -30,7 +33,10 @@ class ApiClient(object):
         headers = {}
         headers['X-Organization'] = 'Organization-0'
         headers['X-User-id'] = 'User-0'
+        headers['x-auth-token'] = 'b080a512-8847-4f74-81df-b3c8071d45f4'
 
+        sys.stdout.write('.')
+        sys.stdout.flush()
         if data:
             data = json.dumps(data)
             headers['content-type'] = 'application/json'
@@ -42,11 +48,13 @@ class ApiClient(object):
         if blocking:
             if self.debug:
                 print(r.json())
-            return self.wait_for_task(r.json()['response']['task_id'])
+            res = self.wait_for_task(r.json()['response']['task_id'])
+            sys.stdout.write('\n')
+            return res
         else:
             return r.json()['response']
 
-    def wait_for_task(self, task_id, sleep_time=.5):
+    def wait_for_task(self, task_id, sleep_time=1):
         while True:
             ret = self.request('/tasks/%s' % task_id)
             if self.debug:
