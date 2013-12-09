@@ -32,13 +32,31 @@ def create_volume(size=None, base_volume=None):
     )['result']
 
 
+def create_volume_internal(size, internal_uuid):
+    volume_id = get_client().request(
+        '/volumes_internal/',
+        method='POST',
+        data={'size': size, 'internal_s3_uuid': internal_uuid},
+        blocking=True
+    )['result']
+    with open(expanduser('~/.base_volume'), 'w') as f:
+        f.write(volume_id)
+    return volume_id
+
+
 def list_servers():
     return get_client().request('/servers/')
 
-def create_server(name, volumes=None):
-    data = {'name': name}
+def create_server(name, volumes=None, new_volumes=None, image=None):
+    data = {'name': name, 'volumes': []}
     if volumes:
-        data.update({'volumes': volumes})
+        for vol in volumes:
+            data['volumes'].append({'key': vol})
+    if new_volumes:
+        for vol in new_volumes:
+            data['volumes'].append({'size': vol})
+    if image:
+        data['image'] = image
     return get_client().request(
         '/servers/',
         method='POST',
@@ -99,17 +117,27 @@ def main():
         help='The server id on which the actions take effect'
     )
 
+    ## Create server parser ##
     server_parser = subparsers.add_parser('create-server',
                                           help='Create a new server')
     server_parser.add_argument(
-        'name', type=str,
+        '--name', type=str, default='NewServer',
         help='The name of the server to create'
     )
     server_parser.add_argument(
         '--volumes', type=str, nargs='+',
-        help='The volumes which will be attached to the volume'
+        help='The volumes which will be attached to the server'
+    )
+    server_parser.add_argument(
+        '--new-volumes', type=lambda x: int(x) * (10 ** 9), nargs='+',
+        metavar='SIZE',
+        help='The size of the new volumes'
+    )
+    server_parser.add_argument(
+        '--image', type=str, help='The name of a base image'
     )
 
+    ## Volume parser ##
     volume_parser = subparsers.add_parser('volume',  help='Volume parser')
     volume_subparsers = volume_parser.add_subparsers(
         help='', dest='volume_action'
@@ -123,6 +151,19 @@ def main():
         'create-from-base', help='Create a raw volume using an other one as base'
     )
     volume_base_parser.add_argument('base', type=str, help='Base volume id')
+
+
+    ## Volume internal parser ##
+    volume_internal_parser = subparsers.add_parser(
+        'volume-internal', help='Volume internal parser'
+    )
+    volume_internal_parser.add_argument(
+        '--size', type=int, help='Size in octet', default='4294967296'
+    )
+    volume_internal_parser.add_argument(
+        '--internal-uuid', type=str, help='UUID of the qcow2 file',
+        default='778160a8-0962-4692-8fcf-a50f638eb78b'
+    )
 
     parsed = parser.parse_args()
 
@@ -139,12 +180,16 @@ def main():
     elif parsed.entity == 'list-servers':
         res = list_servers()
     elif parsed.entity == 'create-server':
-        res = create_server(parsed.name, parsed.volumes)
+        res = create_server(
+            parsed.name, parsed.volumes, parsed.new_volumes, parsed.image
+        )
     elif parsed.entity == 'volume':
         if parsed.volume_action == 'create-raw':
             res = create_volume(size=parsed.size)
         elif parsed.volume_action == 'create-from-base':
             res = create_volume(base_volume=parsed.base)
+    elif parsed.entity == 'volume-internal':
+        res = create_volume_internal(parsed.size, parsed.internal_uuid)
     pprint.pprint(res)
 
 
