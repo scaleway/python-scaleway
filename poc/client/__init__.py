@@ -12,7 +12,7 @@ class ApiClient(object):
     def __init__(self, access_key, secret_key, endpoint='localhost:5002',
                  endpoint_ssl=False, region='dev', debug=False):
         self.access_key = access_key
-        self.secret_key = secret_key
+        self.secret_key = secret_key or 'b080a512-8847-4f74-81df-b3c8071d45f4'
         self.endpoint = endpoint
         self.endpoint_ssl = endpoint_ssl
         self.region = region
@@ -31,9 +31,7 @@ class ApiClient(object):
         if self.debug:
             print('\n%-6s %s data=%s' % (method, url, data))
         headers = {}
-        headers['X-Organization'] = 'Organization-0'
-        headers['X-User-id'] = 'User-0'
-        headers['x-auth-token'] = 'b080a512-8847-4f74-81df-b3c8071d45f4'
+        headers['x-auth-token'] = self.secret_key
 
         sys.stdout.write('.')
         sys.stdout.flush()
