@@ -12,7 +12,7 @@ class ApiClient(object):
     def __init__(self, access_key, secret_key, endpoint='localhost:5002',
                  endpoint_ssl=False, region='dev', debug=False):
         self.access_key = access_key
-        self.secret_key = secret_key or 'b080a512-8847-4f74-81df-b3c8071d45f4'
+        self.secret_key = 'b080a512-8847-4f74-81df-b3c8071d45f4'
         self.endpoint = endpoint
         self.endpoint_ssl = endpoint_ssl
         self.region = region
