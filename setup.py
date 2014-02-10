@@ -26,7 +26,7 @@ setup(
     url='http://online.net',
 
     install_requires=[
-
+        'slumber >=0.6.0',
     ],
 
     classifiers=[
