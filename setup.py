@@ -3,7 +3,7 @@
 import imp
 import os
 
-from setuptools import setup
+from setuptools import setup, find_packages
 
 
 MODULE_NAME = 'ocs_sdk'
@@ -28,6 +28,8 @@ setup(
     install_requires=[
         'slumber >=0.6.0',
     ],
+
+    packages=find_packages(),
 
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
