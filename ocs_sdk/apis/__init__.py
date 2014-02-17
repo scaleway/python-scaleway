@@ -34,11 +34,5 @@ class API(object):
         )
 
 
-class AccountAPI(API):
-
-    base_url = 'http://localhost:5004'
-
-
-class ComputeAPI(API):
-
-    base_url = 'http://localhost:5002'
+from .api_account import AccountAPI
+from .api_compute import ComputeAPI
