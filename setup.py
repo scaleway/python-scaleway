@@ -31,6 +31,8 @@ setup(
 
     packages=find_packages(),
 
+    test_suite=MODULE_NAME + '.tests',
+
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
