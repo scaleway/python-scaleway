@@ -59,8 +59,8 @@ class TestComputeAPI(FakeAPITestCase, unittest.TestCase):
 
         def compare_results(permissions, service=None, name=None, resource=None,
                         result=[]):
-            """ Resets the API endpoint, call get_resources and compare
-            results with what is expected.
+            """ Resets the auth API endpoint /tokens/:id/permissions, call
+            get_resources and compare results with what is expected.
             """
             self.make_fake_perms(permissions)
             resources = self.api.get_resources(
@@ -119,3 +119,34 @@ class TestComputeAPI(FakeAPITestCase, unittest.TestCase):
         compare_results(self.fake_permissions,
                     service='account', name='token:admin',
                     result=['token1', 'token2'])
+
+    def test_has_perm(self):
+
+        def has_perm(permissions, service=None, name=None, resource=None):
+            """ Resets the auth API endpoint /tokens/:id/permissions and call
+            api.has_perm.
+            """
+            self.make_fake_perms(permissions)
+            return self.api.has_perm(service=service, name=name,
+                                     resource=resource)
+
+        self.assertTrue(has_perm(self.fake_permissions,
+            service='compute', name='can_boot', resource='server1'))
+
+        self.assertTrue(has_perm(self.fake_permissions,
+            service='compute', name='can_boot', resource='server2'))
+
+        self.assertFalse(has_perm(self.fake_permissions,
+            service='compute', name='can_boot', resource='server3'))
+
+        self.assertTrue(has_perm(self.fake_permissions,
+            service='account', name='token:read', resource='token1'))
+
+        self.assertTrue(has_perm(self.fake_permissions,
+            service='account', name='token:write', resource='token1'))
+
+        self.assertTrue(has_perm(self.fake_permissions,
+            service='account', name='token:write', resource='token4'))
+
+        self.assertFalse(has_perm(self.fake_permissions,
+            service='account', name='token:write', resource='token3'))
