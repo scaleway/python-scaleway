@@ -31,6 +31,9 @@ setup(
 
     packages=find_packages(),
 
+    tests_require=[
+        'httpretty >=0.8.0',
+    ],
     test_suite=MODULE_NAME + '.tests',
 
     classifiers=[
