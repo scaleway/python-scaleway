@@ -57,8 +57,8 @@ class TestComputeAPI(FakeAPITestCase, unittest.TestCase):
 
     def test_get_resources(self):
 
-        def compare_results(permissions, service=None, name=None, resource=None,
-                        result=[]):
+        def compare_results(permissions, service=None, name=None,
+                            resource=None, result=[]):
             """ Resets the auth API endpoint /tokens/:id/permissions, call
             get_resources and compare results with what is expected.
             """
@@ -76,49 +76,59 @@ class TestComputeAPI(FakeAPITestCase, unittest.TestCase):
 
         # Simple permissions
         compare_results(self.fake_permissions,
-                    service='compute', name='can_boot',
-                    result=['server1', 'server2'])
+                        service='compute', name='can_boot',
+                        result=['server1', 'server2'])
 
         compare_results(self.fake_permissions,
-                    service='compute', name='can_boot',
-                    result=['server1', 'server2'])
+                        service='compute', name='can_boot',
+                        result=['server1', 'server2'])
 
         compare_results(self.fake_permissions,
-                    service='compute', name='can_boot', resource='server2',
-                    result=['server2'])
+                        service='compute', name='can_boot', resource='server2',
+                        result=['server2'])
 
         compare_results(self.fake_permissions,
-                    service='compute', name='can_delete',
-                    result=['server1'])
+                        service='compute', name='can_delete',
+                        result=['server1'])
+
+        compare_results(
+            self.fake_permissions,
+            service='compute', name='can_delete', resource='server1',
+            result=['server1']
+        )
 
         compare_results(self.fake_permissions,
-                    service='compute', name='can_delete', resource='server1',
-                    result=['server1'])
-
-        compare_results(self.fake_permissions,
-                    service='compute', name='can_write',
-                    result=[])
+                        service='compute', name='can_write',
+                        result=[])
 
         # Nested permissions
         compare_results(self.fake_permissions,
-                    service='account', name='token:read',
-                    result=['token1', 'token2', 'token3'])
+                        service='account', name='token:read',
+                        result=['token1', 'token2', 'token3'])
 
-        compare_results(self.fake_permissions,
-                    service='account', name='token:read', resource='invalid',
-                    result=[])
+        compare_results(
+            self.fake_permissions,
+            service='account', name='token:read', resource='invalid',
+            result=[]
+        )
 
-        compare_results(self.fake_permissions,
-                    service='account', name='token:read', resource='token2',
-                    result=['token2'])
+        compare_results(
+            self.fake_permissions,
+            service='account', name='token:read', resource='token2',
+            result=['token2']
+        )
 
-        compare_results(self.fake_permissions,
-                    service='account', name='token:write',
-                    result=['token1', 'token2', 'token4'])
+        compare_results(
+            self.fake_permissions,
+            service='account', name='token:write',
+            result=['token1', 'token2', 'token4']
+        )
 
-        compare_results(self.fake_permissions,
-                    service='account', name='token:admin',
-                    result=['token1', 'token2'])
+        compare_results(
+            self.fake_permissions,
+            service='account', name='token:admin',
+            result=['token1', 'token2']
+        )
 
     def test_has_perm(self):
 
@@ -130,23 +140,37 @@ class TestComputeAPI(FakeAPITestCase, unittest.TestCase):
             return self.api.has_perm(service=service, name=name,
                                      resource=resource)
 
-        self.assertTrue(has_perm(self.fake_permissions,
-            service='compute', name='can_boot', resource='server1'))
+        self.assertTrue(
+            has_perm(self.fake_permissions,
+                     service='compute', name='can_boot', resource='server1')
+        )
 
-        self.assertTrue(has_perm(self.fake_permissions,
-            service='compute', name='can_boot', resource='server2'))
+        self.assertTrue(
+            has_perm(self.fake_permissions,
+                     service='compute', name='can_boot', resource='server2')
+        )
 
-        self.assertFalse(has_perm(self.fake_permissions,
-            service='compute', name='can_boot', resource='server3'))
+        self.assertFalse(
+            has_perm(self.fake_permissions,
+                     service='compute', name='can_boot', resource='server3')
+        )
 
-        self.assertTrue(has_perm(self.fake_permissions,
-            service='account', name='token:read', resource='token1'))
+        self.assertTrue(
+            has_perm(self.fake_permissions,
+                     service='account', name='token:read', resource='token1')
+        )
 
-        self.assertTrue(has_perm(self.fake_permissions,
-            service='account', name='token:write', resource='token1'))
+        self.assertTrue(
+            has_perm(self.fake_permissions,
+                     service='account', name='token:write', resource='token1')
+        )
 
-        self.assertTrue(has_perm(self.fake_permissions,
-            service='account', name='token:write', resource='token4'))
+        self.assertTrue(
+            has_perm(self.fake_permissions,
+                     service='account', name='token:write', resource='token4')
+        )
 
-        self.assertFalse(has_perm(self.fake_permissions,
-            service='account', name='token:write', resource='token3'))
+        self.assertFalse(
+            has_perm(self.fake_permissions,
+                     service='account', name='token:write', resource='token3')
+        )

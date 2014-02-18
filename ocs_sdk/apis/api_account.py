@@ -84,7 +84,8 @@ class AccountAPI(API):
                     if self.perm_matches(name, eff_perm_name):
 
                         # Filter on resources
-                        ret.extend([eff_perm_resource
+                        ret.extend([
+                            eff_perm_resource
                             for eff_perm_resource in eff_perm_resources
                             if self.perm_matches(resource, eff_perm_resource)
                         ])
