@@ -1,12 +1,40 @@
+import json
 import unittest
+import uuid
 
-from ocs_sdk.apis.api_account import AccountAPI
+import httpretty
+
+from ocs_sdk.apis import AccountAPI
+
+from . import FakeAPITestCase
 
 
-class TestComputeAPI(unittest.TestCase):
+class TestComputeAPI(FakeAPITestCase, unittest.TestCase):
+
+    fake_permissions = {
+        'compute': {
+            'can_boot': ['server1', 'server2'],
+            'can_delete': ['server1'],
+        },
+        'account': {
+            'token:*': ['token1', 'token2'],
+            'token:read': ['token2', 'token3'],
+            'token:write': ['token4'],
+        }
+    }
 
     def setUp(self):
-        self.api = AccountAPI()
+        super(TestComputeAPI, self).setUp()
+        self.api = AccountAPI(str(uuid.uuid4()))
+
+    def make_fake_perms(self, permissions):
+        self.fake_endpoint(
+            self.api,
+            'tokens/%s/permissions/' % self.api.auth_token,
+            body={
+                'permissions': permissions
+            }
+        )
 
     def test_perm_matches(self):
         # simple permissions
@@ -26,3 +54,68 @@ class TestComputeAPI(unittest.TestCase):
         self.assertTrue(self.api.perm_matches('object:read:subperm', '*'))
         self.assertTrue(self.api.perm_matches('object:read:hello', 'object'))
         self.assertFalse(self.api.perm_matches('object', 'object:read:hello'))
+
+    def test_get_resources(self):
+
+        def compare_results(permissions, service=None, name=None, resource=None,
+                        result=[]):
+            """ Resets the API endpoint, call get_resources and compare
+            results with what is expected.
+            """
+            self.make_fake_perms(permissions)
+            resources = self.api.get_resources(
+                service=service, name=name, resource=resource
+            )
+            # XOR on two sets returns the difference between them
+            # Used because we don't know in which order api.get_resources
+            # returns the resources.
+            self.assertFalse(set(resources) ^ set(result))
+
+        # No permission, no resource
+        compare_results({}, result=[])
+
+        # Simple permissions
+        compare_results(self.fake_permissions,
+                    service='compute', name='can_boot',
+                    result=['server1', 'server2'])
+
+        compare_results(self.fake_permissions,
+                    service='compute', name='can_boot',
+                    result=['server1', 'server2'])
+
+        compare_results(self.fake_permissions,
+                    service='compute', name='can_boot', resource='server2',
+                    result=['server2'])
+
+        compare_results(self.fake_permissions,
+                    service='compute', name='can_delete',
+                    result=['server1'])
+
+        compare_results(self.fake_permissions,
+                    service='compute', name='can_delete', resource='server1',
+                    result=['server1'])
+
+        compare_results(self.fake_permissions,
+                    service='compute', name='can_write',
+                    result=[])
+
+        # Nested permissions
+        compare_results(self.fake_permissions,
+                    service='account', name='token:read',
+                    result=['token1', 'token2', 'token3'])
+
+        compare_results(self.fake_permissions,
+                    service='account', name='token:read', resource='invalid',
+                    result=[])
+
+        compare_results(self.fake_permissions,
+                    service='account', name='token:read', resource='token2',
+                    result=['token2'])
+
+        compare_results(self.fake_permissions,
+                    service='account', name='token:write',
+                    result=['token1', 'token2', 'token4'])
+
+        compare_results(self.fake_permissions,
+                    service='account', name='token:admin',
+                    result=['token1', 'token2'])
