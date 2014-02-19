@@ -130,6 +130,10 @@ class TestComputeAPI(FakeAPITestCase, unittest.TestCase):
             result=['token1', 'token2']
         )
 
+    def test_get_resources_with_empty_token(self):
+        self.api = AccountAPI()
+        self.assertEqual(self.api.get_resources(), [])
+
     def test_has_perm(self):
 
         def has_perm(permissions, service=None, name=None, resource=None):
