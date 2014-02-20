@@ -36,6 +36,6 @@ class TestAPI(FakeAPITestCase, unittest.TestCase):
         )
 
         self.assertRaises(
-            slumber.exceptions.HttpServerError,
+            slumber.exceptions.SlumberHttpBaseException,
             api.safe_query, api.query().users.get
         )

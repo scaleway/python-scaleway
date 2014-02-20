@@ -147,7 +147,7 @@ class TestComputeAPI(FakeAPITestCase, unittest.TestCase):
         self.assertEqual(self.api.get_resources(), [])
 
         self.fake_endpoint(self.api, url, status=500)
-        self.assertRaises(slumber.exceptions.HttpServerError,
+        self.assertRaises(slumber.exceptions.SlumberHttpBaseException,
                           self.api.get_resources)
 
     def test_has_perm(self):

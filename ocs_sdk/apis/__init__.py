@@ -44,8 +44,7 @@ class API(object):
         try:
             return callable_query(*(args or tuple()), **(kwargs or {}))
 
-        except (slumber.exceptions.HttpClientError,
-                slumber.exceptions.HttpServerError) as exc:
+        except slumber.exceptions.SlumberHttpBaseException as exc:
             if exc.response.status_code in http_status_caught:
                 return default
             raise
