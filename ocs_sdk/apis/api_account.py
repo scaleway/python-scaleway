@@ -57,7 +57,11 @@ class AccountAPI(API):
             return []
 
         # GET /tokens/:id/permissions on account-api
-        response = self.query().tokens(self.auth_token).permissions.get()
+        response = self.safe_query(
+            self.query().tokens(self.auth_token).permissions.get,
+            http_status_caught=[404, 410],
+            default={}
+        )
 
         # Apply filters on effective permissions
         #

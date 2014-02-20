@@ -33,6 +33,23 @@ class API(object):
             session=self.make_requests_session()
         )
 
+    def safe_query(self, callable_query, args=None, kwargs=None,
+                   http_status_caught=[404], default=None):
+        """ Prevents slumber raising an exception when it can be handled.
+
+        :param default: the value returned if an exception occured
+        :param http_status_caught: list or HTTP error codes, catches 404 errors
+                                   by default
+        """
+        try:
+            return callable_query(*(args or tuple()), **(kwargs or {}))
+
+        except (slumber.exceptions.HttpClientError,
+                slumber.exceptions.HttpServerError) as exc:
+            if exc.response.status_code in http_status_caught:
+                return default
+            raise
+
 
 from .api_account import AccountAPI
 from .api_compute import ComputeAPI

@@ -3,6 +3,7 @@ import unittest
 import uuid
 
 import httpretty
+import slumber
 
 from ocs_sdk.apis import AccountAPI
 
@@ -133,6 +134,21 @@ class TestComputeAPI(FakeAPITestCase, unittest.TestCase):
     def test_get_resources_with_empty_token(self):
         self.api = AccountAPI()
         self.assertEqual(self.api.get_resources(), [])
+
+    def test_get_resources_with_invalid_token(self):
+        url = 'tokens/%s/permissions/' % (
+            self.api.auth_token
+        )
+
+        self.fake_endpoint(self.api, url, status=404)
+        self.assertEqual(self.api.get_resources(), [])
+
+        self.fake_endpoint(self.api, url, status=410)
+        self.assertEqual(self.api.get_resources(), [])
+
+        self.fake_endpoint(self.api, url, status=500)
+        self.assertRaises(slumber.exceptions.HttpServerError,
+                          self.api.get_resources)
 
     def test_has_perm(self):
 
