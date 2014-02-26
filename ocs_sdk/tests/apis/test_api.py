@@ -1,6 +1,7 @@
 import unittest
 
 import slumber
+import requests
 
 from ocs_sdk.apis import API
 
@@ -20,7 +21,9 @@ class TestAPI(FakeAPITestCase, unittest.TestCase):
             requests_session.headers.get('X-Auth-Token'), '0xdeadbeef'
         )
 
-        self.assertIsNone(API().make_requests_session())
+        session_of_no_auth_api = API().make_requests_session()
+        self.assertIsInstance(session_of_no_auth_api, requests.Session)
+        self.assertNotIn('X-Auth-Token', session_of_no_auth_api.headers)
 
     def test_get_api_url(self):
         self.assertEqual(SimpleAPI().get_api_url(), 'http://localhost')

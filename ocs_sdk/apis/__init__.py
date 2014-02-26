@@ -12,13 +12,11 @@ class API(object):
     def make_requests_session(self):
         """ Attaches a X-Auth-Token header to requests.Session.
         """
-        if not self.auth_token:
-            return None
-
         session = requests.Session()
-        session.headers.update({
-            'X-Auth-Token': self.auth_token
-        })
+        if self.auth_token:
+            session.headers.update({
+                'X-Auth-Token': self.auth_token
+            })
         return session
 
     def get_api_url(self):
