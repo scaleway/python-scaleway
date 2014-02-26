@@ -2,12 +2,24 @@
 
 import imp
 import os
+import re
 
 from setuptools import setup, find_packages
 
 
 MODULE_NAME = 'ocs_sdk'
-MODULE = imp.load_module(MODULE_NAME, *imp.find_module(MODULE_NAME))
+
+
+def get_version():
+
+    with open(os.path.join(
+        os.path.dirname(__file__), MODULE_NAME, '__init__.py')
+    ) as init:
+
+        for line in init.readlines():
+            res = re.match(r'__version__ *= *[\'"]([0-9\.]*)[\'"]$', line)
+            if res:
+                return res.group(1)
 
 
 def get_long_description():
@@ -17,7 +29,7 @@ def get_long_description():
 
 setup(
     name='ocs-sdk',
-    version=MODULE.__version__,
+    version=get_version(),
     description='OCS APIs client',
     long_description=get_long_description(),
 
