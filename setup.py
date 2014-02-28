@@ -24,7 +24,8 @@ def get_version():
 
 def get_long_description():
     readme = os.path.join(os.path.dirname(__file__), 'README.rst')
-    return open(readme).read()
+    changes = os.path.join(os.path.dirname(__file__), 'CHANGES.rst')
+    return open(readme).read() + '\n' + open(changes).read()
 
 
 setup(
