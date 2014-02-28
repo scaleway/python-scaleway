@@ -1,8 +1,6 @@
-import json
 import unittest
 import uuid
 
-import httpretty
 import slumber
 
 from ocs_sdk.apis import AccountAPI
