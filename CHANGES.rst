@@ -1,7 +1,7 @@
 ChangeLog
 =========
 
-0.1.1 (unreleased)
+0.1.1 (2014-02-28)
 ------------------
 
 * Add missing files in source tarball.
