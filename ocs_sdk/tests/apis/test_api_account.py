@@ -4,6 +4,7 @@ import uuid
 import slumber
 
 from ocs_sdk.apis import AccountAPI
+from ocs_sdk.apis.api_account import BadToken, ExpiredToken
 
 from . import FakeAPITestCase
 
@@ -139,10 +140,14 @@ class TestComputeAPI(FakeAPITestCase, unittest.TestCase):
         )
 
         self.fake_endpoint(self.api, url, status=404)
-        self.assertEqual(self.api.get_resources(), [])
+        self.assertRaises(BadToken, self.api.get_resources)
 
         self.fake_endpoint(self.api, url, status=410)
-        self.assertEqual(self.api.get_resources(), [])
+        self.assertRaises(ExpiredToken, self.api.get_resources)
+
+        self.fake_endpoint(self.api, url, status=418)
+        self.assertRaises(slumber.exceptions.SlumberHttpBaseException,
+                          self.api.get_resources)
 
         self.fake_endpoint(self.api, url, status=500)
         self.assertRaises(slumber.exceptions.SlumberHttpBaseException,

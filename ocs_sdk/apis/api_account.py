@@ -1,6 +1,20 @@
 from itertools import izip_longest
 
+import slumber
+
 from . import API
+
+
+class InvalidToken(Exception):
+    pass
+
+
+class ExpiredToken(InvalidToken):
+    pass
+
+
+class BadToken(InvalidToken):
+    pass
 
 
 class AccountAPI(API):
@@ -57,11 +71,17 @@ class AccountAPI(API):
             return []
 
         # GET /tokens/:id/permissions on account-api
-        response = self.safe_query(
-            self.query().tokens(self.auth_token).permissions.get,
-            http_status_caught=[404, 410],
-            default={}
-        )
+        try:
+            response = self.query().tokens(self.auth_token).permissions.get()
+
+        except slumber.exceptions.HttpClientError as exc:
+            if exc.response.status_code == 404:
+                raise BadToken()
+
+            if exc.response.status_code == 410:
+                raise ExpiredToken()
+
+            raise
 
         # Apply filters on effective permissions
         #

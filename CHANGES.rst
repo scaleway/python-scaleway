@@ -4,7 +4,7 @@ ChangeLog
 0.1.2 (unreleased)
 ------------------
 
-* No entry.
+* Raise InvalidToken when get_resources is called with and invalid token.
 
 0.1.1 (2014-02-28)
 ------------------
