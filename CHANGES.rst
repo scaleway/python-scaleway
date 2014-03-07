@@ -1,7 +1,7 @@
 ChangeLog
 =========
 
-0.1.3 (unreleased)
+0.1.3 (2014-03-07)
 ------------------
 
 * Minor changes in AccountAPI.perm_matches (67f967d26d3).
