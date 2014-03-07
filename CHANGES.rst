@@ -4,7 +4,8 @@ ChangeLog
 0.1.3 (unreleased)
 ------------------
 
-* No entry.
+* Minor changes in AccountAPI.perm_matches (67f967d26d3).
+* API base url can be given to the constructor.
 
 0.1.2 (2014-02-28)
 ------------------
