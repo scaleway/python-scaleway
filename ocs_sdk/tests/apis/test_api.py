@@ -27,3 +27,7 @@ class TestAPI(FakeAPITestCase, unittest.TestCase):
 
     def test_get_api_url(self):
         self.assertEqual(SimpleAPI().get_api_url(), 'http://localhost')
+
+        self.assertEqual(
+            SimpleAPI(base_url='http://hello').get_api_url(), 'http://hello'
+        )

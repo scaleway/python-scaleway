@@ -6,8 +6,11 @@ class API(object):
 
     base_url = None
 
-    def __init__(self, auth_token=None):
+    def __init__(self, auth_token=None, base_url=None):
         self.auth_token = auth_token
+
+        if base_url:
+            self.base_url = base_url
 
     def make_requests_session(self):
         """ Attaches a X-Auth-Token header to requests.Session.
