@@ -5,7 +5,8 @@ ChangeLog
 ------------------
 
 * Minor changes in AccountAPI.perm_matches (67f967d26d3).
-* API base url can be given to the constructor.
+* base_url can be given to the constructor of API().
+* verify_ssl can be given to the constructor of API().
 
 0.1.2 (2014-02-28)
 ------------------
