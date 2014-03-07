@@ -45,7 +45,7 @@ class AccountAPI(API):
         :param request_perm: Currently granted permissions
         :param effective_perm: Actual permission granted to the token
         """
-        if not request_perm:
+        if request_perm is None:
             return True
 
         request_perm_parts = request_perm.split(':')
