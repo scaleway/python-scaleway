@@ -122,3 +122,26 @@ class AccountAPI(API):
         return bool(
             self.get_resources(service=service, name=name, resource=resource)
         )
+
+    def get_quotas(self, organization):
+        """ Gets a list of quotas for the given organization.
+        """
+        print(self.auth_token)
+
+        if not self.auth_token:
+            return {}
+
+        try:
+            response = self.query().organizations(organization).quotas.get()
+        except slumber.exceptions.HttpClientError as exc:
+            raise Exception(exc.message)
+
+        return response['quotas']
+
+    def has_quota(self, organization=None, resource=None, used=None):
+        """ Checks quota for a resource
+        """
+        quotas = self.get_quotas(organization=organization)
+        return bool(
+            resource in quotas and used < quotas[resource]
+        )
