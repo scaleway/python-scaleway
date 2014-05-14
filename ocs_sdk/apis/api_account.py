@@ -17,10 +17,6 @@ class BadToken(InvalidToken):
     pass
 
 
-class Unauthorized(Exception):
-    pass
-
-
 class AccountAPI(API):
     """ Interacts with OCS Account API.
     """
@@ -133,17 +129,13 @@ class AccountAPI(API):
         if not self.auth_token:
             return {}
 
-        try:
-            response = self.query().organizations(organization).quotas.get()
-        except slumber.exceptions.HttpClientError as exc:
-            if exc.response.status_code == 403:
-                raise Unauthorized(exc.message)
+        response = self.query().organizations(organization).quotas.get()
         return response['quotas']
 
-    def has_quota(self, organization=None, resource=None, used=None):
+    def has_quota(self, organization, resource, used=None):
         """ Checks quota for a resource
         """
         quotas = self.get_quotas(organization=organization)
         return bool(
-            resource in quotas and used < quotas[resource]
+            resource in quotas and used < quotas.get(resource, 0)
         )
