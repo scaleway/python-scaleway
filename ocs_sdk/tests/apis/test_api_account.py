@@ -4,7 +4,7 @@ import uuid
 import slumber
 
 from ocs_sdk.apis import AccountAPI
-from ocs_sdk.apis.api_account import BadToken, ExpiredToken, Unauthorized
+from ocs_sdk.apis.api_account import BadToken, ExpiredToken
 
 from . import FakeAPITestCase
 
@@ -212,13 +212,14 @@ class TestComputeAPI(FakeAPITestCase, unittest.TestCase):
         self.api = AccountAPI()
         self.assertEquals(self.api.get_quotas(str(uuid.uuid4())), {})
 
-    # def test_get_quota_exception(self):
-    #     url = 'organizations/%s/quotas/' % (
-    #         self.fake_orga_key
-    #     )
-    #     self.fake_endpoint(self.api, url, status=403)
-    #     self.assertRaises(Unauthorized,
-    #                       self.api.get_quotas(self.fake_orga_key))
+    def test_get_quota_403(self):
+        url = 'organizations/%s/quotas/' % (
+            self.fake_orga_key
+        )
+        self.fake_endpoint(self.api, url, status=403)
+        self.assertRaises(slumber.exceptions.HttpClientError,
+                          self.api.get_quotas,
+                          self.fake_orga_key)
 
     def test_get_quota(self):
         self.api = AccountAPI()
