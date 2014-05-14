@@ -122,3 +122,20 @@ class AccountAPI(API):
         return bool(
             self.get_resources(service=service, name=name, resource=resource)
         )
+
+    def get_quotas(self, organization):
+        """ Gets a list of quotas for the given organization.
+        """
+        if not self.auth_token:
+            raise BadToken()
+
+        response = self.query().organizations(organization).quotas.get()
+        return response['quotas']
+
+    def has_quota(self, organization, resource, used=None):
+        """ Checks quota for a resource
+        """
+        quotas = self.get_quotas(organization=organization)
+        return bool(
+            resource in quotas and used < quotas.get(resource, 0)
+        )

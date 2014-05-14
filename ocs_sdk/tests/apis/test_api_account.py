@@ -26,6 +26,7 @@ class TestComputeAPI(FakeAPITestCase, unittest.TestCase):
     def setUp(self):
         super(TestComputeAPI, self).setUp()
         self.api = AccountAPI(str(uuid.uuid4()))
+        self.fake_orga_key = str(uuid.uuid4())
 
     def make_fake_perms(self, permissions):
         self.fake_endpoint(
@@ -33,6 +34,15 @@ class TestComputeAPI(FakeAPITestCase, unittest.TestCase):
             'tokens/%s/permissions/' % self.api.auth_token,
             body={
                 'permissions': permissions
+            }
+        )
+
+    def make_fake_quotas(self, quotas):
+        self.fake_endpoint(
+            self.api,
+            'organizations/%s/quotas/' % self.fake_orga_key,
+            body={
+                'quotas': quotas
             }
         )
 
@@ -197,3 +207,32 @@ class TestComputeAPI(FakeAPITestCase, unittest.TestCase):
             has_perm(self.fake_permissions,
                      service='account', name='token:write', resource='token3')
         )
+
+    def test_get_quotas_no_token(self):
+        self.api = AccountAPI()
+        self.assertRaises(BadToken,
+                          self.api.get_quotas,
+                          str(uuid.uuid4()))
+
+    def test_get_quota_403(self):
+        url = 'organizations/%s/quotas/' % (
+            self.fake_orga_key
+        )
+        self.fake_endpoint(self.api, url, status=403)
+        self.assertRaises(slumber.exceptions.HttpClientError,
+                          self.api.get_quotas,
+                          self.fake_orga_key)
+
+    def test_get_quota(self):
+        self.api = AccountAPI()
+        self.api.auth_token = str(uuid.uuid4())
+        self.make_fake_quotas({'invites': 5})
+        self.assertEquals(self.api.get_quotas(self.fake_orga_key),
+                          {'invites': 5})
+
+    def test_has_quota(self):
+        self.api = AccountAPI()
+        self.api.auth_token = str(uuid.uuid4())
+        self.make_fake_quotas({'invites': 5})
+        self.assertTrue(self.api.has_quota(self.fake_orga_key, 'invites', 2))
+        self.assertFalse(self.api.has_quota(self.fake_orga_key, 'invites', 5))
