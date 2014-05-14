@@ -127,7 +127,7 @@ class AccountAPI(API):
         """ Gets a list of quotas for the given organization.
         """
         if not self.auth_token:
-            return {}
+            raise BadToken()
 
         response = self.query().organizations(organization).quotas.get()
         return response['quotas']

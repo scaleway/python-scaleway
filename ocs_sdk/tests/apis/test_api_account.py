@@ -210,7 +210,9 @@ class TestComputeAPI(FakeAPITestCase, unittest.TestCase):
 
     def test_get_quotas_no_token(self):
         self.api = AccountAPI()
-        self.assertEquals(self.api.get_quotas(str(uuid.uuid4())), {})
+        self.assertRaises(BadToken,
+                          self.api.get_quotas,
+                          str(uuid.uuid4()))
 
     def test_get_quota_403(self):
         url = 'organizations/%s/quotas/' % (
