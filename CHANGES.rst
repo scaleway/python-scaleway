@@ -4,7 +4,7 @@ ChangeLog
 0.2.0 (unreleased)
 ------------------
 
-* Added quota methods (has_quota, get_quotas) & their tests
+* Added quota methods (has_quota, get_quotas) & their tests, refs: AM-1, AM-11.
 
 0.1.3 (2014-03-07)
 ------------------
