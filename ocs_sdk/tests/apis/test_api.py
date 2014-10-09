@@ -1,6 +1,5 @@
 import unittest
 
-import slumber
 import requests
 
 from ocs_sdk.apis import API

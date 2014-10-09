@@ -68,10 +68,13 @@ class TestComputeAPI(FakeAPITestCase, unittest.TestCase):
     def test_get_resources(self):
 
         def compare_results(permissions, service=None, name=None,
-                            resource=None, result=[]):
+                            resource=None, result=None):
             """ Resets the auth API endpoint /tokens/:id/permissions, call
             get_resources and compare results with what is expected.
             """
+            if result is None:
+                result = []
+
             self.make_fake_perms(permissions)
             resources = self.api.get_resources(
                 service=service, name=name, resource=resource
