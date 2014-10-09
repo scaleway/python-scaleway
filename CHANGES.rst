@@ -4,7 +4,8 @@ ChangeLog
 0.2.1 (unreleased)
 ------------------
 
-* No entry.
+* Add documentation.
+* Set production URLs as defaults in AccountAPI and ComputeAPI,
 
 0.2.0 (2014-04-16)
 ------------------
