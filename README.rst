@@ -1,7 +1,7 @@
 ocs-sdk
 =======
 
-ocs-sdk provides configured Slumber_ objects to make HTTP requests easily
+``ocs-sdk`` provides configured Slumber_ objects to make HTTP requests easily
 against the REST APIs of the `Online.net Cloud service`_. It also provides
 helpers to render APIs results under a more usable form.
 
@@ -12,8 +12,8 @@ need to give a look to the Slumber_ documentation, too.
 Examples
 --------
 
-Instances of `ocs_sdk.apis.API` define a `query` method that returns a
-`slumber.API` object. `API.query().xxx.yyy.zzz.get()` generates a *GET
+Instances of ``ocs_sdk.apis.API`` define a ``query`` method that returns a
+``slumber.API`` object. ``API.query().xxx.yyy.zzz.get()`` generates a *GET
 API_URL/xxx/yyy/zzz*.
 
 
@@ -52,8 +52,8 @@ Examples, using `Slumber`_:
 
 Using helpers:
 
-- Check if your token has the permission "servers:read" for the service
-  "compute" for the organization "9a096d36-6bf9-470f-91df-2398aa7361f7"::
+- Check if your token has the permission ``servers:read`` for the service
+  ``compute`` for the organization ``9a096d36-6bf9-470f-91df-2398aa7361f7``::
 
         >>> from ocs_sdk.apis import AccountAPI
         >>>
