@@ -1,23 +1,39 @@
 ocs-sdk
 =======
 
-``ocs-sdk`` provides configured Slumber_ objects to make HTTP requests easily
-against the REST APIs of the `Online.net Cloud service`_. It also provides
-helpers to render APIs results under a more usable form.
+This package provides tools to query the REST APIs of
+`Online.net's cloud services`_.
 
-First of all, it is recommended to read the `API documentation`_. You probably
-need to give a look to the Slumber_ documentation, too.
+
+General principle
+-----------------
+
+If you're looking to send a ``GET`` HTTP request against our APIs, like::
+
+        GET <api_url>/xxx/yyy/zzz
+
+you only need to call the following pythonic code::
+
+        >>> from ocs_sdk.apis import StorageAPI
+        >>> StorageAPI().query().xxx.yyy.zzz.get()
+
+The magic here lies in ``ocs_sdk.apis.*API`` instances, which all have a
+``query`` method returning a ``slumber.API`` object. The latter handling all
+the excruciating details of the requests.
+
+
+Documentation
+-------------
+
+Even if this SDK is designed to be developer-friendly and aim for self-service
+discovery, it is still recommended to read the official `API documentation`_.
+
+And because most of the provided helpers takes the form of pre-configured
+Slumber_ objects, a good read of Slumber_ documention is encouraged as well.
 
 
 Examples
 --------
-
-Instances of ``ocs_sdk.apis.API`` define a ``query`` method that returns a
-``slumber.API`` object. ``API.query().xxx.yyy.zzz.get()`` generates a *GET
-API_URL/xxx/yyy/zzz*.
-
-
-Examples, using `Slumber`_:
 
 - List your organizations::
 
@@ -60,7 +76,7 @@ Using helpers:
         >>> api = AccountAPI(auth_token='') # set your token here!
         >>>
         >>> print api.has_perm(service='compute', name='servers:read',
-        ...  resource='9a096d36-6bf9-470f-91df-2398aa7361f7')
+        ...     resource='9a096d36-6bf9-470f-91df-2398aa7361f7')
         False
 
 
