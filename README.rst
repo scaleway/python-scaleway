@@ -14,8 +14,8 @@ If you're looking to send a ``GET`` HTTP request against our APIs, like::
 
 you only need to call the following pythonic code::
 
-        >>> from ocs_sdk.apis import StorageAPI
-        >>> StorageAPI().query().xxx.yyy.zzz.get()
+        >>> from ocs_sdk.apis import XxxAPI
+        >>> XxxAPI().query().xxx.yyy.zzz.get()
 
 The magic here lies in ``ocs_sdk.apis.*API`` instances, which all have a
 ``query`` method returning a ``slumber.API`` object. The latter handling all
@@ -108,7 +108,7 @@ To submit a patch, you'll need to test your code. To run tests::
 * pylint score should never be lower than before your patch.
 
 
-.. _Online.net Cloud service: https://cloud.online.net
+.. _Online.net's cloud services: https://cloud.online.net
 .. _Slumber: http://slumber.readthedocs.org/
 .. _API documentation: https://doc.cloud.online.net/api/
 .. _virtualenv: http://virtualenv.readthedocs.org/en/latest/
