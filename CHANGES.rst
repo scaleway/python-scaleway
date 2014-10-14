@@ -1,7 +1,7 @@
 ChangeLog
 =========
 
-0.2.1 (unreleased)
+0.2.1 (2014-10-14)
 ------------------
 
 * Add documentation.
