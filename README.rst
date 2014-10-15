@@ -108,7 +108,14 @@ To submit a patch, you'll need to test your code. To run tests::
 * pylint score should never be lower than before your patch.
 
 
+License
+-------
+
+This software is licensed under a `BSD 2-Clause License`_.
+
+
 .. _Online.net's cloud services: https://cloud.online.net
 .. _Slumber: http://slumber.readthedocs.org/
 .. _API documentation: https://doc.cloud.online.net/api/
 .. _virtualenv: http://virtualenv.readthedocs.org/en/latest/
+.. _BSD 2-Clause License: ./LICENSE.rst

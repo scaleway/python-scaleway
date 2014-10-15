@@ -37,6 +37,7 @@ setup(
     author='OCS',
     author_email='contact@ocs.online.net',
     url='http://online.net',
+    license='BSD',
 
     install_requires=[
         'slumber >=0.6.0',
@@ -52,10 +53,10 @@ setup(
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
-        'License :: Other/Proprietary License',
         'Operating System :: POSIX',
         'Operating System :: MacOS',
         'Operating System :: Unix',
+        'License :: OSI Approved :: BSD License',
         'Programming Language :: Python',
         'Topic :: Software Development :: Libraries :: Python Modules',
         'Topic :: Internet',
