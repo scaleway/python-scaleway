@@ -4,4 +4,4 @@ python:
 install:
   - pip install -e .
 script:
-  - python setup.py test
+  - python setup.py nosetests --with-coverage
