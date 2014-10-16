@@ -31,7 +31,7 @@ def get_long_description():
 setup(
     name='ocs-sdk',
     version=get_version(),
-    description='OCS APIs client',
+    description="Tools to query the REST APIs of Online.net's cloud services",
     long_description=get_long_description(),
 
     author='OCS',
