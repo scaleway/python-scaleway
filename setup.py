@@ -34,9 +34,9 @@ setup(
     description="Tools to query the REST APIs of Online.net's cloud services",
     long_description=get_long_description(),
 
-    author='OCS',
-    author_email='contact@ocs.online.net',
-    url='http://online.net',
+    author='Online Labs',
+    author_email='opensource@labs.online.net',
+    url='http://github.com/online-labs/ocs-sdk',
     license='BSD',
 
     install_requires=[
