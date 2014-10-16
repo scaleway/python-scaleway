@@ -5,6 +5,16 @@ This package provides tools to query the REST APIs of
 `Online.net's cloud services`_.
 
 
+Installation
+------------
+
+The package is available on pip. To install it in a virtualenv::
+
+        virtualenv my_virtualenv
+        source my_virtualenv/bin/activate
+        pip install ocs-sdk
+
+
 General principle
 -----------------
 
