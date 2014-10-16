@@ -4,6 +4,10 @@ ocs-sdk
 This package provides tools to query the REST APIs of
 `Online.net's cloud services`_.
 
+.. image:: https://badge.fury.io/py/ocs-sdk.svg
+    :target: http://badge.fury.io/py/ocs-sdk
+.. image:: https://travis-ci.org/online-labs/ocs-sdk.svg?branch=develop
+    :target: https://travis-ci.org/online-labs/ocs-sdk
 
 Installation
 ------------
