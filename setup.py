@@ -40,13 +40,13 @@ setup(
     license='BSD',
 
     install_requires=[
-        'slumber >=0.6.0',
+        'slumber >= 0.6.0',
     ],
 
     packages=find_packages(),
 
     tests_require=[
-        'httpretty >=0.8.0',
+        'httpretty >= 0.8.0',
     ],
     test_suite=MODULE_NAME + '.tests',
 
