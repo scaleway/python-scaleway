@@ -45,3 +45,4 @@ class API(object):
 
 from .api_account import AccountAPI
 from .api_compute import ComputeAPI
+from .api_metadata import MetadataAPI

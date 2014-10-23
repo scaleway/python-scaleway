@@ -17,10 +17,14 @@ class FakeAPITestCase(object):
 
     def fake_endpoint(self, api, endpoint, method=httpretty.GET,
                       body=None, status=200):
+
+        if not callable(body):
+            body = json.dumps(body)
+
         httpretty.register_uri(
             method,
             urlparse.urljoin(api.get_api_url(), endpoint),
-            body=json.dumps(body),
+            body=body,
             content_type='application/json',
             status=status
         )
