@@ -27,7 +27,7 @@ class TestComputeAPI(FakeAPITestCase, unittest.TestCase):
 
     def setUp(self):
         super(TestComputeAPI, self).setUp()
-        self.api = AccountAPI(str(uuid.uuid4()))
+        self.api = AccountAPI(auth_token=str(uuid.uuid4()))
         self.fake_orga_key = str(uuid.uuid4())
 
     def make_fake_perms(self, permissions):
