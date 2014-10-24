@@ -12,10 +12,12 @@ class MetadataAPI(API):
 
     base_url = 'http://169.254.42.42/'
 
-    def __init__(self, base_url=None, verify_ssl=False):
-        super(MetadataAPI, self).__init__(
-            auth_token=None, base_url=base_url, verify_ssl=verify_ssl
-        )
+    def __init__(self, **kwargs):
+
+        assert 'auth_token' not in kwargs, \
+            'auth_token is not required to query the metadata API'
+
+        super(MetadataAPI, self).__init__(auth_token=None, **kwargs)
 
     def get_metadata(self, as_shell=False):
         """ Returns server metadata.
