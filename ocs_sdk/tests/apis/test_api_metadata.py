@@ -54,8 +54,8 @@ class TestMetadataAPI(FakeAPITestCase, unittest.TestCase):
 
     def test_get(self):
         expected_response = self.make_fake_metadata_api()
-        self.assertEqual(self.api.get(), expected_response)
+        self.assertEqual(self.api.get_metadata(), expected_response)
 
-        shell_response = self.api.get(as_shell=True)
+        shell_response = self.api.get_metadata(as_shell=True)
         self.assertIn('id="%(id)s"' % expected_response, shell_response)
         self.assertIn('name="%(name)s"' % expected_response, shell_response)

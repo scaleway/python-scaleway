@@ -17,7 +17,7 @@ class MetadataAPI(API):
             auth_token=None, base_url=base_url, verify_ssl=verify_ssl
         )
 
-    def get(self, as_shell=False):
+    def get_metadata(self, as_shell=False):
         """ Returns server metadata.
 
         If `as_shell` is True, return a string easily parsable by a shell. If
