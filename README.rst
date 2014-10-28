@@ -10,6 +10,7 @@ This package provides tools to query the REST APIs of
     :target: https://travis-ci.org/online-labs/ocs-sdk
 .. image:: http://img.shields.io/pypi/l/ocs-sdk.svg
     :target: http://opensource.org/licenses/BSD-2-Clause
+.. image:: http://img.shields.io/pypi/dm/ocs-sdk.svg
 
 
 Installation
