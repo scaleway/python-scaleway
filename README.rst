@@ -8,6 +8,9 @@ This package provides tools to query the REST APIs of
     :target: http://badge.fury.io/py/ocs-sdk
 .. image:: https://travis-ci.org/online-labs/ocs-sdk.svg?branch=develop
     :target: https://travis-ci.org/online-labs/ocs-sdk
+.. image:: http://img.shields.io/pypi/l/ocs-sdk.svg
+    :target: http://opensource.org/licenses/BSD-2-Clause
+
 
 Installation
 ------------
