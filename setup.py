@@ -35,7 +35,7 @@ setup(
     long_description=get_long_description(),
 
     author='Online Labs',
-    author_email='cloud-team@labs.online.net',
+    author_email='opensource@labs.online.net',
     url='http://github.com/online-labs/ocs-sdk',
     license='BSD',
 
