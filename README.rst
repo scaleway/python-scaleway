@@ -6,11 +6,18 @@ This package provides tools to query the REST APIs of
 
 .. image:: https://badge.fury.io/py/ocs-sdk.svg
     :target: http://badge.fury.io/py/ocs-sdk
+    :alt: Last release
 .. image:: https://travis-ci.org/online-labs/ocs-sdk.svg?branch=develop
     :target: https://travis-ci.org/online-labs/ocs-sdk
+    :alt: Unit-tests status
+.. image:: https://requires.io/github/online-labs/ocs-sdk/requirements.svg?branch=master
+    :target: https://requires.io/github/online-labs/ocs-sdk/requirements/?branch=master
+    :alt: Requirements freshness
 .. image:: http://img.shields.io/pypi/l/ocs-sdk.svg
     :target: http://opensource.org/licenses/BSD-2-Clause
+    :alt: Software license
 .. image:: http://img.shields.io/pypi/dm/ocs-sdk.svg
+    :alt: Popularity
 
 
 Installation
