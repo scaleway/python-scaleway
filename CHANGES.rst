@@ -1,10 +1,15 @@
 ChangeLog
 =========
 
+0.3.1 (unreleased)
+------------------
+
+* No entry.
+
 0.3.0 (2014-11-12)
 ------------------
 
-* Add missing license files. Closes #1 .
+* Add missing license files. Closes #1.
 * Create class MetadataAPI to get metadata of a running server.
 
 0.2.1 (2014-10-14)
