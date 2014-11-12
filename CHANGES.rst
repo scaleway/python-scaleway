@@ -1,7 +1,7 @@
 ChangeLog
 =========
 
-0.2.2 (unreleased)
+0.3.0 (2014-11-12)
 ------------------
 
 * Add missing license files. Closes #1 .
