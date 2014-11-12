@@ -22,8 +22,9 @@ class API(object):
         session = requests.Session()
 
         if self.auth_token:
+            # HTTP headers must always be ISO-8859-1 encoded
             session.headers.update({
-                'X-Auth-Token': self.auth_token
+                'X-Auth-Token': self.auth_token.encode('latin1')
             })
 
         if not self.verify_ssl:

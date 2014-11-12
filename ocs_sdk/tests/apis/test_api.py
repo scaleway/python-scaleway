@@ -32,6 +32,14 @@ class TestAPI(FakeAPITestCase, unittest.TestCase):
         self.assertTrue(API().make_requests_session().verify)
         self.assertFalse(API(verify_ssl=False).make_requests_session().verify)
 
+        # HTTP headers must be latin1 encoded
+        token_unicode = u'éè'
+        session = SimpleAPI(auth_token=token_unicode).make_requests_session()
+        self.assertEqual(
+            session.headers['X-Auth-Token'],
+            token_unicode.encode('latin1')
+        )
+
     def test_get_api_url(self):
         self.assertEqual(SimpleAPI().get_api_url(), 'http://localhost')
 
