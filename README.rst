@@ -112,7 +112,7 @@ Assuming you are in a `virtualenv`_::
 
         $> pip install -e .
         $> python -c 'from ocs_sdk.apis import AccountAPI'
-        $> # it worked!
+        $> # it works!
 
 
 Test
