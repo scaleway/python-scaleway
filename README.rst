@@ -72,7 +72,7 @@ Examples
 .. code-block:: python
 
     >>> from ocs_sdk.apis import AccountAPI
-    >>> api = AccountAPI(auth_token='') # set your token here!
+    >>> api = AccountAPI(auth_token='')  # Set your token here!
     >>> print api.query().organizations.get()
     {u'organizations': [...]}
 
@@ -82,7 +82,7 @@ Examples
 .. code-block:: python
 
     >>> from ocs_sdk.apis import ComputeAPI
-    >>> api = ComputeAPI(auth_token='') # set your token here!
+    >>> api = ComputeAPI(auth_token='')  # Set your token here!
     >>> print api.query().servers.get()
     {u'servers': [...]}
 
@@ -92,8 +92,8 @@ Examples
 .. code-block:: python
 
     >>> from ocs_sdk.apis import ComputeAPI
-    >>> api = ComputeAPI(auth_token='')  # set your token here!
-    >>> server_id = '' # set a server id here!
+    >>> api = ComputeAPI(auth_token='')  # Set your token here!
+    >>> server_id = ''  # Set a server ID here!
     >>> print api.query().servers(server_id).get()
     {u'server': {...}}
 
@@ -106,7 +106,7 @@ Using helpers:
 .. code-block:: python
 
     >>> from ocs_sdk.apis import AccountAPI
-    >>> api = AccountAPI(auth_token='') # set your token here!
+    >>> api = AccountAPI(auth_token='')  # Set your token here!
     >>> print api.has_perm(service='compute', name='servers:read',
     ...     resource='9a096d36-6bf9-470f-91df-2398aa7361f7')
     False
