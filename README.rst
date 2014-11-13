@@ -152,4 +152,4 @@ This software is licensed under a `BSD 2-Clause License`_.
 .. _Slumber: http://slumber.readthedocs.org/
 .. _API documentation: https://doc.cloud.online.net/api/
 .. _virtualenv: http://virtualenv.readthedocs.org/en/latest/
-.. _BSD 2-Clause License: ./LICENSE.rst
+.. _BSD 2-Clause License: https://github.com/online-labs/ocs-sdk/blob/develop/LICENSE.rst
