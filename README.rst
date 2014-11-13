@@ -17,6 +17,7 @@ This package provides tools to query the REST APIs of
     :target: http://opensource.org/licenses/BSD-2-Clause
     :alt: Software license
 .. image:: http://img.shields.io/pypi/dm/ocs-sdk.svg
+    :target: https://pypi.python.org/pypi/ocs-sdk#downloads
     :alt: Popularity
 
 
