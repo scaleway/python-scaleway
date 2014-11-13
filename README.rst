@@ -92,7 +92,7 @@ Examples
 .. code-block:: python
 
     >>> from ocs_sdk.apis import ComputeAPI
-    >>> api = ComputeAPI(auth_token='') # set your token here!
+    >>> api = ComputeAPI(auth_token='')  # set your token here!
     >>> server_id = '' # set a server id here!
     >>> print api.query().servers(server_id).get()
     {u'server': {...}}
@@ -133,11 +133,11 @@ To submit a patch, you'll need to test your code. To run tests:
 
     pip install nose coverage pep8 pylint
     python setup.py nosetests --with-coverage
-    (...)
+    # (...)
     pep8 ocs_sdk
-    (...)
+    # (...)
     pylint ocs_sdk
-    (...)
+    # (...)
 
 * coverage score should never be lower than before your patch.
 * PEP8 should never return an error.
