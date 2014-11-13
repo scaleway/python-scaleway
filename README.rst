@@ -24,24 +24,30 @@ This package provides tools to query the REST APIs of
 Installation
 ------------
 
-The package is available on pip. To install it in a virtualenv::
+The package is available on pip. To install it in a virtualenv:
 
-        virtualenv my_virtualenv
-        source my_virtualenv/bin/activate
-        pip install ocs-sdk
+.. code-block:: bash
+
+    virtualenv my_virtualenv
+    source my_virtualenv/bin/activate
+    pip install ocs-sdk
 
 
 General principle
 -----------------
 
-If you're looking to send a ``GET`` HTTP request against our APIs, like::
+If you're looking to send a ``GET`` HTTP request against our APIs, like:
 
-        GET <api_url>/xxx/yyy/zzz
+.. code-block:: http
 
-you only need to call the following pythonic code::
+    GET <api_url>/xxx/yyy/zzz
 
-        >>> from ocs_sdk.apis import XxxAPI
-        >>> XxxAPI().query().xxx.yyy.zzz.get()
+you only need to call the following pythonic code:
+
+.. code-block:: python
+
+    >>> from ocs_sdk.apis import XxxAPI
+    >>> XxxAPI().query().xxx.yyy.zzz.get()
 
 The magic here lies in ``ocs_sdk.apis.*API`` instances, which all have a
 ``query`` method returning a ``slumber.API`` object. The latter handling all
@@ -61,73 +67,77 @@ Slumber_ objects, a good read of Slumber_ documention is encouraged as well.
 Examples
 --------
 
-- List your organizations::
+- List your organizations:
 
-        >>> from ocs_sdk.apis import AccountAPI
-        >>>
-        >>> api = AccountAPI(auth_token='') # set your token here!
-        >>>
-        >>> print api.query().organizations.get()
-        {u'organizations': [...]}
+.. code-block:: python
 
-
-- List your servers::
-
-        >>> from ocs_sdk.apis import ComputeAPI
-        >>>
-        >>> api = ComputeAPI(auth_token='') # set your token here!
-        >>>
-        >>> print api.query().servers.get()
-        {u'servers': [...]}
+    >>> from ocs_sdk.apis import AccountAPI
+    >>> api = AccountAPI(auth_token='') # set your token here!
+    >>> print api.query().organizations.get()
+    {u'organizations': [...]}
 
 
-- Get details of a server::
+- List your servers:
 
-        >>> from ocs_sdk.apis import ComputeAPI
-        >>>
-        >>> api = ComputeAPI(auth_token='') # set your token here!
-        >>> server_id = '' # set a server id here!
-        >>>
-        >>> print api.query().servers(server_id).get()
-        {u'server': {...}}
+.. code-block:: python
+
+    >>> from ocs_sdk.apis import ComputeAPI
+    >>> api = ComputeAPI(auth_token='') # set your token here!
+    >>> print api.query().servers.get()
+    {u'servers': [...]}
+
+
+- Get details of a server:
+
+.. code-block:: python
+
+    >>> from ocs_sdk.apis import ComputeAPI
+    >>> api = ComputeAPI(auth_token='') # set your token here!
+    >>> server_id = '' # set a server id here!
+    >>> print api.query().servers(server_id).get()
+    {u'server': {...}}
 
 
 Using helpers:
 
 - Check if your token has the permission ``servers:read`` for the service
-  ``compute`` for the organization ``9a096d36-6bf9-470f-91df-2398aa7361f7``::
+  ``compute`` for the organization ``9a096d36-6bf9-470f-91df-2398aa7361f7``:
 
-        >>> from ocs_sdk.apis import AccountAPI
-        >>>
-        >>> api = AccountAPI(auth_token='') # set your token here!
-        >>>
-        >>> print api.has_perm(service='compute', name='servers:read',
-        ...     resource='9a096d36-6bf9-470f-91df-2398aa7361f7')
-        False
+.. code-block:: python
+
+    >>> from ocs_sdk.apis import AccountAPI
+    >>> api = AccountAPI(auth_token='') # set your token here!
+    >>> print api.has_perm(service='compute', name='servers:read',
+    ...     resource='9a096d36-6bf9-470f-91df-2398aa7361f7')
+    False
 
 
 Development
 -----------
 
-Assuming you are in a `virtualenv`_::
+Assuming you are in a `virtualenv`_:
 
-        $> pip install -e .
-        $> python -c 'from ocs_sdk.apis import AccountAPI'
-        $> # it works!
+.. code-block:: bash
+
+    pip install -e .
+    python -c 'from ocs_sdk.apis import AccountAPI'
+    # it works!
 
 
 Test
 ----
 
-To submit a patch, you'll need to test your code. To run tests::
+To submit a patch, you'll need to test your code. To run tests:
 
-        $> pip install nose coverage pep8 pylint
-        $> python setup.py nosetests --with-coverage
-        ...
-        $> pep8 ocs_sdk
-        ...
-        $> pylint ocs_sdk
-        ...
+.. code-block:: bash
+
+    pip install nose coverage pep8 pylint
+    python setup.py nosetests --with-coverage
+    (...)
+    pep8 ocs_sdk
+    (...)
+    pylint ocs_sdk
+    (...)
 
 * coverage score should never be lower than before your patch.
 * PEP8 should never return an error.
