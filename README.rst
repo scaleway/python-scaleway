@@ -98,8 +98,6 @@ Examples
     {u'server': {...}}
 
 
-Using helpers:
-
 - Check if your token has the permission ``servers:read`` for the service
   ``compute`` for the organization ``9a096d36-6bf9-470f-91df-2398aa7361f7``:
 
