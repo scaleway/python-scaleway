@@ -1,7 +1,12 @@
 # -*- coding: utf-8 -*-
 
+import platform
+import sys
+
 import requests
 import slumber
+
+from .. import __version__
 
 
 class API(object):
@@ -17,9 +22,15 @@ class API(object):
         self.verify_ssl = verify_ssl
 
     def make_requests_session(self):
-        """ Attaches a X-Auth-Token header to requests.Session.
+        """ Attaches headers needed to query OCS APIs.
         """
         session = requests.Session()
+
+        session.headers.update({
+            'User-Agent': 'ocs-sdk/%s Python/%s %s' % (
+                __version__, ' '.join(sys.version.split()), platform.platform()
+            )
+        })
 
         if self.auth_token:
             # HTTP headers must always be ISO-8859-1 encoded

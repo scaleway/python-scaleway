@@ -4,7 +4,7 @@ ChangeLog
 0.3.1 (unreleased)
 ------------------
 
-* No entry.
+* Set User-Agent HTTP header.
 
 0.3.0 (2014-11-12)
 ------------------
