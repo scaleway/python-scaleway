@@ -12,9 +12,17 @@ from .. import __version__
 class API(object):
 
     base_url = None
+    user_agent = 'ocs-sdk/%s Python/%s %s' % (
+        __version__, ' '.join(sys.version.split()), platform.platform()
+    )
 
-    def __init__(self, auth_token=None, base_url=None, verify_ssl=True):
+    def __init__(self, auth_token=None, base_url=None, verify_ssl=True,
+                 user_agent=None):
+
         self.auth_token = auth_token
+
+        if user_agent is not None:
+            self.user_agent = user_agent
 
         if base_url:
             self.base_url = base_url
@@ -26,11 +34,7 @@ class API(object):
         """
         session = requests.Session()
 
-        session.headers.update({
-            'User-Agent': 'ocs-sdk/%s Python/%s %s' % (
-                __version__, ' '.join(sys.version.split()), platform.platform()
-            )
-        })
+        session.headers.update({'User-Agent': self.user_agent})
 
         if self.auth_token:
             # HTTP headers must always be ISO-8859-1 encoded

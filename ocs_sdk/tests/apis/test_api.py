@@ -18,10 +18,15 @@ class TestAPI(FakeAPITestCase, unittest.TestCase):
 
     def test_make_requests_session(self):
         # normal use
-        requests_session = API('0xdeadbeef').make_requests_session()
-        self.assertEqual(
-            requests_session.headers.get('X-Auth-Token'), '0xdeadbeef'
-        )
+        requests_session = API(
+            auth_token='0xdeadbeef', user_agent='jamesb0nd'
+        ).make_requests_session()
+
+        self.assertEqual(requests_session.headers.get('X-Auth-Token'),
+                         '0xdeadbeef')
+        self.assertEqual(requests_session.headers.get('User-Agent'),
+                         'jamesb0nd')
+
 
         # no auth provided
         session_of_no_auth_api = API().make_requests_session()

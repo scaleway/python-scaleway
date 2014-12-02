@@ -4,7 +4,8 @@ ChangeLog
 0.3.1 (unreleased)
 ------------------
 
-* Set User-Agent HTTP header.
+* ocs_sdk.apis.API accepts the constructor param "user_agent". Defaults to
+  "ocs-sdk Pythons/version Platform".
 
 0.3.0 (2014-11-12)
 ------------------
