@@ -6,6 +6,7 @@ ChangeLog
 
 * ocs_sdk.apis.API accepts the constructor param "user_agent". Defaults to
   "ocs-sdk Pythons/version Platform".
+* Check code coverage thanks to coveralls.
 
 0.3.0 (2014-11-12)
 ------------------

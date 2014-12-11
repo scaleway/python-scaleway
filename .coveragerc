@@ -1,6 +1,7 @@
 # http://nedbatchelder.com/code/coverage/config.html#config
 
 [run]
+source = ocs_sdk
 branch = True
 omit = */tests/*
 

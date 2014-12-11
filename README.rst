@@ -10,6 +10,9 @@ This package provides tools to query the REST APIs of
 .. image:: https://travis-ci.org/online-labs/ocs-sdk.svg?branch=develop
     :target: https://travis-ci.org/online-labs/ocs-sdk
     :alt: Unit-tests status
+.. image:: https://img.shields.io/coveralls/online-labs/ocs-sdk.svg
+    :target: https://coveralls.io/r/online-labs/ocs-sdk?branch=develop
+    :alt: Coverage Status
 .. image:: https://requires.io/github/online-labs/ocs-sdk/requirements.svg?branch=master
     :target: https://requires.io/github/online-labs/ocs-sdk/requirements/?branch=master
     :alt: Requirements freshness
