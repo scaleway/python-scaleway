@@ -4,22 +4,22 @@ ocs-sdk
 This package provides tools to query the REST APIs of
 `Online.net's cloud services`_.
 
-.. image:: https://badge.fury.io/py/ocs-sdk.svg
-    :target: http://badge.fury.io/py/ocs-sdk
+.. image:: https://img.shields.io/pypi/v/ocs-sdk.svg?style=flat
+    :target: https://pypi.python.org/pypi/ocs-sdk
     :alt: Last release
-.. image:: https://travis-ci.org/online-labs/ocs-sdk.svg?branch=develop
+.. image:: https://img.shields.io/travis/online-labs/ocs-sdk/develop.svg?style=flat
     :target: https://travis-ci.org/online-labs/ocs-sdk
     :alt: Unit-tests status
-.. image:: https://img.shields.io/coveralls/online-labs/ocs-sdk.svg
+.. image:: https://img.shields.io/coveralls/online-labs/ocs-sdk/develop.svg?style=flat
     :target: https://coveralls.io/r/online-labs/ocs-sdk?branch=develop
     :alt: Coverage Status
-.. image:: https://requires.io/github/online-labs/ocs-sdk/requirements.svg?branch=master
+.. image:: https://img.shields.io/requires/github/online-labs/ocs-sdk/master.svg?style=flat
     :target: https://requires.io/github/online-labs/ocs-sdk/requirements/?branch=master
     :alt: Requirements freshness
-.. image:: http://img.shields.io/pypi/l/ocs-sdk.svg
+.. image:: https://img.shields.io/pypi/l/ocs-sdk.svg?style=flat
     :target: http://opensource.org/licenses/BSD-2-Clause
     :alt: Software license
-.. image:: http://img.shields.io/pypi/dm/ocs-sdk.svg
+.. image:: https://img.shields.io/pypi/dm/ocs-sdk.svg?style=flat
     :target: https://pypi.python.org/pypi/ocs-sdk#downloads
     :alt: Popularity
 
