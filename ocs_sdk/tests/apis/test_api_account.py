@@ -231,12 +231,24 @@ class TestComputeAPI(FakeAPITestCase, unittest.TestCase):
                           self.api.get_quotas,
                           self.fake_orga_key)
 
-    def test_get_quota(self):
+    def test_get_quotas(self):
         self.api = AccountAPI()
         self.api.auth_token = str(uuid.uuid4())
         self.make_fake_quotas({'invites': 5})
         self.assertEquals(self.api.get_quotas(self.fake_orga_key),
                           {'invites': 5})
+
+    def test_get_quota(self):
+        self.api = AccountAPI()
+        self.api.auth_token = str(uuid.uuid4())
+        self.make_fake_quotas({'invites': 5})
+        self.assertEquals(self.api.get_quota(self.fake_orga_key, 'invites'), 5)
+
+    def test_get_quota_None(self):
+        self.api = AccountAPI()
+        self.api.auth_token = str(uuid.uuid4())
+        self.make_fake_quotas({'invites': 5})
+        self.assertEquals(self.api.get_quota(self.fake_orga_key, 'xoxo'), None)
 
     def test_has_quota(self):
         self.api = AccountAPI()

@@ -140,6 +140,12 @@ class AccountAPI(API):
         response = self.query().organizations(organization).quotas.get()
         return response['quotas']
 
+    def get_quota(self, organization, resource):
+        """ Gets one quota for the given organization.
+        """
+        quotas = self.get_quotas(organization)
+        return quotas.get(resource)
+
     def has_quota(self, organization, resource, used=None):
         """ Checks quota for a resource
         """
