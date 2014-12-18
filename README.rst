@@ -43,14 +43,14 @@ If you're looking to send a ``GET`` HTTP request against our APIs, like:
 
 .. code-block:: http
 
-    GET <api_url>/xxx/yyy/zzz
+    GET <api_url>/foo/bar
 
 you only need to call the following pythonic code:
 
 .. code-block:: python
 
-    >>> from ocs_sdk.apis import XxxAPI
-    >>> XxxAPI().query().xxx.yyy.zzz.get()
+    >>> from ocs_sdk.apis import DummyAPI
+    >>> DummyAPI().query().foo.bar.get()
 
 The magic here lies in ``ocs_sdk.apis.*API`` instances, which all have a
 ``query`` method returning a ``slumber.API`` object. The latter handling all
