@@ -1,7 +1,7 @@
 ChangeLog
 =========
 
-0.3.1 (unreleased)
+0.3.1 (2014-12-19)
 ------------------
 
 * ocs_sdk.apis.API accepts the constructor param "user_agent". Defaults to
