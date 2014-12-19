@@ -35,7 +35,6 @@ class TestAPI(FakeAPITestCase, unittest.TestCase):
         self.assertEqual(requests_session.headers.get('User-Agent'),
                          'jamesb0nd')
 
-
         # no auth provided
         session_of_no_auth_api = API().make_requests_session()
         self.assertIsInstance(session_of_no_auth_api, requests.Session)
