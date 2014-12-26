@@ -50,7 +50,7 @@ setup(
     license='BSD',
 
     install_requires=[
-        'slumber >= 0.6.0',
+        'slumber >= 0.6.2',
         'pyOpenSSL',
         'ndg-httpsclient',
         'pyasn1',
