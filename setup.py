@@ -49,6 +49,7 @@ setup(
 
     install_requires=[
         'slumber >= 0.6.0',
+        'six',
     ],
 
     packages=find_packages(),

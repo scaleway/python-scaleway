@@ -9,11 +9,7 @@
 # file except in compliance with the License. You may obtain a copy of the
 # License at http://opensource.org/licenses/BSD-2-Clause
 
-try:
-    from itertools import izip_longest as zip_longest
-except ImportError:
-    from itertools import zip_longest
-
+from six.moves import zip_longest
 import slumber
 
 from . import API

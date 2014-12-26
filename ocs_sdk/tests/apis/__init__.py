@@ -10,12 +10,8 @@
 
 import json
 
-try:
-    from urlparse import urljoin
-except ImportError:
-    from urllib.parse import urljoin
-
 import httpretty
+from six.moves.urllib.parse import urljoin
 
 
 class FakeAPITestCase(object):

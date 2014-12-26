@@ -11,10 +11,8 @@ import json
 import unittest
 import uuid
 
-try:
-    from urlparse import parse_qs, urlparse
-except ImportError:
-    from urllib.parse import parse_qs, urlparse
+import six
+from six.moves.urllib.parse import parse_qs, urlparse
 
 from ocs_sdk.apis import MetadataAPI
 
