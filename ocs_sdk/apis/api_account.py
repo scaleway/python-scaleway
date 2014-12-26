@@ -9,7 +9,10 @@
 # file except in compliance with the License. You may obtain a copy of the
 # License at http://opensource.org/licenses/BSD-2-Clause
 
-from itertools import izip_longest
+try:
+    from itertools import izip_longest as zip_longest
+except ImportError:
+    from itertools import zip_longest
 
 import slumber
 
@@ -63,8 +66,8 @@ class AccountAPI(API):
         effective_perm_parts = effective_perm.split(':')
 
         for (request_perm_part,
-             effective_perm_part) in izip_longest(request_perm_parts,
-                                                  effective_perm_parts):
+             effective_perm_part) in zip_longest(request_perm_parts,
+                                                 effective_perm_parts):
 
             if (
                 request_perm_part != effective_perm_part and

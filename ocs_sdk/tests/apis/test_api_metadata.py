@@ -9,8 +9,12 @@
 
 import json
 import unittest
-import urlparse
 import uuid
+
+try:
+    from urlparse import parse_qs, urlparse
+except ImportError:
+    from urllib.parse import parse_qs, urlparse
 
 from ocs_sdk.apis import MetadataAPI
 
@@ -45,7 +49,7 @@ class TestMetadataAPI(FakeAPITestCase, unittest.TestCase):
             If no format is given, return a text/plain response with a "shell"
             format.
             """
-            querystring = urlparse.parse_qs(urlparse.urlparse(uri).query)
+            querystring = parse_qs(urlparse(uri).query)
 
             if 'json' in querystring.get('format', []):
                 return 200, headers, json.dumps(json_response)
@@ -64,5 +68,7 @@ class TestMetadataAPI(FakeAPITestCase, unittest.TestCase):
         self.assertEqual(self.api.get_metadata(), expected_response)
 
         shell_response = self.api.get_metadata(as_shell=True)
+        if not isinstance(shell_response, str):  # py3 branch
+            shell_response = str(shell_response, 'utf-8')
         self.assertIn('id="%(id)s"' % expected_response, shell_response)
         self.assertIn('name="%(name)s"' % expected_response, shell_response)

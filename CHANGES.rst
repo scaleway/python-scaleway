@@ -4,7 +4,7 @@ ChangeLog
 0.3.2 (unreleased)
 ------------------
 
-* No entry.
+* Add python 3.4 support.
 
 0.3.1 (2014-12-19)
 ------------------
