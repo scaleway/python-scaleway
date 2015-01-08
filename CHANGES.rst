@@ -1,7 +1,7 @@
 ChangeLog
 =========
 
-0.3.2 (unreleased)
+0.3.2 (2015-01-08)
 ------------------
 
 * Raise BadToken if account API returns HTTP/400.
