@@ -163,6 +163,9 @@ class TestComputeAPI(FakeAPITestCase, unittest.TestCase):
             self.api.auth_token
         )
 
+        self.fake_endpoint(self.api, url, status=400)
+        self.assertRaises(BadToken, self.api.get_resources)
+
         self.fake_endpoint(self.api, url, status=404)
         self.assertRaises(BadToken, self.api.get_resources)
 

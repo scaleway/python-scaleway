@@ -86,7 +86,7 @@ class AccountAPI(API):
             response = self.query().tokens(self.auth_token).permissions.get()
 
         except slumber.exceptions.HttpClientError as exc:
-            if exc.response.status_code == 404:
+            if exc.response.status_code in (400, 404):
                 raise BadToken()
 
             if exc.response.status_code == 410:

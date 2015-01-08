@@ -4,7 +4,7 @@ ChangeLog
 0.3.2 (unreleased)
 ------------------
 
-* No entry.
+* Raise BadToken if account API returns HTTP/400.
 
 0.3.1 (2014-12-19)
 ------------------
