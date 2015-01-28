@@ -147,9 +147,19 @@ class AccountAPI(API):
         return quotas.get(resource)
 
     def has_quota(self, organization, resource, used=None):
-        """ Checks quota for a resource
+        """ Checks if `organization` has the quota set for `resource`, and if
+        `used` is not None, also checks if the quota value is higher than
+        `used`.
         """
         quotas = self.get_quotas(organization=organization)
-        return bool(
-            resource in quotas and used < quotas.get(resource, 0)
-        )
+
+        # Check if the quota is set
+        quota_value = quotas.get(resource, 0)
+        if quota_value is None:
+            return False
+
+        # If `used` is not None, check it is lower than `quota_value`
+        if used is not None and used >= quota_value:
+            return False
+
+        return True
