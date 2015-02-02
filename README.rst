@@ -150,10 +150,11 @@ Alternative libraries / clients
 
 - Ruby library: https://github.com/bchatelard/onlinelabs-ruby
 - Go library + CLI: https://github.com/lalyos/onlabs
-- Vagrant packer, with GO API client: https://github.com/meatballhat/packer-builder-onlinelabs/
+- Vagrant packer, with GO API client: https://github.com/meatballhat/packer-builder-onlinelabs
 - Node.js/Javascript in browser client: https://github.com/moul/node-onlinelabs
 - Juju plugin, with Python API client: https://github.com/online-labs/juju-onlinelabs
 - Cloudformation plugin, with Node.js API client: https://github.com/resin-io/onlinelabs-cloudformation
+- Python API client: https://github.com/adebarbara/olpy
 
 License
 -------
