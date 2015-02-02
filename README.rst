@@ -152,6 +152,7 @@ Alternative libraries / clients
 - Go library + CLI: https://github.com/lalyos/onlabs
 - Vagrant packer, with GO API client: https://github.com/meatballhat/packer-builder-onlinelabs/
 - Node.js/Javascript in browser client: https://github.com/moul/node-onlinelabs
+- Juju plugin, with Python API client: https://github.com/online-labs/juju-onlinelabs
 
 License
 -------
