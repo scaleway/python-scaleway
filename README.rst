@@ -145,12 +145,12 @@ To submit a patch, you'll need to test your code. To run tests:
 * pylint score should never be lower than before your patch.
 
 
-Alternative libraries
----------------------
+Alternative libraries / clients
+-------------------------------
 
 - Ruby library: https://github.com/bchatelard/onlinelabs-ruby
 - Go library + CLI: https://github.com/lalyos/onlabs
-
+- Vagrant packer, with GO API client: https://github.com/meatballhat/packer-builder-onlinelabs/
 
 License
 -------
