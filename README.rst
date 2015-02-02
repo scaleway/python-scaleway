@@ -153,6 +153,7 @@ Alternative libraries / clients
 - Vagrant packer, with GO API client: https://github.com/meatballhat/packer-builder-onlinelabs/
 - Node.js/Javascript in browser client: https://github.com/moul/node-onlinelabs
 - Juju plugin, with Python API client: https://github.com/online-labs/juju-onlinelabs
+- Cloudformation plugin, with Node.js API client: https://github.com/resin-io/onlinelabs-cloudformation
 
 License
 -------
