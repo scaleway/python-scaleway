@@ -259,3 +259,4 @@ class TestComputeAPI(FakeAPITestCase, unittest.TestCase):
         self.make_fake_quotas({'invites': 5})
         self.assertTrue(self.api.has_quota(self.fake_orga_key, 'invites', 2))
         self.assertFalse(self.api.has_quota(self.fake_orga_key, 'invites', 5))
+        self.assertFalse(self.api.has_quota(self.fake_orga_key, 'nope'))

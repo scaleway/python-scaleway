@@ -154,7 +154,7 @@ class AccountAPI(API):
         quotas = self.get_quotas(organization=organization)
 
         # Check if the quota is set
-        quota_value = quotas.get(resource, 0)
+        quota_value = quotas.get(resource)
         if quota_value is None:
             return False
 
