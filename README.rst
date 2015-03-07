@@ -156,6 +156,7 @@ Alternative libraries / clients
 
   - Go library + CLI: https://github.com/lalyos/onlabs
   - Vagrant packer + API client: https://github.com/meatballhat/packer-builder-onlinelabs/
+  - Go CLI: https://github.com/nlamirault/go-onlinelabs
 
 - Node.js/javascript
 
