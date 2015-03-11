@@ -1,10 +1,12 @@
 ChangeLog
 =========
 
-0.3.3 (unreleased)
+0.4.0 (unreleased)
 ------------------
 
-* No entry.
+* Add param `include_locked` to `AccountAPI.get_resources()`. Useful if you
+  need to list all the permissions of a token, even if the owner's organization
+  is locked.
 
 0.3.2 (2015-01-08)
 ------------------

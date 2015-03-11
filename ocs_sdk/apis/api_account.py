@@ -75,16 +75,37 @@ class AccountAPI(API):
 
         return True
 
-    def get_resources(self, service=None, name=None, resource=None):
+    def get_resources(self, service=None, name=None, resource=None,
+                      include_locked=False):
         """ Gets a list of resources for which the auth token is granted.
+
+        The permissions of a token is the sum of:
+
+        - token's permissions
+        - user's permissions
+        - user's roles permissions
+        - token's roles permissions
+
+        Roles are linked to organizations.
+
+        This function doesn't return the permissions retrieved from locked
+        organizations unless `include_locked` is True. Setting `include_lock`
+        to True is useful when you need to check the permissions of a token,
+        but don't care if the owner's organization is locked or not.
+
+        Note: If you - the reader - are not a staff member, this pydoc might be
+        a little confusing. Roles and permissions are not yet fully exposed by
+        our APIs, but I promise we will try to expose and document them very
+        soon. Anyway, if you have questions, we'll be glad to answer you guys!
         """
         if not self.auth_token:
             return []
 
         # GET /tokens/:id/permissions on account-api
         try:
-            response = self.query().tokens(self.auth_token).permissions.get()
-
+            response = self.query() \
+                           .tokens(self.auth_token) \
+                           .permissions.get(include_locked=include_locked)
         except slumber.exceptions.HttpClientError as exc:
             if exc.response.status_code in (400, 404):
                 raise BadToken()

@@ -12,6 +12,7 @@
 import unittest
 import uuid
 
+import httpretty
 import slumber
 
 from ocs_sdk.apis import AccountAPI
@@ -79,7 +80,7 @@ class TestComputeAPI(FakeAPITestCase, unittest.TestCase):
     def test_get_resources(self):
 
         def compare_results(permissions, service=None, name=None,
-                            resource=None, result=None):
+                            resource=None, result=None, include_locked=False):
             """ Resets the auth API endpoint /tokens/:id/permissions, call
             get_resources and compare results with what is expected.
             """
@@ -88,12 +89,20 @@ class TestComputeAPI(FakeAPITestCase, unittest.TestCase):
 
             self.make_fake_perms(permissions)
             resources = self.api.get_resources(
-                service=service, name=name, resource=resource
+                service=service, name=name, resource=resource,
+                include_locked=include_locked
             )
             # XOR on two sets returns the difference between them
             # Used because we don't know in which order api.get_resources
             # returns the resources.
             self.assertFalse(set(resources) ^ set(result))
+
+            # Check the API has been requested with
+            # ?include_locked set to `include_locked`
+            self.assertEqual(
+                httpretty.last_request().querystring.get('include_locked'),
+                [unicode(include_locked)]
+            )
 
         # No permission, no resource
         compare_results({}, result=[])
@@ -152,6 +161,14 @@ class TestComputeAPI(FakeAPITestCase, unittest.TestCase):
             self.fake_permissions,
             service='account', name='token:admin',
             result=['token1', 'token2']
+        )
+
+        # Include lock set to True
+        compare_results(
+            self.fake_permissions,
+            service='account', name='token:admin',
+            result=['token1', 'token2'],
+            include_locked=True
         )
 
     def test_get_resources_with_empty_token(self):
