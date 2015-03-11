@@ -1,7 +1,7 @@
 ChangeLog
 =========
 
-0.4.0 (unreleased)
+0.4.0 (2015-03-11)
 ------------------
 
 * Add param `include_locked` to `AccountAPI.get_resources()`. Useful if you
