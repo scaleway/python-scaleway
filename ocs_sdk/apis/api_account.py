@@ -98,6 +98,8 @@ class AccountAPI(API):
         our APIs, but I promise we will try to expose and document them very
         soon. Anyway, if you have questions, we'll be glad to answer you guys!
         """
+        assert isinstance(include_locked, bool)
+
         if not self.auth_token:
             return []
 
