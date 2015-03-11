@@ -7,6 +7,7 @@ ChangeLog
 * Add param `include_locked` to `AccountAPI.get_resources()`. Useful if you
   need to list all the permissions of a token, even if the owner's organization
   is locked.
+* `AccountAPI.has_perm()` also accepts the param `include_locked`.
 
 0.3.2 (2015-01-08)
 ------------------

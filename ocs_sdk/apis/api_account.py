@@ -150,11 +150,13 @@ class AccountAPI(API):
 
         return list(set(ret))
 
-    def has_perm(self, service=None, name=None, resource=None):
+    def has_perm(self, service=None, name=None, resource=None,
+                 include_locked=False):
         """ Checks if the token has a permission.
         """
         return bool(
-            self.get_resources(service=service, name=name, resource=resource)
+            self.get_resources(service=service, name=name, resource=resource,
+                               include_locked=include_locked)
         )
 
     def get_quotas(self, organization):
