@@ -154,19 +154,20 @@ Alternative libraries / clients
   
 - Golang
 
-  - Go library + CLI: https://github.com/lalyos/onlabs
-  - Vagrant packer + API client: https://github.com/meatballhat/packer-builder-onlinelabs/
-  - Go CLI: https://github.com/nlamirault/go-onlinelabs
+  - Go library + CLI: https://github.com/lalyos/onlabs (@lalyos)
+  - Vagrant packer + API client: https://github.com/meatballhat/packer-builder-onlinelabs/ (@meatballhat)
+  - Go CLI: https://github.com/nlamirault/go-onlinelabs (@nlamirault)
 
 - Node.js/javascript
 
-  - Node.js + browser API client: https://github.com/moul/node-onlinelabs
-  - Cloudformation plugin, with API client: https://github.com/resin-io/onlinelabs-cloudformation
+  - Node.js + browser client: https://github.com/moul/node-onlinelabs (@moul)
+  - Docker like CLI: https://github.com/moul/onlinelabs-cli (@moul)
+  - Cloudformation plugin, with API client: https://github.com/resin-io/onlinelabs-cloudformation (@resin.io)
 
 - Python
 
   - Juju plugin + with API client: https://github.com/online-labs/juju-onlinelabs
-  - API client: https://github.com/adebarbara/olpy
+  - API client: https://github.com/adebarbara/olpy (@adebarbara)
 
 
 
