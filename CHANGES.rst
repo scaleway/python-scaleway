@@ -4,7 +4,7 @@ ChangeLog
 0.4.1 (unreleased)
 ------------------
 
-* No entry.
+* Add python 3.4 support.
 
 0.4.0 (2015-03-11)
 ------------------

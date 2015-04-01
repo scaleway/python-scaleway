@@ -9,9 +9,9 @@
 # License at http://opensource.org/licenses/BSD-2-Clause
 
 import json
-import urlparse
 
 import httpretty
+from six.moves.urllib.parse import urljoin
 
 
 class FakeAPITestCase(object):
@@ -31,7 +31,7 @@ class FakeAPITestCase(object):
 
         httpretty.register_uri(
             method,
-            urlparse.urljoin(api.get_api_url(), endpoint),
+            urljoin(api.get_api_url(), endpoint),
             body=body,
             content_type='application/json',
             status=status
