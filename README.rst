@@ -1,5 +1,5 @@
-ocs-sdk
-=======
+python-scaleway
+===============
 
 This package provides tools to query the REST APIs of
 `Online.net's cloud services`_.
@@ -160,8 +160,8 @@ Alternative libraries / clients
 
 - Node.js/javascript
 
-  - Node.js + browser client: https://github.com/moul/node-onlinelabs (@moul)
-  - Docker like CLI: https://github.com/moul/onlinelabs-cli (@moul)
+  - Docker-like CLI: https://github.com/moul/scaleway-cli (@moul)
+  - Node.js + browser client: https://github.com/moul/node-scaleway (@moul)
   - Cloudformation plugin, with API client: https://github.com/resin-io/onlinelabs-cloudformation (@resin.io)
 
 - Python
