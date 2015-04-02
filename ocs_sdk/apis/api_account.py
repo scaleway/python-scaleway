@@ -31,7 +31,7 @@ class BadToken(InvalidToken):
 class AccountAPI(API):
     """ Interacts with OCS Account API.
     """
-    base_url = 'https://account.cloud.online.net/'
+    base_url = 'https://account.scaleway.com/'
 
     def perm_matches(self, request_perm, effective_perm):
         """ Evaluates whether `request_perm` is granted by `effective_perm`.
