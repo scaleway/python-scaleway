@@ -37,7 +37,10 @@ class TestComputeAPI(FakeAPITestCase, unittest.TestCase):
 
     def setUp(self):
         super(TestComputeAPI, self).setUp()
-        self.api = AccountAPI(auth_token=str(uuid.uuid4()))
+        self.api = AccountAPI(
+            base_url='http://compute.localhost',
+            auth_token=str(uuid.uuid4())
+        )
         self.fake_orga_key = str(uuid.uuid4())
 
     def make_fake_perms(self, permissions):
@@ -252,27 +255,19 @@ class TestComputeAPI(FakeAPITestCase, unittest.TestCase):
                           self.fake_orga_key)
 
     def test_get_quotas(self):
-        self.api = AccountAPI()
-        self.api.auth_token = str(uuid.uuid4())
         self.make_fake_quotas({'invites': 5})
         self.assertEquals(self.api.get_quotas(self.fake_orga_key),
                           {'invites': 5})
 
     def test_get_quota(self):
-        self.api = AccountAPI()
-        self.api.auth_token = str(uuid.uuid4())
         self.make_fake_quotas({'invites': 5})
         self.assertEquals(self.api.get_quota(self.fake_orga_key, 'invites'), 5)
 
     def test_get_quota_None(self):
-        self.api = AccountAPI()
-        self.api.auth_token = str(uuid.uuid4())
         self.make_fake_quotas({'invites': 5})
         self.assertEquals(self.api.get_quota(self.fake_orga_key, 'xoxo'), None)
 
     def test_has_quota(self):
-        self.api = AccountAPI()
-        self.api.auth_token = str(uuid.uuid4())
         self.make_fake_quotas({'invites': 5})
         self.assertTrue(self.api.has_quota(self.fake_orga_key, 'invites', 2))
         self.assertFalse(self.api.has_quota(self.fake_orga_key, 'invites', 5))
