@@ -1,7 +1,7 @@
 ChangeLog
 =========
 
-0.4.2 (unreleased)
+0.4.2 (2015-04-02)
 ------------------
 
 * Install packages to have TLS SNI support.
