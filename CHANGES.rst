@@ -1,7 +1,7 @@
 ChangeLog
 =========
 
-0.4.1 (unreleased)
+0.4.1 (2015-04-02)
 ------------------
 
 * Update URLs from cloud.online.net.scaleway.com.
