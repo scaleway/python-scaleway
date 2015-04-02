@@ -1,7 +1,7 @@
 # http://nedbatchelder.com/code/coverage/config.html#config
 
 [run]
-source = ocs_sdk
+source = scaleway
 branch = True
 omit = */tests/*
 

@@ -1,8 +1,7 @@
-python-scaleway
-===============
+Scaleway SDK
+============
 
-This package provides tools to query the REST APIs of
-`Online.net's cloud services`_.
+This package provides tools to query the REST APIs of `Scaleway`_.
 
 .. image:: https://img.shields.io/pypi/v/ocs-sdk.svg?style=flat
     :target: https://pypi.python.org/pypi/ocs-sdk
@@ -33,7 +32,7 @@ The package is available on pip. To install it in a virtualenv:
 
     virtualenv my_virtualenv
     source my_virtualenv/bin/activate
-    pip install ocs-sdk
+    pip install scaleway-sdk
 
 
 General principle
@@ -49,10 +48,10 @@ you only need to call the following pythonic code:
 
 .. code-block:: python
 
-    >>> from ocs_sdk.apis import DummyAPI
+    >>> from scaleway.apis import DummyAPI
     >>> DummyAPI().query().foo.bar.get()
 
-The magic here lies in ``ocs_sdk.apis.*API`` instances, which all have a
+The magic here lies in ``scaleway.apis.*API`` instances, which all have a
 ``query`` method returning a ``slumber.API`` object. The latter handling all
 the excruciating details of the requests.
 
@@ -74,7 +73,7 @@ Examples
 
 .. code-block:: python
 
-    >>> from ocs_sdk.apis import AccountAPI
+    >>> from scaleway.apis import AccountAPI
     >>> api = AccountAPI(auth_token='')  # Set your token here!
     >>> print api.query().organizations.get()
     {u'organizations': [...]}
@@ -84,7 +83,7 @@ Examples
 
 .. code-block:: python
 
-    >>> from ocs_sdk.apis import ComputeAPI
+    >>> from scaleway.apis import ComputeAPI
     >>> api = ComputeAPI(auth_token='')  # Set your token here!
     >>> print api.query().servers.get()
     {u'servers': [...]}
@@ -94,7 +93,7 @@ Examples
 
 .. code-block:: python
 
-    >>> from ocs_sdk.apis import ComputeAPI
+    >>> from scaleway.apis import ComputeAPI
     >>> api = ComputeAPI(auth_token='')  # Set your token here!
     >>> server_id = ''  # Set a server ID here!
     >>> print api.query().servers(server_id).get()
@@ -106,7 +105,7 @@ Examples
 
 .. code-block:: python
 
-    >>> from ocs_sdk.apis import AccountAPI
+    >>> from scaleway.apis import AccountAPI
     >>> api = AccountAPI(auth_token='')  # Set your token here!
     >>> print api.has_perm(service='compute', name='servers:read',
     ...     resource='9a096d36-6bf9-470f-91df-2398aa7361f7')
@@ -121,7 +120,7 @@ Assuming you are in a `virtualenv`_:
 .. code-block:: bash
 
     pip install -e .
-    python -c 'from ocs_sdk.apis import AccountAPI'
+    python -c 'from scaleway.apis import AccountAPI'
     # it works!
 
 
@@ -135,9 +134,9 @@ To submit a patch, you'll need to test your code. To run tests:
     pip install nose coverage pep8 pylint
     python setup.py nosetests --with-coverage
     # (...)
-    pep8 ocs_sdk
+    pep8 scaleway
     # (...)
-    pylint ocs_sdk
+    pylint scaleway
     # (...)
 
 * coverage score should never be lower than before your patch.
@@ -177,7 +176,7 @@ License
 This software is licensed under a `BSD 2-Clause License`_.
 
 
-.. _Online.net's cloud services: https://cloud.online.net
+.. _Scaleway: https://www.scaleway.com/
 .. _Slumber: http://slumber.readthedocs.org/
 .. _API documentation: https://doc.cloud.online.net/api/
 .. _virtualenv: http://virtualenv.readthedocs.org/en/latest/

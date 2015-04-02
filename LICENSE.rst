@@ -1,7 +1,7 @@
 BSD 2-Clause License
 --------------------
 
-Copyright (c) 2013-2015, `Online Labs <http://labs.online.net>`_  and
+Copyright (c) 2013-2015, `Scaleway <https://www.scaleway.com>`_  and
 individual contributors.
 All rights reserved.
 

@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 #
 # Copyright (c) 2013-2014 Online SAS and Contributors. All Rights Reserved.
-#                         Julien Castets <jcastets@ocs.online.net>
-#                         Kevin Deldycke <kdeldycke@ocs.online.net>
+#                         Julien Castets <jcastets@scaleway.com>
+#                         Kevin Deldycke <kdeldycke@scaleway.com>
 #
 # Licensed under the BSD 2-Clause License (the "License"); you may not use this
 # file except in compliance with the License. You may obtain a copy of the
@@ -15,7 +15,7 @@ import re
 from setuptools import setup, find_packages
 
 
-MODULE_NAME = 'ocs_sdk'
+MODULE_NAME = 'scaleway'
 
 
 def get_version():
@@ -37,14 +37,14 @@ def get_long_description():
 
 
 setup(
-    name='ocs-sdk',
+    name='scaleway-sdk',
     version=get_version(),
-    description="Tools to query the REST APIs of Online.net's cloud services",
+    description="Tools to query the REST APIs of Scaleway",
     long_description=get_long_description(),
 
-    author='Online Labs',
-    author_email='opensource@labs.online.net',
-    url='http://github.com/online-labs/ocs-sdk',
+    author='Scaleway',
+    author_email='opensource@scaleway.com',
+    url='https://github.com/scaleway/python-scaleway',
     license='BSD',
 
     install_requires=[

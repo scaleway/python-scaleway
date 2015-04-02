@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 #
 # Copyright (c) 2013-2014 Online SAS and Contributors. All Rights Reserved.
-#                         Julien Castets <jcastets@ocs.online.net>
-#                         Kevin Deldycke <kdeldycke@ocs.online.net>
+#                         Julien Castets <jcastets@scaleway.com>
+#                         Kevin Deldycke <kdeldycke@scaleway.com>
 #
 # Licensed under the BSD 2-Clause License (the "License"); you may not use this
 # file except in compliance with the License. You may obtain a copy of the
