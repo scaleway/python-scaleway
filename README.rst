@@ -3,23 +3,23 @@ Scaleway SDK
 
 This package provides tools to query the REST APIs of `Scaleway`_.
 
-.. image:: https://img.shields.io/pypi/v/ocs-sdk.svg?style=flat
-    :target: https://pypi.python.org/pypi/ocs-sdk
+.. image:: https://img.shields.io/pypi/v/scaleway-sdk.svg?style=flat
+    :target: https://pypi.python.org/pypi/scaleway-sdk
     :alt: Last release
-.. image:: https://img.shields.io/travis/online-labs/ocs-sdk/develop.svg?style=flat
-    :target: https://travis-ci.org/online-labs/ocs-sdk
+.. image:: https://img.shields.io/travis/scaleway/python-scaleway/develop.svg?style=flat
+    :target: https://travis-ci.org/scaleway/python-scaleway
     :alt: Unit-tests status
-.. image:: https://img.shields.io/coveralls/online-labs/ocs-sdk/develop.svg?style=flat
-    :target: https://coveralls.io/r/online-labs/ocs-sdk?branch=develop
+.. image:: https://img.shields.io/coveralls/scaleway/python-scaleway/develop.svg?style=flat
+    :target: https://coveralls.io/r/scaleway/python-scaleway?branch=develop
     :alt: Coverage Status
-.. image:: https://img.shields.io/requires/github/online-labs/ocs-sdk/master.svg?style=flat
-    :target: https://requires.io/github/online-labs/ocs-sdk/requirements/?branch=master
+.. image:: https://img.shields.io/requires/github/scaleway/python-scaleway/master.svg?style=flat
+    :target: https://requires.io/github/scaleway/python-scaleway/requirements/?branch=master
     :alt: Requirements freshness
-.. image:: https://img.shields.io/pypi/l/ocs-sdk.svg?style=flat
+.. image:: https://img.shields.io/pypi/l/scaleway-sdk.svg?style=flat
     :target: http://opensource.org/licenses/BSD-2-Clause
     :alt: Software license
-.. image:: https://img.shields.io/pypi/dm/ocs-sdk.svg?style=flat
-    :target: https://pypi.python.org/pypi/ocs-sdk#downloads
+.. image:: https://img.shields.io/pypi/dm/scaleway-sdk.svg?style=flat
+    :target: https://pypi.python.org/pypi/scaleway-sdk#downloads
     :alt: Popularity
 
 
@@ -180,4 +180,4 @@ This software is licensed under a `BSD 2-Clause License`_.
 .. _Slumber: http://slumber.readthedocs.org/
 .. _API documentation: https://doc.cloud.online.net/api/
 .. _virtualenv: http://virtualenv.readthedocs.org/en/latest/
-.. _BSD 2-Clause License: https://github.com/online-labs/ocs-sdk/blob/develop/LICENSE.rst
+.. _BSD 2-Clause License: https://github.com/scaleway/python-scaleway/blob/develop/LICENSE.rst
