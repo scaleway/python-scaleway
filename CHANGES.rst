@@ -1,7 +1,7 @@
 ChangeLog
 =========
 
-0.4.3 (unreleased)
+1.0.0 (unreleased)
 ------------------
 
 * Rename OCS to Scaleway. ``import ocs`` becomes ``import scaleway``.
