@@ -38,7 +38,7 @@ class API(object):
         self.verify_ssl = verify_ssl
 
     def make_requests_session(self):
-        """ Attaches headers needed to query OCS APIs.
+        """ Attaches headers needed to query Scaleway APIs.
         """
         session = requests.Session()
 

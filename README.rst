@@ -178,6 +178,6 @@ This software is licensed under a `BSD 2-Clause License`_.
 
 .. _Scaleway: https://www.scaleway.com/
 .. _Slumber: http://slumber.readthedocs.org/
-.. _API documentation: https://doc.cloud.online.net/api/
+.. _API documentation: https://www.scaleway.com/docs/
 .. _virtualenv: http://virtualenv.readthedocs.org/en/latest/
 .. _BSD 2-Clause License: https://github.com/scaleway/python-scaleway/blob/develop/LICENSE.rst

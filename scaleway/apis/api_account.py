@@ -29,7 +29,7 @@ class BadToken(InvalidToken):
 
 
 class AccountAPI(API):
-    """ Interacts with OCS Account API.
+    """ Interacts with Scaleway Account API.
     """
     base_url = 'https://account.scaleway.com/'
 
