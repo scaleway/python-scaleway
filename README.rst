@@ -150,7 +150,7 @@ Alternative libraries / clients
 - Ruby
 
   - API client: https://github.com/bchatelard/onlinelabs-ruby
-  
+
 - Golang
 
   - Go library + CLI: https://github.com/lalyos/onlabs (@lalyos)
