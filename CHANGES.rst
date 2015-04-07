@@ -4,7 +4,7 @@ ChangeLog
 0.4.3 (unreleased)
 ------------------
 
-* No entry.
+* Rename OCS to Scaleway. ``import ocs`` becomes ``import scaleway``.
 
 0.4.2 (2015-04-02)
 ------------------
@@ -14,7 +14,7 @@ ChangeLog
 0.4.1 (2015-04-02)
 ------------------
 
-* Update URLs from ``cloud.online.net`` to ``scaleway.com``.
+* Update APIs URLs from ``cloud.online.net`` to ``scaleway.com``.
 
 0.4.0 (2015-03-11)
 ------------------
