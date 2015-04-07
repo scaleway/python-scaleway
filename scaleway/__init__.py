@@ -7,4 +7,4 @@
 # file except in compliance with the License. You may obtain a copy of the
 # License at http://opensource.org/licenses/BSD-2-Clause
 
-__version__ = '1.0.1'
+__version__ = '1.0.2'
