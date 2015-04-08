@@ -168,6 +168,10 @@ Alternative libraries / clients
   - Juju plugin + with API client: https://github.com/online-labs/juju-onlinelabs
   - API client: https://github.com/adebarbara/olpy (@adebarbara)
 
+- PHP
+
+  - API client: https://github.com/indigophp/scaleway
+
 
 
 License
