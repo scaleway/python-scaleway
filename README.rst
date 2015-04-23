@@ -149,7 +149,7 @@ Alternative libraries / clients
 
 - Ruby
 
-  - API client: https://github.com/bchatelard/scaleway-ruby
+  - API client: https://github.com/bchatelard/scaleway-ruby (@bchatelard)
 
 - Golang
 
@@ -159,18 +159,18 @@ Alternative libraries / clients
 
 - Node.js/javascript
 
-  - Docker-like CLI: https://github.com/moul/scaleway-cli (@moul)
+  - Docker-like CLI: https://github.com/scaleway/scaleway-cli (@scaleway)
   - Node.js + browser client: https://github.com/moul/node-scaleway (@moul)
   - Cloudformation plugin, with API client: https://github.com/resin-io/onlinelabs-cloudformation (@resin.io)
 
 - Python
 
-  - Juju plugin + with API client: https://github.com/scaleway/juju-scaleway
+  - Juju plugin + with API client: https://github.com/scaleway/juju-scaleway (@scaleway)
   - API client: https://github.com/adebarbara/olpy (@adebarbara)
 
 - PHP
 
-  - API client: https://github.com/indigophp/scaleway
+  - API client: https://github.com/indigophp/scaleway (@indigophp)
 
 
 
