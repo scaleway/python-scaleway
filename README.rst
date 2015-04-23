@@ -149,7 +149,7 @@ Alternative libraries / clients
 
 - Ruby
 
-  - API client: https://github.com/bchatelard/onlinelabs-ruby
+  - API client: https://github.com/bchatelard/scaleway-ruby
 
 - Golang
 
@@ -165,7 +165,7 @@ Alternative libraries / clients
 
 - Python
 
-  - Juju plugin + with API client: https://github.com/online-labs/juju-onlinelabs
+  - Juju plugin + with API client: https://github.com/scaleway/juju-scaleway
   - API client: https://github.com/adebarbara/olpy (@adebarbara)
 
 - PHP
