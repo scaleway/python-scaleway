@@ -153,13 +153,14 @@ Alternative libraries / clients
 
 - Golang
 
+  - Docker-like CLI: https://github.com/scaleway/scaleway-cli (@scaleway)
   - Go library + CLI: https://github.com/lalyos/onlabs (@lalyos)
   - Vagrant packer + API client: https://github.com/meatballhat/packer-builder-onlinelabs/ (@meatballhat)
   - Go CLI: https://github.com/nlamirault/go-scaleway (@nlamirault)
 
 - Node.js/javascript
 
-  - Docker-like CLI: https://github.com/scaleway/scaleway-cli (@scaleway)
+  - Docker-like CLI: https://github.com/moul/scaleway-cli-node (@moul)
   - Node.js + browser client: https://github.com/moul/node-scaleway (@moul)
   - Cloudformation plugin, with API client: https://github.com/resin-io/onlinelabs-cloudformation (@resin.io)
 
