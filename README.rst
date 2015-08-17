@@ -27,13 +27,13 @@ This package provides tools to query the REST APIs of `Scaleway
 Installation
 ------------
 
-The package is available on pip. To install it in a virtualenv:
+The package is available on ``pip``. To install it in a virtualenv:
 
 .. code-block:: bash
 
-    virtualenv my_virtualenv
-    source my_virtualenv/bin/activate
-    pip install scaleway-sdk
+    $ virtualenv my_virtualenv
+    $ source my_virtualenv/bin/activate
+    $ pip install scaleway-sdk
 
 
 General principle
@@ -122,9 +122,9 @@ Assuming you are in a `virtualenv <http://virtualenv.readthedocs.org>`_:
 
 .. code-block:: bash
 
-    pip install -e .
-    python -c 'from scaleway.apis import AccountAPI'
-    # it works!
+    $ pip install -e .
+    $ python -c 'from scaleway.apis import AccountAPI'
+      # it works!
 
 
 Test
@@ -134,17 +134,17 @@ To submit a patch, you'll need to test your code. To run tests:
 
 .. code-block:: bash
 
-    pip install nose coverage pep8 pylint
-    python setup.py nosetests --with-coverage
-    # (...)
-    pep8 scaleway
-    # (...)
-    pylint scaleway
-    # (...)
+    $ pip install nose coverage pep8 pylint
+    $ python setup.py nosetests --with-coverage
+      (...)
+    $ pep8 scaleway
+      (...)
+    $ pylint scaleway
+      (...)
 
-* coverage score should never be lower than before your patch.
+* Coverage score should never be lower than before your patch.
 * PEP8 should never return an error.
-* pylint score should never be lower than before your patch.
+* Pylint score should never be lower than before your patch.
 
 
 Alternative libraries / clients
