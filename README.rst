@@ -1,7 +1,8 @@
 Scaleway SDK
 ============
 
-This package provides tools to query the REST APIs of `Scaleway`_.
+This package provides tools to query the REST APIs of `Scaleway
+<https://scaleway.com/>`_.
 
 .. image:: https://img.shields.io/pypi/v/scaleway-sdk.svg?style=flat
     :target: https://pypi.python.org/pypi/scaleway-sdk
@@ -60,10 +61,12 @@ Documentation
 -------------
 
 Even if this SDK is designed to be developer-friendly and aim for self-service
-discovery, it is still recommended to read the official `API documentation`_.
+discovery, it is still recommended to read the official `API documentation
+<https://scaleway.com/docs/>`_.
 
 And because most of the provided helpers takes the form of pre-configured
-Slumber_ objects, a good read of Slumber_ documention is encouraged as well.
+``Slumber`` objects, a good read of `Slumber <http://slumber.readthedocs.org>`_
+documention is encouraged as well.
 
 
 Examples
@@ -115,7 +118,7 @@ Examples
 Development
 -----------
 
-Assuming you are in a `virtualenv`_:
+Assuming you are in a `virtualenv <http://virtualenv.readthedocs.org>`_:
 
 .. code-block:: bash
 
@@ -174,15 +177,8 @@ Alternative libraries / clients
   - API client: https://github.com/indigophp/scaleway (@indigophp)
 
 
-
 License
 -------
 
-This software is licensed under a `BSD 2-Clause License`_.
-
-
-.. _Scaleway: https://scaleway.com/
-.. _Slumber: http://slumber.readthedocs.org/
-.. _API documentation: https://scaleway.com/docs/
-.. _virtualenv: http://virtualenv.readthedocs.org/en/latest/
-.. _BSD 2-Clause License: https://github.com/scaleway/python-scaleway/blob/develop/LICENSE.rst
+This software is licensed under a `BSD 2-Clause License
+<https://github.com/scaleway/python-scaleway/blob/develop/LICENSE.rst>`_.
