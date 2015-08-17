@@ -16,6 +16,9 @@ This package provides tools to query the REST APIs of `Scaleway
 .. image:: https://img.shields.io/requires/github/scaleway/python-scaleway/master.svg?style=flat
     :target: https://requires.io/github/scaleway/python-scaleway/requirements/?branch=master
     :alt: Requirements freshness
+.. image:: https://img.shields.io/scrutinizer/g/scaleway/python-scaleway.svg?style=flat
+    :target: https://scrutinizer-ci.com/g/scaleway/python-scaleway/?branch=develop
+    :alt: Code Quality
 .. image:: https://img.shields.io/pypi/l/scaleway-sdk.svg?style=flat
     :target: http://opensource.org/licenses/BSD-2-Clause
     :alt: Software license
