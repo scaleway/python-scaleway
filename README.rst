@@ -179,6 +179,10 @@ Alternative libraries / clients
 
   - API client: https://github.com/indigophp/scaleway (@indigophp)
 
+- PERL
+
+  - API client: https://metacpan.org/pod/WebService::Scaleway (@mgv)
+
 
 License
 -------
