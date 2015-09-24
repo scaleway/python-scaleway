@@ -153,36 +153,7 @@ To submit a patch, you'll need to test your code. To run tests:
 Alternative libraries / clients
 -------------------------------
 
-- Ruby
-
-  - API client: https://github.com/bchatelard/scaleway-ruby (@bchatelard)
-
-- Golang
-
-  - Docker-like CLI: https://github.com/scaleway/scaleway-cli (@scaleway)
-  - Go library + CLI: https://github.com/lalyos/onlabs (@lalyos)
-  - Vagrant packer + API client: https://github.com/meatballhat/packer-builder-onlinelabs/ (@meatballhat)
-  - Go CLI: https://github.com/nlamirault/go-scaleway (@nlamirault)
-
-- Node.js/javascript
-
-  - Docker-like CLI: https://github.com/moul/scaleway-cli-node (@moul)
-  - Node.js + browser client: https://github.com/moul/node-scaleway (@moul)
-  - Cloudformation plugin, with API client: https://github.com/resin-io/onlinelabs-cloudformation (@resin.io)
-
-- Python
-
-  - Juju plugin + with API client: https://github.com/scaleway/juju-scaleway (@scaleway)
-  - API client: https://github.com/adebarbara/olpy (@adebarbara)
-
-- PHP
-
-  - API client: https://github.com/indigophp/scaleway (@indigophp)
-
-- Perl
-
-  - API client: https://metacpan.org/pod/WebService::Scaleway (@mgv)
-
+We maintain a list of the current library/client implementations on the `api.scaleway.com repository <https://github.com/scaleway/api.scaleway.com/blob/master/README.md#clients--libraries>`_.
 
 License
 -------
