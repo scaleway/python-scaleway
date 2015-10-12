@@ -4,7 +4,8 @@ ChangeLog
 1.0.3 (unreleased)
 ------------------
 
-* Add Python3 support.
+* Add Python3 support (#4).
+* Add an explicit error message when SNI fails (#8).
 
 1.0.2 (2015-04-07)
 ------------------

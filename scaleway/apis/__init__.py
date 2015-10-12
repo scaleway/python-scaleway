@@ -8,6 +8,8 @@
 # file except in compliance with the License. You may obtain a copy of the
 # License at http://opensource.org/licenses/BSD-2-Clause
 
+from __future__ import print_function
+
 import platform
 import sys
 
@@ -15,6 +17,33 @@ import requests
 import slumber
 
 from .. import __version__
+
+
+class _CustomHTTPAdapter(requests.adapters.HTTPAdapter):
+    """ In order to support SNI in Python 2.x, the packages pyOpenSSL, pyasn1
+    and ndg-httpsclient need to be installed. pyOpenSSL needs the system
+    packages gcc, python-dev, libffi-dev and libssl-dev to be installed.
+
+    Because Python packaging sucks, you will succeed to install pyOpenSSL even
+    if the system requirements aren't installed ; but SNI requests will fail.
+
+    _CustomHTTPAdapter is a simple wrapper around a requests HTTPAdapter that
+    logs an explicit message if a SSLError occurs, as there are good chances
+    the problems comes from a bad installation.
+    """
+    def send(self, *args, **kwargs):  # pragma: no cover
+        try:
+            return super(_CustomHTTPAdapter, self).send(*args, **kwargs)
+        except requests.exceptions.SSLError as exc:
+            print("SSL error is raised by python-requests. This is probably "
+                  "because the required modules to handle SNI aren't "
+                  "installed correctly. You should probably uninstall them "
+                  "(pip uninstall pyopenssl pyasn1 ndg-httpsclient), install "
+                  "the system dependencies required for their installation "
+                  "(on Ubuntu, apt-get install python-dev libffi-dev "
+                  "libssl-dev) and resintall them (pip install pyopenssl "
+                  "pyasn1 ndg-httpsclient).", file=sys.stderr)
+            raise
 
 
 class API(object):
@@ -52,6 +81,8 @@ class API(object):
 
         if not self.verify_ssl:
             session.verify = False
+
+        session.mount('https://', _CustomHTTPAdapter())
 
         return session
 
