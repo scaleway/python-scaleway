@@ -9,6 +9,7 @@
 # file except in compliance with the License. You may obtain a copy of the
 # License at http://opensource.org/licenses/BSD-2-Clause
 
+from contextlib import closing
 import os
 import re
 
@@ -33,7 +34,8 @@ def get_version():
 def get_long_description():
     readme = os.path.join(os.path.dirname(__file__), 'README.rst')
     changes = os.path.join(os.path.dirname(__file__), 'CHANGES.rst')
-    return open(readme).read() + '\n' + open(changes).read()
+    with closing(open(readme)) as hreadme, closing(open(changes)) as hchanges:
+        return hreadme.read() + '\n' + hchanges.read()
 
 
 setup(
