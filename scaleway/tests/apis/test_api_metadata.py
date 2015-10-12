@@ -9,10 +9,12 @@
 
 import json
 import unittest
-import urlparse
 import uuid
 
+from six.moves.urllib.parse import parse_qs, urlparse
+
 from scaleway.apis import MetadataAPI
+
 
 from . import FakeAPITestCase
 
@@ -45,7 +47,7 @@ class TestMetadataAPI(FakeAPITestCase, unittest.TestCase):
             If no format is given, return a text/plain response with a "shell"
             format.
             """
-            querystring = urlparse.parse_qs(urlparse.urlparse(uri).query)
+            querystring = parse_qs(urlparse(uri).query)
 
             if 'json' in querystring.get('format', []):
                 return 200, headers, json.dumps(json_response)
@@ -64,5 +66,7 @@ class TestMetadataAPI(FakeAPITestCase, unittest.TestCase):
         self.assertEqual(self.api.get_metadata(), expected_response)
 
         shell_response = self.api.get_metadata(as_shell=True)
-        self.assertIn('id="%(id)s"' % expected_response, shell_response)
-        self.assertIn('name="%(name)s"' % expected_response, shell_response)
+        self.assertIn('id="%(id)s"' % expected_response,
+                      shell_response.decode('utf8'))
+        self.assertIn('name="%(name)s"' % expected_response,
+                      shell_response.decode('utf8'))

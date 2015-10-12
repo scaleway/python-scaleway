@@ -104,7 +104,7 @@ class TestComputeAPI(FakeAPITestCase, unittest.TestCase):
             # ?include_locked set to `include_locked`
             self.assertEqual(
                 httpretty.last_request().querystring.get('include_locked'),
-                [unicode(include_locked)]
+                [str(include_locked)]
             )
 
         # No permission, no resource

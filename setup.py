@@ -49,10 +49,10 @@ setup(
 
     install_requires=[
         'slumber >= 0.6.0',
-
         'pyOpenSSL',
         'ndg-httpsclient',
         'pyasn1',
+        'six',
     ],
 
     packages=find_packages(),

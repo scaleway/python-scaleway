@@ -31,7 +31,7 @@ class TestAPI(FakeAPITestCase, unittest.TestCase):
         ).make_requests_session()
 
         self.assertEqual(requests_session.headers.get('X-Auth-Token'),
-                         '0xdeadbeef')
+                         b'0xdeadbeef')
         self.assertEqual(requests_session.headers.get('User-Agent'),
                          'jamesb0nd')
 

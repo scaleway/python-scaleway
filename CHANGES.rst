@@ -4,7 +4,7 @@ ChangeLog
 1.0.3 (unreleased)
 ------------------
 
-* No entry.
+* Add Python3 support.
 
 1.0.2 (2015-04-07)
 ------------------
