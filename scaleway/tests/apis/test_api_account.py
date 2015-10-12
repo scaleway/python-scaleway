@@ -256,16 +256,16 @@ class TestComputeAPI(FakeAPITestCase, unittest.TestCase):
 
     def test_get_quotas(self):
         self.make_fake_quotas({'invites': 5})
-        self.assertEquals(self.api.get_quotas(self.fake_orga_key),
-                          {'invites': 5})
+        self.assertEqual(self.api.get_quotas(self.fake_orga_key),
+                         {'invites': 5})
 
     def test_get_quota(self):
         self.make_fake_quotas({'invites': 5})
-        self.assertEquals(self.api.get_quota(self.fake_orga_key, 'invites'), 5)
+        self.assertEqual(self.api.get_quota(self.fake_orga_key, 'invites'), 5)
 
     def test_get_quota_None(self):
         self.make_fake_quotas({'invites': 5})
-        self.assertEquals(self.api.get_quota(self.fake_orga_key, 'xoxo'), None)
+        self.assertEqual(self.api.get_quota(self.fake_orga_key, 'xoxo'), None)
 
     def test_has_quota(self):
         self.make_fake_quotas({'invites': 5})
