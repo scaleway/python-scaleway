@@ -12,6 +12,7 @@
 from contextlib import closing
 import os
 import re
+import sys
 
 from setuptools import setup, find_packages
 
@@ -38,6 +39,19 @@ def get_long_description():
         return hreadme.read() + '\n' + hchanges.read()
 
 
+REQUIREMENTS = [
+    'slumber >= 0.6.2',
+        'six',
+]
+
+# Packages required to handle SNI, only for Python2.
+if sys.version_info.major == 2:
+    REQUIREMENTS += [
+        'pyOpenSSL',
+        'ndg-httpsclient',
+        'pyasn1'
+    ]
+
 setup(
     name='scaleway-sdk',
     version=get_version(),
@@ -49,13 +63,7 @@ setup(
     url='https://github.com/scaleway/python-scaleway',
     license='BSD',
 
-    install_requires=[
-        'slumber >= 0.6.2',
-        'pyOpenSSL',
-        'ndg-httpsclient',
-        'pyasn1',
-        'six',
-    ],
+    install_requires=REQUIREMENTS,
 
     packages=find_packages(),
 
