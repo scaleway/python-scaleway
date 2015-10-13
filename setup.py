@@ -41,7 +41,7 @@ def get_long_description():
 
 REQUIREMENTS = [
     'slumber >= 0.6.2',
-        'six',
+    'six',
 ]
 
 # Packages required to handle SNI, only for Python2.
