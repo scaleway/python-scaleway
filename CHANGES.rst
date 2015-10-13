@@ -1,11 +1,13 @@
 ChangeLog
 =========
 
-1.0.3 (unreleased)
+1.1.0 (unreleased)
 ------------------
 
 * Add Python3 support (#4).
 * Add an explicit error message when SNI fails (#8).
+* In an API endpoint is in maintenance (ie. it returns HTTP/503), keep trying
+  to make requests for 180 seconds.
 
 1.0.2 (2015-04-07)
 ------------------

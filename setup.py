@@ -69,6 +69,7 @@ setup(
 
     tests_require=[
         'httpretty >= 0.8.0',
+        'mock',
     ],
     test_suite=MODULE_NAME + '.tests',
 
