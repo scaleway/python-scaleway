@@ -11,3 +11,4 @@ build/
 doc/_build/
 dist/
 venv/
+.tox/
