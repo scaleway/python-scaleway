@@ -10,9 +10,11 @@
 
 import unittest
 
+import mock
 import requests
+import slumber
 
-from scaleway.apis import API
+from scaleway.apis import API, SlumberResource
 
 from . import FakeAPITestCase
 
@@ -58,3 +60,15 @@ class TestAPI(FakeAPITestCase, unittest.TestCase):
         self.assertEqual(
             SimpleAPI(base_url='http://hello').get_api_url(), 'http://hello'
         )
+
+    @mock.patch('time.sleep', return_value=None)
+    def test_maintenance(self, sleep):
+        api = SimpleAPI()
+        self.fake_endpoint(api, 'whatever/', status=503)
+
+        self.assertRaises(
+            slumber.exceptions.HttpServerError,
+            api.query().whatever.get
+        )
+        self.assertEqual(sleep.call_count, SlumberResource.MAX_RETRIES - 1)
+        sleep.assert_called_with(SlumberResource.SLEEP_BETWEEN_RETRIES)

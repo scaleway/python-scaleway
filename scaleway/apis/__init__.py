@@ -10,13 +10,18 @@
 
 from __future__ import print_function
 
+import logging
 import platform
 import sys
+import time
 
 import requests
 import slumber
 
 from .. import __version__
+
+
+logger = logging.getLogger(__name__)
 
 
 class _CustomHTTPAdapter(requests.adapters.HTTPAdapter):
@@ -44,6 +49,53 @@ class _CustomHTTPAdapter(requests.adapters.HTTPAdapter):
                   "libssl-dev) and resintall them (pip install pyopenssl "
                   "pyasn1 ndg-httpsclient).", file=sys.stderr)
             raise
+
+
+class SlumberResource(slumber.Resource):
+
+    # Maximum number of times we try to make a request against an API in
+    # maintenance before aborting.
+    MAX_RETRIES = 60
+
+    # Sleep between two retries, in seconds.
+    SLEEP_BETWEEN_RETRIES = 3
+
+    def _request(self, *args, **kwargs):
+        """ Makes a request to the Scaleway API, and wait patiently if there is
+        an ongoing maintenance.
+        """
+        retry = 0
+
+        while True:
+            try:
+                return super(SlumberResource, self)._request(*args, **kwargs)
+            except slumber.exceptions.HttpServerError as exc:
+                # Not a maintenance exception
+                if exc.response.status_code != 503:
+                    raise
+
+                retry += 1
+
+                if retry >= self.MAX_RETRIES:
+                    logger.error(
+                        'API endpoint still in maintenance after %s seconds. '
+                        'Stop trying.' % (self.MAX_RETRIES *
+                                          self.SLEEP_BETWEEN_RETRIES)
+                    )
+                    raise
+
+                logger.info(
+                    'API endpoint is currently in maintenance. Try again in '
+                    '%s seconds... (retry %s on %s)' % (
+                        self.SLEEP_BETWEEN_RETRIES, retry, self.MAX_RETRIES
+                    )
+                )
+                time.sleep(self.SLEEP_BETWEEN_RETRIES)
+
+
+class SlumberAPI(slumber.API):
+
+    resource_class = SlumberResource
 
 
 class API(object):
@@ -92,7 +144,7 @@ class API(object):
     def query(self):
         """ Gets a configured slumber.API object.
         """
-        return slumber.API(
+        return SlumberAPI(
             self.get_api_url(),
             session=self.make_requests_session()
         )
