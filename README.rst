@@ -133,7 +133,8 @@ Assuming you are in a `virtualenv <http://virtualenv.readthedocs.org>`_:
 Test
 ----
 
-To submit a patch, you'll need to test your code. To run tests:
+To submit a patch, you'll need to test your code against ptyhon2.7 and
+python3.4. To run tests:
 
 .. code-block:: bash
 
@@ -148,6 +149,9 @@ To submit a patch, you'll need to test your code. To run tests:
 * Coverage score should never be lower than before your patch.
 * PEP8 should never return an error.
 * Pylint score should never be lower than before your patch.
+
+Alternatively, to run `nosetests` on both Python2.7 and Python3.4, you can run
+`tox`.
 
 
 Alternative libraries / clients
