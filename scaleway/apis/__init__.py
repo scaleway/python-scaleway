@@ -71,7 +71,7 @@ class SlumberResource(slumber.Resource):
                 return super(SlumberResource, self)._request(*args, **kwargs)
             except slumber.exceptions.HttpServerError as exc:
                 # Not a maintenance exception
-                if exc.response.status_code != 503:
+                if exc.response.status_code not in (502, 503, 504):
                     raise
 
                 retry += 1
