@@ -23,8 +23,6 @@ Development: |build| |quality| |coverage|
 .. |build| image:: https://img.shields.io/travis/scaleway/python-scaleway/develop.svg?style=flat
     :target: https://travis-ci.org/scaleway/python-scaleway
     :alt: Unit-tests status
-.. |coverage| image::  https://coveralls.io/repos/scaleway/python-scaleway/badge.svg?branch=develop&service=github
-    :target: https://coveralls.io/r/scaleway/python-scaleway?branch=develop
 .. |coverage| image:: https://codecov.io/github/scaleway/python-scaleway/coverage.svg?branch=develop
     :target: https://codecov.io/github/scaleway/python-scaleway?branch=develop
     :alt: Coverage Status
