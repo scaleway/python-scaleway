@@ -4,7 +4,7 @@ ChangeLog
 1.1.2 (unreleased)
 ------------------
 
-* No changes yet.
+* Add bumpversion config.
 
 1.1.1 (2015-11-23)
 ------------------
