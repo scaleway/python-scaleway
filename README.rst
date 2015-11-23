@@ -25,6 +25,8 @@ Development: |build| |quality| |coverage|
     :alt: Unit-tests status
 .. |coverage| image::  https://coveralls.io/repos/scaleway/python-scaleway/badge.svg?branch=develop&service=github
     :target: https://coveralls.io/r/scaleway/python-scaleway?branch=develop
+.. |coverage| image:: https://codecov.io/github/scaleway/python-scaleway/coverage.svg?branch=develop
+    :target: https://codecov.io/github/scaleway/python-scaleway?branch=develop
     :alt: Coverage Status
 .. |quality| image:: https://img.shields.io/scrutinizer/g/scaleway/python-scaleway.svg?style=flat
     :target: https://scrutinizer-ci.com/g/scaleway/python-scaleway/?branch=develop
