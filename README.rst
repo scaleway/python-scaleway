@@ -4,27 +4,31 @@ Scaleway SDK
 This package provides tools to query the REST APIs of `Scaleway
 <https://scaleway.com/>`_.
 
-.. image:: https://img.shields.io/pypi/v/scaleway-sdk.svg?style=flat
+Stable release: |release| |license| |dependencies| |popularity|
+
+Development: |build| |quality| |coverage|
+
+.. |release| image:: https://img.shields.io/pypi/v/scaleway-sdk.svg?style=flat
     :target: https://pypi.python.org/pypi/scaleway-sdk
     :alt: Last release
-.. image:: https://img.shields.io/travis/scaleway/python-scaleway/develop.svg?style=flat
-    :target: https://travis-ci.org/scaleway/python-scaleway
-    :alt: Unit-tests status
-.. image:: https://coveralls.io/repos/scaleway/python-scaleway/badge.svg?branch=develop&service=github
-    :target: https://coveralls.io/r/scaleway/python-scaleway?branch=develop
-    :alt: Coverage Status
-.. image:: https://img.shields.io/requires/github/scaleway/python-scaleway/master.svg?style=flat
-    :target: https://requires.io/github/scaleway/python-scaleway/requirements/?branch=master
-    :alt: Requirements freshness
-.. image:: https://img.shields.io/scrutinizer/g/scaleway/python-scaleway.svg?style=flat
-    :target: https://scrutinizer-ci.com/g/scaleway/python-scaleway/?branch=develop
-    :alt: Code Quality
-.. image:: https://img.shields.io/pypi/l/scaleway-sdk.svg?style=flat
+.. |license| image:: https://img.shields.io/pypi/l/scaleway-sdk.svg?style=flat
     :target: http://opensource.org/licenses/BSD-2-Clause
     :alt: Software license
-.. image:: https://img.shields.io/pypi/dm/scaleway-sdk.svg?style=flat
+.. |popularity| image:: https://img.shields.io/pypi/dm/scaleway-sdk.svg?style=flat
     :target: https://pypi.python.org/pypi/scaleway-sdk#downloads
     :alt: Popularity
+.. |dependencies| image:: https://img.shields.io/requires/github/scaleway/python-scaleway/master.svg?style=flat
+    :target: https://requires.io/github/scaleway/python-scaleway/requirements/?branch=master
+    :alt: Requirements freshness
+.. |build| image:: https://img.shields.io/travis/scaleway/python-scaleway/develop.svg?style=flat
+    :target: https://travis-ci.org/scaleway/python-scaleway
+    :alt: Unit-tests status
+.. |coverage| image::  https://coveralls.io/repos/scaleway/python-scaleway/badge.svg?branch=develop&service=github
+    :target: https://coveralls.io/r/scaleway/python-scaleway?branch=develop
+    :alt: Coverage Status
+.. |quality| image:: https://img.shields.io/scrutinizer/g/scaleway/python-scaleway.svg?style=flat
+    :target: https://scrutinizer-ci.com/g/scaleway/python-scaleway/?branch=develop
+    :alt: Code Quality
 
 
 Installation
