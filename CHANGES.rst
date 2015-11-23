@@ -5,6 +5,7 @@ ChangeLog
 ------------------
 
 * Add bumpversion config.
+* Fix readme rendering.
 
 1.1.1 (2015-11-23)
 ------------------
