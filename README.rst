@@ -137,7 +137,7 @@ Assuming you are in a `virtualenv <http://virtualenv.readthedocs.org>`_:
 Test
 ----
 
-To submit a patch, you'll need to test your code against ptyhon2.7 and
+To submit a patch, you'll need to test your code against python2.7 and
 python3.4. To run tests:
 
 .. code-block:: bash
