@@ -71,4 +71,5 @@ class TestAPI(FakeAPITestCase, unittest.TestCase):
             api.query().whatever.get
         )
         self.assertEqual(sleep.call_count, SlumberResource.MAX_RETRIES - 1)
-        sleep.assert_called_with(SlumberResource.SLEEP_BETWEEN_RETRIES)
+        # maximum sleep time is 30 seconds
+        sleep.assert_called_with(30)

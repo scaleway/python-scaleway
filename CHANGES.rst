@@ -4,7 +4,7 @@ ChangeLog
 1.1.3 (unreleased)
 ------------------
 
-* No changes yet.
+* Do not flood the APIs in case of maintenance.
 
 1.1.2 (2015-11-23)
 ------------------

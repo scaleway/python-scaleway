@@ -55,10 +55,13 @@ class SlumberResource(slumber.Resource):
 
     # Maximum number of times we try to make a request against an API in
     # maintenance before aborting.
-    MAX_RETRIES = 60
+    MAX_RETRIES = 10
 
-    # Sleep between two retries, in seconds.
-    SLEEP_BETWEEN_RETRIES = 3
+    def retry_in(self, retry):
+        """ If the API returns a maintenance HTTP status code, sleep a while
+        before retrying.
+        """
+        return min(2 ** retry, 30)
 
     def _request(self, *args, **kwargs):
         """ Makes a request to the Scaleway API, and wait patiently if there is
@@ -75,22 +78,22 @@ class SlumberResource(slumber.Resource):
                     raise
 
                 retry += 1
+                retry_in = self.retry_in(retry)
 
                 if retry >= self.MAX_RETRIES:
                     logger.error(
-                        'API endpoint still in maintenance after %s seconds. '
-                        'Stop trying.' % (self.MAX_RETRIES *
-                                          self.SLEEP_BETWEEN_RETRIES)
+                        'API endpoint still in maintenance after %s attempts. '
+                        'Stop trying.' % (self.MAX_RETRIES,)
                     )
                     raise
 
                 logger.info(
                     'API endpoint is currently in maintenance. Try again in '
                     '%s seconds... (retry %s on %s)' % (
-                        self.SLEEP_BETWEEN_RETRIES, retry, self.MAX_RETRIES
+                        retry_in, retry, self.MAX_RETRIES
                     )
                 )
-                time.sleep(self.SLEEP_BETWEEN_RETRIES)
+                time.sleep(retry_in)
 
 
 class SlumberAPI(slumber.API):
