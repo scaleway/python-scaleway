@@ -1,7 +1,7 @@
 ChangeLog
 =========
 
-1.1.3 (unreleased)
+1.1.3 (2016-03-29)
 ------------------
 
 * Do not flood the APIs in case of maintenance.
