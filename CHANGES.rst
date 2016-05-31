@@ -4,7 +4,8 @@ ChangeLog
 1.1.4 (unreleased)
 ------------------
 
-* No entry.
+* Really, do not flood the APIs in case of maintenance. Reduce number of
+  retries from 10 to 3.
 
 1.1.3 (2016-03-29)
 ------------------

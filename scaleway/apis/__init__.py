@@ -55,7 +55,7 @@ class SlumberResource(slumber.Resource):
 
     # Maximum number of times we try to make a request against an API in
     # maintenance before aborting.
-    MAX_RETRIES = 10
+    MAX_RETRIES = 3
 
     def retry_in(self, retry):
         """ If the API returns a maintenance HTTP status code, sleep a while
