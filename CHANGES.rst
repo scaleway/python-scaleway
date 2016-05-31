@@ -1,7 +1,7 @@
 ChangeLog
 =========
 
-1.1.4 (unreleased)
+1.1.4 (2016-05-31)
 ------------------
 
 * Really, do not flood the APIs in case of maintenance. Reduce number of
