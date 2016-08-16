@@ -1,10 +1,11 @@
 ChangeLog
 =========
 
-1.1.5 (unreleased)
+1.2.0 (unreleased)
 ------------------
 
-* No entry.
+* Forward api.query() kwargs to the slumber.API object. It is now possible to
+  override the append_slash behaviour with `api.query(append_slash=False)`.
 
 1.1.4 (2016-05-31)
 ------------------

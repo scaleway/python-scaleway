@@ -144,12 +144,13 @@ class API(object):
     def get_api_url(self):
         return self.base_url
 
-    def query(self):
+    def query(self, **kwargs):
         """ Gets a configured slumber.API object.
         """
         return SlumberAPI(
             self.get_api_url(),
-            session=self.make_requests_session()
+            session=self.make_requests_session(),
+            **kwargs
         )
 
 

@@ -72,3 +72,14 @@ class TestAPI(FakeAPITestCase, unittest.TestCase):
         )
         self.assertEqual(sleep.call_count, SlumberResource.MAX_RETRIES - 1)
         sleep.assert_called_with(4)
+
+    def test_append_slash(self):
+        api = SimpleAPI()
+        self.fake_endpoint(api, 'slash/', status=200, body='slash')
+        self.fake_endpoint(api, 'no_slash', status=200, body='no slash')
+
+        # Default is to set append_slash
+        self.assertEqual(api.query().slash.get(), 'slash')
+        self.assertEqual(api.query(append_slash=True).slash.get(), 'slash')
+
+        self.assertEqual(api.query(append_slash=False).no_slash.get(), 'no slash')
