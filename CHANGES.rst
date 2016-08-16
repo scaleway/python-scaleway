@@ -1,7 +1,7 @@
 ChangeLog
 =========
 
-1.2.0 (unreleased)
+1.2.0 (2016-08-16)
 ------------------
 
 * Forward api.query() kwargs to the slumber.API object. It is now possible to
