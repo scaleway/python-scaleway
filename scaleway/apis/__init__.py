@@ -95,6 +95,11 @@ class SlumberResource(slumber.Resource):
                 )
                 time.sleep(retry_in)
 
+    def _process_response(self, resp):
+        if self._store.get('serialize', True) is False:
+            return resp
+        return super(SlumberResource, self)._process_response(resp)
+
 
 class SlumberAPI(slumber.API):
 
@@ -144,14 +149,16 @@ class API(object):
     def get_api_url(self):
         return self.base_url
 
-    def query(self, **kwargs):
+    def query(self, serialize=True, **kwargs):
         """ Gets a configured slumber.API object.
         """
-        return SlumberAPI(
+        api = SlumberAPI(
             self.get_api_url(),
             session=self.make_requests_session(),
             **kwargs
         )
+        api._store['serialize'] = serialize
+        return api
 
 
 from .api_account import AccountAPI

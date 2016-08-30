@@ -83,3 +83,13 @@ class TestAPI(FakeAPITestCase, unittest.TestCase):
         self.assertEqual(api.query(append_slash=True).slash.get(), 'slash')
 
         self.assertEqual(api.query(append_slash=False).no_slash.get(), 'no slash')
+
+    def test_serialize(self):
+        api = SimpleAPI()
+        self.fake_endpoint(api, 'whatever/', status=200, body='xxx')
+
+        response = api.query(serialize=False).whatever.get()
+        self.assertIsInstance(response, requests.Response)
+
+        response = api.query(serialize=True).whatever.get()
+        self.assertIsInstance(response, unicode)
