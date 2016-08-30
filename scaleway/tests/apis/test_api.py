@@ -94,4 +94,7 @@ class TestAPI(FakeAPITestCase, unittest.TestCase):
         self.assertIsInstance(response, requests.Response)
 
         response = api.query(serialize=True).whatever.get()
-        self.assertIsInstance(response, unicode)
+        try:
+            self.assertIsInstance(response, unicode)
+        except NameError:  # python3
+            self.assertIsInstance(response, str)
