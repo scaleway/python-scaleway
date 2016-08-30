@@ -89,6 +89,22 @@ Examples
     {u'organizations': [...]}
 
 
+- List your organizations, but get a `flask.Response` object instead of a
+  `dict`:
+
+.. code-block:: python
+
+    >>> from scaleway.apis import AccountAPI
+    >>> api = AccountAPI(auth_token='')  # Set your token here!
+    >>> resp = api.query(serialize=False).organizations.get()
+    >>> print type(resp)
+    <Response [200]>
+    >>> print resp.headers
+    {...}  # Response HTTP headers.
+    >>> print resp.links
+    {...}  # Parsed "Link" HTTP header, for pagination.
+
+
 - List your servers:
 
 .. code-block:: python
