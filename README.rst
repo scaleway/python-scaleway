@@ -103,6 +103,8 @@ Examples
     {...}  # Response HTTP headers.
     >>> print resp.links
     {...}  # Parsed "Link" HTTP header, for pagination.
+    >>> print resp.json()
+    {u'organizations': [...]}
 
 
 - List your servers:

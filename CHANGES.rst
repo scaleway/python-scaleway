@@ -1,10 +1,12 @@
 ChangeLog
 =========
 
-1.2.1 (unreleased)
+1.3.0 (2016-08-30)
 ------------------
 
-* No entry... yet.
+* query() accepts the argument serialize. If False (default is True), a
+  flask.Response object is returned instead of a dict. It can be used to get
+  response HTTP headers.
 
 1.2.0 (2016-08-16)
 ------------------
