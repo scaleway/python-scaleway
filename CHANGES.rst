@@ -1,10 +1,10 @@
 ChangeLog
 =========
 
-1.3.1 (unreleased)
+1.4.0 (2016-10-28)
 ------------------
 
-* No entry.. yet.
+* Accept "region" argument in the constructor of ComputeAPI.
 
 1.3.0 (2016-08-30)
 ------------------
