@@ -34,7 +34,7 @@ class _CustomHTTPAdapter(requests.adapters.HTTPAdapter):
 
     _CustomHTTPAdapter is a simple wrapper around a requests HTTPAdapter that
     logs an explicit message if a SSLError occurs, as there are good chances
-    the problems comes from a bad installation.
+    the problem comes from a bad installation.
     """
     def send(self, *args, **kwargs):  # pragma: no cover
         try:
