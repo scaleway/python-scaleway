@@ -115,6 +115,10 @@ Examples
     >>> api = ComputeAPI(auth_token='')  # Set your token here!
     >>> print api.query().servers.get()
     {u'servers': [...]}
+    # Or choose your region, as in apis/api_compute.py
+    >>> api = ComputeAPI(region='ams1', auth_token='')  # Set your token here!
+    >>> print api.query().servers.get()
+    {u'servers': [...]}
 
 
 - Get details of a server:
