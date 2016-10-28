@@ -11,6 +11,22 @@
 from . import API
 
 
-class ComputeAPI(API):
+REGIONS = {
+    'par1': {
+        'url': 'https://cp-par1.scaleway.com/',
+    },
+    'ams1': {
+        'url': 'https://cp-ams1.scaleway.com/',
+    }
+}
 
-    base_url = 'https://api.scaleway.com/'
+
+class ComputeAPI(API):
+    """ The default region is par1 as it was the first availability zone
+    provided by Scaleway, but it could change in the future.
+    """
+
+    def __init__(self, region='par1', **kwargs):
+        assert region in REGIONS
+        base_url = REGIONS[region]['url']
+        super(ComputeAPI, self).__init__(base_url=base_url, **kwargs)

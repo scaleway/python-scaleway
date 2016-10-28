@@ -21,7 +21,7 @@ from scaleway.apis.api_account import BadToken, ExpiredToken
 from . import FakeAPITestCase
 
 
-class TestComputeAPI(FakeAPITestCase, unittest.TestCase):
+class TestAccountAPI(FakeAPITestCase, unittest.TestCase):
 
     fake_permissions = {
         'compute': {
@@ -36,7 +36,7 @@ class TestComputeAPI(FakeAPITestCase, unittest.TestCase):
     }
 
     def setUp(self):
-        super(TestComputeAPI, self).setUp()
+        super(TestAccountAPI, self).setUp()
         self.api = AccountAPI(
             base_url='http://compute.localhost',
             auth_token=str(uuid.uuid4())
