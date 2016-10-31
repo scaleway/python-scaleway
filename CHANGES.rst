@@ -4,7 +4,7 @@ ChangeLog
 1.4.1 (unreleased)
 ------------------
 
-* @_@ No entry @_@
+* Fix ComputeAPI when base_url is providen explicitely.
 
 1.4.0 (2016-10-28)
 ------------------

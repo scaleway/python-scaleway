@@ -26,7 +26,19 @@ class ComputeAPI(API):
     provided by Scaleway, but it could change in the future.
     """
 
-    def __init__(self, region='par1', **kwargs):
-        assert region in REGIONS
-        base_url = REGIONS[region]['url']
+    def __init__(self, **kwargs):
+        region = kwargs.pop('region', None)
+        base_url = kwargs.pop('base_url', None)
+
+        assert region is None or base_url is None, \
+            "Specify either region or base_url, not both."
+
+        if base_url is None:
+            region = region or 'par1'
+
+            assert region is None or region in REGIONS, \
+                "'%s' is not a valid Scaleway region." % region
+
+            base_url = REGIONS.get(region)['url']
+
         super(ComputeAPI, self).__init__(base_url=base_url, **kwargs)
