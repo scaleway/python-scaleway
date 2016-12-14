@@ -5,7 +5,7 @@ ChangeLog
 ------------------
 
 * Add default ``isort`` config.
-* Activate tests on Python 3.3, 3.5, PyPy2 and PyPy3.
+* Activate tests on Python 3.3, 3.5, 3.6-dev, 3.7-dev, PyPy2 and PyPy3.
 
 1.4.1 (2016-10-31)
 ------------------
