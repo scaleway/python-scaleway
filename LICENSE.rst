@@ -1,7 +1,7 @@
 BSD 2-Clause License
 --------------------
 
-Copyright (c) 2013-2015, `Scaleway <https://scaleway.com>`_  and individual
+Copyright (c) 2013-2016, `Scaleway <https://scaleway.com>`_  and individual
 contributors.
 All rights reserved.
 

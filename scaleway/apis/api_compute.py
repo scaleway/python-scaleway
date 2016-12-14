@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (c) 2013-2015 Online SAS and Contributors. All Rights Reserved.
+# Copyright (c) 2013-2016 Online SAS and Contributors. All Rights Reserved.
 #                         Julien Castets <jcastets@scaleway.com>
 #                         Kevin Deldycke <kdeldycke@scaleway.com>
 #
