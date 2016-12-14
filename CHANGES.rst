@@ -4,7 +4,7 @@ ChangeLog
 1.4.2 (unreleased)
 ------------------
 
-* No entry...
+* Add default ``isort`` config.
 
 1.4.1 (2016-10-31)
 ------------------
