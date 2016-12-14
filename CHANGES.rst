@@ -159,7 +159,7 @@ ChangeLog
 * Add missing files in source tarball.
 
 
-`0.1.0 (2014-02-28) <http://github.com/scaleway/python-scaleway/compare/v0.0.0...v0.1.0>`_
+`0.1.0 (2014-02-28) <http://github.com/scaleway/python-scaleway/compare/98f429...v0.1.0>`_
 ------------------------------------------------------------------------------------------
 
 * Initial release.
