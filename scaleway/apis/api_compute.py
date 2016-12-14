@@ -10,7 +10,6 @@
 
 from . import API
 
-
 REGIONS = {
     'par1': {
         'url': 'https://cp-par1.scaleway.com/',

@@ -11,10 +11,8 @@ import json
 import unittest
 import uuid
 
-from six.moves.urllib.parse import parse_qs, urlparse
-
 from scaleway.apis import MetadataAPI
-
+from six.moves.urllib.parse import parse_qs, urlparse
 
 from . import FakeAPITestCase
 

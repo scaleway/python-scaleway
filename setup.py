@@ -9,13 +9,12 @@
 # file except in compliance with the License. You may obtain a copy of the
 # License at http://opensource.org/licenses/BSD-2-Clause
 
-from contextlib import closing
 import os
 import re
 import sys
+from contextlib import closing
 
-from setuptools import setup, find_packages
-
+from setuptools import find_packages, setup
 
 MODULE_NAME = 'scaleway'
 

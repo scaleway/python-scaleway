@@ -1,6 +1,6 @@
 import unittest
 
-from scaleway.apis.api_compute import ComputeAPI, REGIONS
+from scaleway.apis.api_compute import REGIONS, ComputeAPI
 
 
 class TestComputeAPI(unittest.TestCase):

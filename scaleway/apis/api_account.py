@@ -9,8 +9,8 @@
 # file except in compliance with the License. You may obtain a copy of the
 # License at http://opensource.org/licenses/BSD-2-Clause
 
-from six.moves import zip_longest
 import slumber
+from six.moves import zip_longest
 
 from . import API
 

@@ -12,8 +12,8 @@ import unittest
 
 import mock
 import requests
-import slumber
 
+import slumber
 from scaleway.apis import API, SlumberResource
 
 from . import FakeAPITestCase

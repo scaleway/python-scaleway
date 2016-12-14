@@ -14,7 +14,6 @@ import uuid
 
 import httpretty
 import slumber
-
 from scaleway.apis import AccountAPI
 from scaleway.apis.api_account import BadToken, ExpiredToken
 
