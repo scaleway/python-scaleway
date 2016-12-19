@@ -72,12 +72,15 @@ setup(
     test_suite=MODULE_NAME + '.tests',
 
     classifiers=[
+        # See: https://pypi.python.org/pypi?:action=list_classifiers
         'Development Status :: 5 - Production/Stable',
         'Environment :: Web Environment',
         'Intended Audience :: Developers',
         'Intended Audience :: Information Technology',
         'License :: OSI Approved :: BSD License',
         'Operating System :: OS Independent',
+        # List of python versions and their support status:
+        # https://en.wikipedia.org/wiki/CPython#Version_history
         'Programming Language :: Python',
         'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 2.7',
