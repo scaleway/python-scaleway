@@ -6,6 +6,7 @@ ChangeLog
 
 * Add default ``isort`` config.
 * Activate tests on Python 3.3, 3.5, 3.6-dev, 3.7-dev, PyPy2 and PyPy3.
+* Move ``coverage`` config to ``setup.cfg``.
 
 
 `1.4.1 (2016-10-31) <http://github.com/scaleway/python-scaleway/compare/v1.4.0...v1.4.1>`_
