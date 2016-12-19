@@ -1,8 +1,8 @@
 ChangeLog
 =========
 
-`1.5.0 (unreleased) <https://github.com/scaleway/python-scaleway/compare/v1.4.1...develop>`_
---------------------------------------------------------------------------------------------
+`1.5.0 (2016-12-19) <https://github.com/scaleway/python-scaleway/compare/v1.4.1...v1.5.0>`_
+-------------------------------------------------------------------------------------------
 
 * Add default ``isort`` config.
 * Activate tests on Python 3.3, 3.5, 3.6-dev, 3.7-dev, PyPy2 and PyPy3.
