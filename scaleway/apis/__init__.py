@@ -161,6 +161,6 @@ class API(object):
         return api
 
 
-from .api_account import AccountAPI
-from .api_compute import ComputeAPI
-from .api_metadata import MetadataAPI
+from .api_account import AccountAPI  # noqa  # isort:skip
+from .api_compute import ComputeAPI  # noqa  # isort:skip
+from .api_metadata import MetadataAPI  # noqa  # isort:skip
