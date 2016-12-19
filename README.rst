@@ -4,20 +4,20 @@ Scaleway SDK
 This package provides tools to query the REST APIs of `Scaleway
 <https://scaleway.com/>`_.
 
-Stable release: |release| |license| |dependencies| |popularity|
+Stable release: |release| |versions| |license| |dependencies|
 
 Development: |build| |quality| |coverage|
 
 .. |release| image:: https://img.shields.io/pypi/v/scaleway-sdk.svg?style=flat
     :target: https://pypi.python.org/pypi/scaleway-sdk
     :alt: Last release
-.. |license| image:: https://img.shields.io/pypi/l/scaleway-sdk.svg?style=flat
-    :target: http://opensource.org/licenses/BSD-2-Clause
+.. |versions| image:: https://img.shields.io/pypi/pyversions/python-scaleway.svg
+    :target: https://pypi.python.org/pypi/python-scaleway
+    :alt: Python versions
+.. |license| image:: https://img.shields.io/pypi/l/python-scaleway.svg
+    :target: https://opensource.org/licenses/BSD-2-Clause
     :alt: Software license
-.. |popularity| image:: https://img.shields.io/pypi/dm/scaleway-sdk.svg?style=flat
-    :target: https://pypi.python.org/pypi/scaleway-sdk#downloads
-    :alt: Popularity
-.. |dependencies| image:: https://img.shields.io/requires/github/scaleway/python-scaleway/master.svg?style=flat
+.. |dependencies| image:: https://requires.io/github/scaleway/python-scaleway/requirements.svg?branch=master
     :target: https://requires.io/github/scaleway/python-scaleway/requirements/?branch=master
     :alt: Requirements freshness
 .. |build| image:: https://img.shields.io/travis/scaleway/python-scaleway/develop.svg?style=flat
