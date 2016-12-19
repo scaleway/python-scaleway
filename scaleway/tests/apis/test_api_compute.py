@@ -18,11 +18,11 @@ class TestComputeAPI(unittest.TestCase):
                          'https://cp-ams1.scaleway.com/')
 
         # Explicit "base_url"
-        self.assertEqual(ComputeAPI(base_url='https://whatever').base_url,
-                         'https://whatever')
+        self.assertEqual(ComputeAPI(base_url='http://whatever').base_url,
+                         'http://whatever')
 
         # Explicit "region" AND "base_url" doesn't make sense.
         self.assertRaises(
             AssertionError,
-            ComputeAPI, region='par1', base_url='https://whatever'
+            ComputeAPI, region='par1', base_url='http://whatever'
         )

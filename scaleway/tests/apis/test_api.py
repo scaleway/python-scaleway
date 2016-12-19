@@ -21,7 +21,7 @@ from . import FakeAPITestCase
 
 class SimpleAPI(API):
 
-    base_url = 'https://localhost'
+    base_url = 'http://localhost'
 
 
 class TestAPI(FakeAPITestCase, unittest.TestCase):
@@ -55,10 +55,10 @@ class TestAPI(FakeAPITestCase, unittest.TestCase):
         )
 
     def test_get_api_url(self):
-        self.assertEqual(SimpleAPI().get_api_url(), 'https://localhost')
+        self.assertEqual(SimpleAPI().get_api_url(), 'http://localhost')
 
         self.assertEqual(
-            SimpleAPI(base_url='https://hello').get_api_url(), 'https://hello'
+            SimpleAPI(base_url='http://hello').get_api_url(), 'http://hello'
         )
 
     @mock.patch('time.sleep', return_value=None)

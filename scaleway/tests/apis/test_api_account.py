@@ -37,7 +37,7 @@ class TestAccountAPI(FakeAPITestCase, unittest.TestCase):
     def setUp(self):
         super(TestAccountAPI, self).setUp()
         self.api = AccountAPI(
-            base_url='https://compute.localhost',
+            base_url='http://compute.localhost',
             auth_token=str(uuid.uuid4())
         )
         self.fake_orga_key = str(uuid.uuid4())

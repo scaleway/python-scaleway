@@ -17,7 +17,7 @@ class MetadataAPI(API):
     X-Auth-Token is not needed.
     """
 
-    base_url = 'https://169.254.42.42/'
+    base_url = 'http://169.254.42.42/'
 
     def __init__(self, **kwargs):
 
