@@ -40,8 +40,7 @@ def get_long_description():
 
 REQUIREMENTS = [
     'slumber >= 0.6.2',
-    'six',
-]
+    'six']
 
 # Packages required to handle SNI, only for Python2.
 if sys.version_info.major == 2:
@@ -92,7 +91,6 @@ setup(
     ],
 
     entry_points={
-        'console_scripts': [
-        ]
+        'console_scripts': [].
     }
 )
