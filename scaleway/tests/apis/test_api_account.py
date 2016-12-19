@@ -7,7 +7,7 @@
 #
 # Licensed under the BSD 2-Clause License (the "License"); you may not use this
 # file except in compliance with the License. You may obtain a copy of the
-# License at http://opensource.org/licenses/BSD-2-Clause
+# License at https://opensource.org/licenses/BSD-2-Clause
 
 import unittest
 import uuid
@@ -37,7 +37,7 @@ class TestAccountAPI(FakeAPITestCase, unittest.TestCase):
     def setUp(self):
         super(TestAccountAPI, self).setUp()
         self.api = AccountAPI(
-            base_url='http://compute.localhost',
+            base_url='https://compute.localhost',
             auth_token=str(uuid.uuid4())
         )
         self.fake_orga_key = str(uuid.uuid4())

@@ -72,7 +72,7 @@ discovery, it is still recommended to read the official `API documentation
 <https://scaleway.com/docs/>`_.
 
 And because most of the provided helpers takes the form of pre-configured
-``Slumber`` objects, a good read of `Slumber <http://slumber.readthedocs.org>`_
+``Slumber`` objects, a good read of `Slumber <https://slumber.readthedocs.org>`_
 documention is encouraged as well.
 
 
@@ -147,7 +147,7 @@ Examples
 Development
 -----------
 
-Assuming you are in a `virtualenv <http://virtualenv.readthedocs.org>`_:
+Assuming you are in a `virtualenv <https://virtualenv.readthedocs.org>`_:
 
 .. code-block:: bash
 

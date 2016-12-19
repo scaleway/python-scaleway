@@ -5,7 +5,7 @@
 #
 # Licensed under the BSD 2-Clause License (the "License"); you may not use this
 # file except in compliance with the License. You may obtain a copy of the
-# License at http://opensource.org/licenses/BSD-2-Clause
+# License at https://opensource.org/licenses/BSD-2-Clause
 
 from . import API
 
@@ -17,7 +17,7 @@ class MetadataAPI(API):
     X-Auth-Token is not needed.
     """
 
-    base_url = 'http://169.254.42.42/'
+    base_url = 'https://169.254.42.42/'
 
     def __init__(self, **kwargs):
 
