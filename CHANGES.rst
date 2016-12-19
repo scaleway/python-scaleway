@@ -24,28 +24,29 @@ ChangeLog
 `1.4.1 (2016-10-31) <https://github.com/scaleway/python-scaleway/compare/v1.4.0...v1.4.1>`_
 -------------------------------------------------------------------------------------------
 
-* Fix ComputeAPI when base_url is providen explicitely.
+* Fix ``ComputeAPI`` when ``base_url`` is providen explicitely.
 
 
 `1.4.0 (2016-10-28) <https://github.com/scaleway/python-scaleway/compare/v1.3.0...v1.4.0>`_
 -------------------------------------------------------------------------------------------
 
-* Accept "region" argument in the constructor of ComputeAPI.
+* Accept ``region`` argument in the constructor of ``ComputeAPI``.
 
 
 `1.3.0 (2016-08-30) <https://github.com/scaleway/python-scaleway/compare/v1.2.0...v1.3.0>`_
 -------------------------------------------------------------------------------------------
 
-* query() accepts the argument serialize. If False (default is True), a
-  flask.Response object is returned instead of a dict. It can be used to get
-  response HTTP headers.
+* ``query()`` accepts the argument ``serialize``. If ``False`` (default is
+  ``True``), a ``flask.Response`` object is returned instead of a ``dict``. It
+  can be used to get response HTTP headers.
 
 
 `1.2.0 (2016-08-16) <https://github.com/scaleway/python-scaleway/compare/v1.1.4...v1.2.0>`_
 -------------------------------------------------------------------------------------------
 
-* Forward api.query() kwargs to the slumber.API object. It is now possible to
-  override the append_slash behaviour with `api.query(append_slash=False)`.
+* Forward ``api.query()`` ``kwargs`` to the ``slumber.API`` object. It is now
+  possible to override the ``append_slash`` behaviour with
+  ``api.query(append_slash=False)``.
 
 
 `1.1.4 (2016-05-31) <https://github.com/scaleway/python-scaleway/compare/v1.1.3...v1.1.4>`_
@@ -71,7 +72,7 @@ ChangeLog
 `1.1.1 (2015-11-23) <https://github.com/scaleway/python-scaleway/compare/v1.1.0...v1.1.1>`_
 -------------------------------------------------------------------------------------------
 
-* Switch from coveralls.io to codecov.io.
+* Switch from ``coveralls.io`` to ``codecov.io``.
 
 
 `1.1.0 (2015-10-13) <https://github.com/scaleway/python-scaleway/compare/v1.0.2...v1.1.0>`_
@@ -79,8 +80,8 @@ ChangeLog
 
 * Add Python3 support (#4).
 * Add an explicit error message when SNI fails (#8).
-* In an API endpoint is in maintenance (ie. it returns HTTP/503), keep trying
-  to make requests for 180 seconds.
+* In an API endpoint is in maintenance (ie. it returns ``HTTP/503``), keep
+  trying to make requests for 180 seconds.
 
 
 `1.0.2 (2015-04-07) <https://github.com/scaleway/python-scaleway/compare/v1.0.0...v1.0.2>`_
