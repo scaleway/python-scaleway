@@ -1,7 +1,8 @@
 Scaleway SDK
 ============
 
-Python SDK to query `Scaleway APIs <https://scaleway.com/>`_.
+Python SDK to query `Scaleway <https://scaleway.com>`_'s `APIs
+<https://developer.scaleway.com>`_.
 
 Stable release: |release| |versions| |license| |dependencies|
 
