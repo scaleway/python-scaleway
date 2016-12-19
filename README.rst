@@ -1,8 +1,7 @@
 Scaleway SDK
 ============
 
-This package provides tools to query the REST APIs of `Scaleway
-<https://scaleway.com/>`_.
+Python SDK to query `Scaleway APIs <https://scaleway.com/>`_.
 
 Stable release: |release| |versions| |license| |dependencies|
 
