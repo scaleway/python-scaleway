@@ -6,10 +6,10 @@ This package provides tools to query the REST APIs of `Scaleway
 
 Stable release: |release| |versions| |license| |dependencies|
 
-Development: |build| |quality| |coverage|
+Development: |build| |coverage| |quality|
 
-.. |release| image:: https://img.shields.io/pypi/v/scaleway-sdk.svg?style=flat
-    :target: https://pypi.python.org/pypi/scaleway-sdk
+.. |release| image:: https://img.shields.io/pypi/v/python-scaleway.svg
+    :target: https://pypi.python.org/pypi/python-scaleway
     :alt: Last release
 .. |versions| image:: https://img.shields.io/pypi/pyversions/python-scaleway.svg
     :target: https://pypi.python.org/pypi/python-scaleway
@@ -20,13 +20,13 @@ Development: |build| |quality| |coverage|
 .. |dependencies| image:: https://requires.io/github/scaleway/python-scaleway/requirements.svg?branch=master
     :target: https://requires.io/github/scaleway/python-scaleway/requirements/?branch=master
     :alt: Requirements freshness
-.. |build| image:: https://img.shields.io/travis/scaleway/python-scaleway/develop.svg?style=flat
+.. |build| image:: https://travis-ci.org/scaleway/python-scaleway.svg?branch=develop
     :target: https://travis-ci.org/scaleway/python-scaleway
     :alt: Unit-tests status
-.. |coverage| image:: https://codecov.io/github/scaleway/python-scaleway/coverage.svg?branch=develop
+.. |coverage| image:: https://codecov.io/gh/scaleway/python-scaleway/branch/develop/graph/badge.svg
     :target: https://codecov.io/github/scaleway/python-scaleway?branch=develop
     :alt: Coverage Status
-.. |quality| image:: https://img.shields.io/scrutinizer/g/scaleway/python-scaleway.svg?style=flat
+.. |quality| image:: https://scrutinizer-ci.com/g/scaleway/python-scaleway/badges/quality-score.png?b=develop
     :target: https://scrutinizer-ci.com/g/scaleway/python-scaleway/?branch=develop
     :alt: Code Quality
 
