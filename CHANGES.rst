@@ -10,6 +10,7 @@ ChangeLog
   displayed.
 * Move ``coverage`` config to ``setup.cfg``.
 * Make wheels generated under Python 2 environnment available for Python 3 too.
+* Add default PyLint config.
 
 
 `1.4.1 (2016-10-31) <https://github.com/scaleway/python-scaleway/compare/v1.4.0...v1.4.1>`_
