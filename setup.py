@@ -112,6 +112,7 @@ def long_description():
         "`Full changelog <https://github.com/scaleway/python-scaleway/blob/"
         "develop/CHANGES.rst#changelog>`_."])
 
+
 setup(
     name=PACKAGE_NAME,
     version=version(),
