@@ -188,4 +188,4 @@ License
 -------
 
 This software is licensed under a `BSD 2-Clause License
-<https://github.com/scaleway/python-scaleway/blob/develop/LICENSE.rst>`_.
+<https://github.com/scaleway/python-scaleway/blob/develop/LICENSE>`_.
