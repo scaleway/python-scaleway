@@ -1,7 +1,7 @@
 ChangeLog
 =========
 
-`1.4.2 (unreleased) <https://github.com/scaleway/python-scaleway/compare/v1.4.1...develop>`_
+`1.5.0 (unreleased) <https://github.com/scaleway/python-scaleway/compare/v1.4.1...develop>`_
 --------------------------------------------------------------------------------------------
 
 * Add default ``isort`` config.
