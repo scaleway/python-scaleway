@@ -1,3 +1,4 @@
+# https://docs.python.org/2.7/distutils/sourcedist.html#the-manifest-in-template
 include CHANGES.rst
 include LICENSE
 include MANIFEST.in
