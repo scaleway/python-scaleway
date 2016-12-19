@@ -182,7 +182,9 @@ Alternatively, to run `nosetests` on both Python2.7 and Python3.4, you can run
 Alternative libraries / clients
 -------------------------------
 
-We maintain a list of the current library/client implementations on the `api.scaleway.com repository <https://github.com/scaleway/api.scaleway.com/blob/master/README.md#clients--libraries>`_.
+We maintain a list of the current library/client implementations on the
+`api.scaleway.com repository
+<https://github.com/scaleway/api.scaleway.com/blob/master/README.md#clients--libraries>`_.
 
 License
 -------
