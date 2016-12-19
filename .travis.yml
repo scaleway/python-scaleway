@@ -25,13 +25,25 @@ python:
   # /index-of-release-notes.html#cpython-3-3-compatible-versions
   - pypy3.3-5.2-alpha1
 
-install:
-  - pip install -e .
+before_install:
+  # Check default Python version installed.
+  - python --version
+
+before_script:
   - pip install codecov
 
 script:
-  - coverage run setup.py test
+  # Launch unittests.
+  - pip install -e .[tests]
+  - coverage run ./setup.py test
   - coverage report -m
+  # Check coding style.
+  - pycodestyle
+  # Test that building packages works.
+  - pip install -e .[develop]
+  - ./setup.py sdist bdist_egg bdist_wheel
+  # Validates package metadata.
+  - ./setup.py check -m -r -s
 
 after_script:
   - codecov

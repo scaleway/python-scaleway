@@ -9,9 +9,16 @@ ChangeLog
 * Remove popularity badge: PyPI download counters are broken and no longer
   displayed.
 * Move ``coverage`` config to ``setup.cfg``.
-* Make wheels generated under Python 2 environnment available for Python 3 too.
+* Add ``test`` and ``develop`` dependencies.
+* Only show latest changes in the long description of the package instead of
+  the full changelog.
 * Add default PyLint config.
 * Add default ``pycodestyle`` config.
+* Enforce ``pycodestyle`` checks in Travis CI jobs.
+* Test production of packages in Travis CI jobs.
+* Always check for package metadata in Travis CI jobs.
+* Make wheels generated under Python 2 environnment available for Python 3 too.
+* Add link to full changelog in package's long description.
 
 
 `1.4.1 (2016-10-31) <https://github.com/scaleway/python-scaleway/compare/v1.4.0...v1.4.1>`_
