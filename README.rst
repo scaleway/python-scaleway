@@ -8,13 +8,13 @@ Stable release: |release| |versions| |license| |dependencies|
 
 Development: |build| |coverage| |quality|
 
-.. |release| image:: https://img.shields.io/pypi/v/python-scaleway.svg
-    :target: https://pypi.python.org/pypi/python-scaleway
+.. |release| image:: https://img.shields.io/pypi/v/scaleway-sdk.svg
+    :target: https://pypi.python.org/pypi/scaleway-sdk
     :alt: Last release
-.. |versions| image:: https://img.shields.io/pypi/pyversions/python-scaleway.svg
-    :target: https://pypi.python.org/pypi/python-scaleway
+.. |versions| image:: https://img.shields.io/pypi/pyversions/scaleway-sdk.svg
+    :target: https://pypi.python.org/pypi/scaleway-sdk
     :alt: Python versions
-.. |license| image:: https://img.shields.io/pypi/l/python-scaleway.svg
+.. |license| image:: https://img.shields.io/pypi/l/scaleway-sdk.svg
     :target: https://opensource.org/licenses/BSD-2-Clause
     :alt: Software license
 .. |dependencies| image:: https://requires.io/github/scaleway/python-scaleway/requirements.svg?branch=master
