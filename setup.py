@@ -28,11 +28,14 @@ PACKAGE_NAME = 'scaleway-sdk'
 
 DEPENDENCIES = [
     'slumber >= 0.6.2',
-    'six',
-    # Packages required to handle SNI, only for Python2.
-    "pyOpenSSL; python_version < '3.0'",
-    "ndg-httpsclient; python_version < '3.0'",
-    "pyasn; python_version < '3.0'"]
+    'six']
+
+# Packages required to handle SNI, only for Python2.
+if sys.version_info.major == 2:
+    DEPENDENCIES += [
+        'pyOpenSSL',
+        'ndg-httpsclient',
+        'pyasn1']
 
 EXTRA_DEPENDENCIES = {
     # Extra dependencies are made available through the

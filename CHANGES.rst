@@ -4,7 +4,7 @@ ChangeLog
 `1.5.1 (unreleased) <https://github.com/scaleway/python-scaleway/compare/v1.5.0...develop>`_
 --------------------------------------------------------------------------------------------
 
-* Use markers for Python 2-only dependencies.
+* No changes yet.
 
 
 `1.5.0 (2016-12-19) <https://github.com/scaleway/python-scaleway/compare/v1.4.1...v1.5.0>`_
