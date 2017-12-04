@@ -1,7 +1,7 @@
 ChangeLog
 =========
 
-`1.5.1 (unreleased) <https://github.com/scaleway/python-scaleway/compare/v1.5.0...develop>`_
+`1.6.0 (unreleased) <https://github.com/scaleway/python-scaleway/compare/v1.5.0...develop>`_
 --------------------------------------------------------------------------------------------
 
 * Add ``scaleway.apis.BillingAPI``.
