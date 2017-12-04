@@ -35,7 +35,7 @@ class ComputeAPI(API):
         if base_url is None:
             region = region or 'par1'
 
-            assert region is None or region in REGIONS, \
+            assert region in REGIONS, \
                 "'%s' is not a valid Scaleway region." % region
 
             base_url = REGIONS.get(region)['url']
