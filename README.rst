@@ -75,6 +75,8 @@ And because most of the provided helpers takes the form of pre-configured
 ``Slumber`` objects, a good read of `Slumber <https://slumber.readthedocs.org>`_
 documention is encouraged as well.
 
+The list of available resources per API can be found [on the Scaleway API repository](https://github.com/scaleway/api.scaleway.com/blob/master/README.md#apis)
+
 
 Examples
 --------
@@ -164,10 +166,10 @@ python3.4. To run tests:
 
 .. code-block:: bash
 
-    $ pip install nose coverage pep8 pylint
+    $ pip install nose coverage pycodestyle pylint
     $ python setup.py nosetests --with-coverage
       (...)
-    $ pep8 scaleway
+    $ pycodestyle scaleway
       (...)
     $ pylint scaleway
       (...)
