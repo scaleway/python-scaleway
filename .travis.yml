@@ -12,7 +12,7 @@ python:
   - "3.3"
   - "3.4"
   - "3.5"
-  - "3.6-dev"
+  - "3.6"
   - "3.7-dev"  # a.k.a "nightly"
 
   # PyPy2.7: https://doc.pypy.org/en/latest
@@ -31,6 +31,10 @@ before_script:
   - pip install codecov
 
 script:
+  # There are some issues regarding python3.7-dev, setuptools and travis.
+  # Force update setuptools on Travis seems to fix the error.
+  # Ref: https://github.com/pypa/setuptools/issues/1257#issuecomment-365961844
+  - pip install -U setuptools
   # Launch unittests.
   - pip install -e .[tests]
   - coverage run ./setup.py test
