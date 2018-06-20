@@ -1,10 +1,11 @@
 ChangeLog
 =========
 
-`1.6.0 (unreleased) <https://github.com/scaleway/python-scaleway/compare/v1.5.0...develop>`_
+`1.6.0 (2018-06-20) <https://github.com/scaleway/python-scaleway/compare/v1.5.0...develop>`_
 --------------------------------------------------------------------------------------------
 
 * Add ``scaleway.apis.BillingAPI``.
+* Add MAINTAINERS.md file.
 
 
 `1.5.0 (2016-12-19) <https://github.com/scaleway/python-scaleway/compare/v1.4.1...v1.5.0>`_
