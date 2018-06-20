@@ -2,6 +2,7 @@
 
 ### Python ###
 *.py[cod]
+.venv/
 
 # C extensions
 *.so

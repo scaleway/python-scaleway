@@ -39,7 +39,7 @@ class _CustomHTTPAdapter(requests.adapters.HTTPAdapter):
     def send(self, *args, **kwargs):  # pragma: no cover
         try:
             return super(_CustomHTTPAdapter, self).send(*args, **kwargs)
-        except requests.exceptions.SSLError as exc:
+        except requests.exceptions.SSLError:
             print("SSL error is raised by python-requests. This is probably "
                   "because the required modules to handle SNI aren't "
                   "installed correctly. You should probably uninstall them "
@@ -164,3 +164,4 @@ class API(object):
 from .api_account import AccountAPI  # noqa  # isort:skip
 from .api_compute import ComputeAPI  # noqa  # isort:skip
 from .api_metadata import MetadataAPI  # noqa  # isort:skip
+from .api_billing import BillingAPI  # noqa  # isort:skip
