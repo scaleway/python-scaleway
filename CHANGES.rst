@@ -1,6 +1,12 @@
 ChangeLog
 =========
 
+`1.7.0 (unreleased) <https://github.com/scaleway/python-scaleway/compare/v1.6.0...develop>`_
+--------------------------------------------------------------------------------------------
+
+* Post release version bump.
+
+
 `1.6.0 (2018-06-20) <https://github.com/scaleway/python-scaleway/compare/v1.5.0...develop>`_
 --------------------------------------------------------------------------------------------
 
