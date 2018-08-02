@@ -165,3 +165,4 @@ from .api_account import AccountAPI  # noqa  # isort:skip
 from .api_compute import ComputeAPI  # noqa  # isort:skip
 from .api_metadata import MetadataAPI  # noqa  # isort:skip
 from .api_billing import BillingAPI  # noqa  # isort:skip
+from .api_userdata import UserDataAPI  # noqa  # isort:skip
