@@ -114,10 +114,10 @@ class API(object):
     )
 
     def __init__(self, auth_token=None, base_url=None, verify_ssl=True,
-                 user_agent=None):
+                 user_agent=None, auth_jwt=None):
 
         self.auth_token = auth_token
-
+        self.auth_jwt = auth_jwt
         if user_agent is not None:
             self.user_agent = user_agent
 
@@ -138,7 +138,10 @@ class API(object):
             session.headers.update({
                 'X-Auth-Token': self.auth_token.encode('latin1')
             })
-
+        if self.auth_jwt:
+            session.headers.update({
+                'X-Session-Token': self.auth_jwt.encode('latin1')
+            })
         if not self.verify_ssl:
             session.verify = False
 
