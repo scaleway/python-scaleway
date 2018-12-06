@@ -43,13 +43,22 @@ class TestAccountAPI(FakeAPITestCase, unittest.TestCase):
         self.fake_orga_key = str(uuid.uuid4())
 
     def make_fake_perms(self, permissions):
-        self.fake_endpoint(
-            self.api,
-            'tokens/%s/permissions/' % self.api.auth_token,
-            body={
-                'permissions': permissions
-            }
-        )
+        if self.api.auth_token:
+            self.fake_endpoint(
+                self.api,
+                'tokens/%s/permissions/' % self.api.auth_token,
+                body={
+                    'permissions': permissions
+                }
+            )
+        else:
+            self.fake_endpoint(
+                self.api,
+                'jwt/permissions/',
+                body={
+                    'permissions': permissions
+                }
+            )
 
     def make_fake_quotas(self, quotas):
         self.fake_endpoint(
@@ -172,6 +181,15 @@ class TestAccountAPI(FakeAPITestCase, unittest.TestCase):
             result=['token1', 'token2'],
             include_locked=True
         )
+
+        # Test JWT
+        self.api = AccountAPI(
+            base_url='http://compute.localhost',
+            auth_jwt=str(uuid.uuid4())
+        )
+        compare_results(self.fake_permissions,
+                        service='compute', name='can_boot',
+                        result=['server1', 'server2'])
 
     def test_get_resources_with_empty_token(self):
         self.api = AccountAPI()

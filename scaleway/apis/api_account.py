@@ -99,14 +99,17 @@ class AccountAPI(API):
         """
         assert isinstance(include_locked, bool)
 
-        if not self.auth_token:
+        if self.auth_token:
+            # GET /tokens/:id/permissions on account-api
+            query = self.query().tokens(self.auth_token).permissions
+        elif self.auth_jwt:
+            # GET /jwt/permissions on account-api
+            query = self.query().jwt.permissions
+        else:
             return []
 
-        # GET /tokens/:id/permissions on account-api
         try:
-            response = self.query() \
-                           .tokens(self.auth_token) \
-                           .permissions.get(include_locked=include_locked)
+            response = query.get(include_locked=include_locked)
         except slumber.exceptions.HttpClientError as exc:
             if exc.response.status_code in (400, 404):
                 raise BadToken()
