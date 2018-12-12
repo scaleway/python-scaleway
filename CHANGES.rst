@@ -4,10 +4,10 @@ ChangeLog
 `1.7.0 (unreleased) <https://github.com/scaleway/python-scaleway/compare/v1.6.0...develop>`_
 --------------------------------------------------------------------------------------------
 
-* Post release version bump.
+* Add jwt support in api-account
 
 
-`1.6.0 (2018-06-20) <https://github.com/scaleway/python-scaleway/compare/v1.5.0...develop>`_
+`1.6.0 (2018-06-20) <https://github.com/scaleway/python-scaleway/compare/v1.5.0...v1.6.0>`_
 --------------------------------------------------------------------------------------------
 
 * Add ``scaleway.apis.BillingAPI``.
