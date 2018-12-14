@@ -25,4 +25,4 @@ except ImportError:  # pragma no cover
 logging.getLogger(__name__).addHandler(NullHandler())
 
 
-__version__ = '1.7.0'
+__version__ = '1.8.0'
