@@ -1,7 +1,7 @@
 ChangeLog
 =========
 
-`1.8.0 (unreleased) <https://github.com/scaleway/python-scaleway/compare/v1.6.0...develop>`_
+`1.8.0 (unreleased) <https://github.com/scaleway/python-scaleway/compare/v1.7.0...develop>`_
 --------------------------------------------------------------------------------------------
 
 * Nothing yet
