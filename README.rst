@@ -123,6 +123,16 @@ Examples
     {u'servers': [...]}
 
 
+- List your buckets:
+
+.. code-block:: python
+
+    >>> from scaleway.apis import ObjectStorageAPI
+    >>> api = ObjectStorageAPI(auth_token='')  # Set your token here!
+    >>> print api.query().containers.get()
+    {u'containers': [...]}
+
+
 - Get details of a server:
 
 .. code-block:: python
