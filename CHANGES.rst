@@ -4,7 +4,7 @@ ChangeLog
 `1.8.0 (unreleased) <https://github.com/scaleway/python-scaleway/compare/v1.7.0...develop>`_
 --------------------------------------------------------------------------------------------
 
-* Nothing yet
+* Remove Python 3.3 support.
 
 
 `1.7.0 (2018-12-14) <https://github.com/scaleway/python-scaleway/compare/v1.6.0...v1.7.0>`_
