@@ -4,6 +4,7 @@ ChangeLog
 `1.8.0 (unreleased) <https://github.com/scaleway/python-scaleway/compare/v1.7.0...develop>`_
 --------------------------------------------------------------------------------------------
 
+* Target tests on Python 3.7 and 3.8-dev.
 * Remove Python 3.3 support.
 
 
