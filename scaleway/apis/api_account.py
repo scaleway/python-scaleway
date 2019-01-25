@@ -164,7 +164,10 @@ class AccountAPI(API):
     def get_quotas(self, organization):
         """ Gets a list of quotas for the given organization.
         """
-        response = self.query().organizations(organization).quotas.get()
+        # For now, request more than the default 50 lines
+        # TODO: improve this, cf: CP-1660
+        response = self.query().organizations(organization).quotas.get(
+            per_page=100)
         return response['quotas']
 
     def get_quota(self, organization, resource):
