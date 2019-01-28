@@ -2,21 +2,21 @@
 If you are not a maintainer, you probably want to check out the [documentation](README.rst)
 instead.**
 
-![Are you ready ?](https://media.giphy.com/media/lvuKkjGQvT4hq/giphy.gif)
 
 ## Package release HOWTO
 
-Releasing a new python-scaleway version implies following the 3 following steps.
+Releasing a new python-scaleway version implies following the following steps.
 
-* Update the CHANGES file to add the date of release and if it's missing the
+1. Update the CHANGES file to add the date of release and if it's missing the
 changes since the last one.
-* Push the tags of the new version.
-* Pushing a post release commit to let the place as it was when you found it.
+2. Push the tags of the new version.
+3. Pushing a post release commit to let the place as it was when you found it.
+4. Push the new version package on PyPi 
 
 For the sake of the example, we assume you want to release the version `42.8.0`
 and the previous version was `42.7.0`.
 
-### Update files before committing
+### 1. Update files before committing
 
 The top part of the [CHANGES](CHANGES.rst) should contain a version with an
 `unreleased` date.
@@ -28,13 +28,14 @@ The top part of the [CHANGES](CHANGES.rst) should contain a version with an
 * Let the SDK make coffee.
 ```
 
-You have to replace the `unreleased` statement with the date of the day.
+You have to replace the `unreleased` statement with the date of the day and
+replace `develop` (at the end of the compare URL) by the current version.
 
 Then you have to make sure the version you want to push is well defined in
 `setup.cfg` and `scaleway.__init__.py`files. If it's not done please update
 them to your version before committing.
 
-### The Commit and The Tag
+### 2. The Commit and The Tag
 
 Now that you're confident in your changes and you are sure to push the right
 code, you can commit them on the `develop` branch, tag your version and merge
@@ -51,9 +52,7 @@ $> git merge "v42.8.0"
 $> git push
 ```
 
-![Well done](https://media.giphy.com/media/d31w24psGYeekCZy/giphy.gif)
-
-### This is the end, my friend
+### 3. This is the end, my friend
 
 Now that you've push your version and you're happy, make the next one happy by
 creating a `Post version bump` commit to let the repository like it was when
@@ -68,7 +67,7 @@ commit.
 `42.8.1 (unreleased) <https://github.com/scaleway/python-scaleway/compare/v42.8.0...develop>`_
 --------------------------------------------------------------------------------------------
 
-* Post release version bump.
+* No changes yet.
 ```
 
 2. setup.cfg: Update the `current_version` key with `42.8.1`
@@ -84,5 +83,10 @@ $> git add ./setup.cfg
 $> git commit -m "Post release version bump."
 $> git push
 ```
+
+### 4. Push new version to pypi
+
+TODO: write this part
+
 
 ![Job done](https://media.giphy.com/media/l0MYw3oeYCUJhj5FC/giphy.gif)
