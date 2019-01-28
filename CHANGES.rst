@@ -6,6 +6,7 @@ ChangeLog
 
 * Target tests on Python 3.7 and 3.8-dev.
 * Remove Python 3.3 support.
+* In AccountAPI.get_quotas(), request more than the default 50 lines, quick fix of CP-1660
 
 
 `1.7.0 (2018-12-14) <https://github.com/scaleway/python-scaleway/compare/v1.6.0...v1.7.0>`_
