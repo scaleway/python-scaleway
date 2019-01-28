@@ -1,7 +1,7 @@
 ChangeLog
 =========
 
-`1.8.0 (unreleased) <https://github.com/scaleway/python-scaleway/compare/v1.7.0...develop>`_
+`1.8.0 (2019-01-28) <https://github.com/scaleway/python-scaleway/compare/v1.7.0...v1.8.0>`_
 --------------------------------------------------------------------------------------------
 
 * Target tests on Python 3.7 and 3.8-dev.
