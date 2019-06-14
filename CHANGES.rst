@@ -1,10 +1,10 @@
 ChangeLog
 =========
 
-`1.8.1 (unreleased) <https://github.com/scaleway/python-scaleway/compare/v1.8.0...develop>`_
+`1.8.1 (2019-06-12) <https://github.com/scaleway/python-scaleway/compare/v1.8.0...develop>`_
 --------------------------------------------------------------------------------------------
 
-* No changes yet.
+* Call api-account with query params in ``get_resources`` function
 
 `1.8.0 (2019-01-28) <https://github.com/scaleway/python-scaleway/compare/v1.7.0...v1.8.0>`_
 --------------------------------------------------------------------------------------------

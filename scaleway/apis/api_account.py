@@ -108,8 +108,26 @@ class AccountAPI(API):
         else:
             return []
 
+        query_params = {
+            "include_locked": include_locked,
+        }
+
+        if resource:
+            resources = resource.split(":")
+            query_params["organization_key"] = resources[0]
+
+            if len(resources) == 2:
+                query_params["resource_key"] = resources[1]
+
+        if name:
+            permissions = name.split(":")
+            query_params["name"] = permissions[0]
+
+            if len(permissions) == 2:
+                query_params["permission"] = permissions[1]
+
         try:
-            response = query.get(include_locked=include_locked)
+            response = query.get(**query_params)
         except slumber.exceptions.HttpClientError as exc:
             if exc.response.status_code in (400, 404):
                 raise BadToken()

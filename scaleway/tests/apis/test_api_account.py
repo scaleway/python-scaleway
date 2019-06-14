@@ -145,6 +145,12 @@ class TestAccountAPI(FakeAPITestCase, unittest.TestCase):
                         service='compute', name='can_write',
                         result=[])
 
+        compare_results(
+            self.fake_permissions,
+            service='compute', name='can_delete', resource='server1:*',
+            result=['server1']
+        )
+
         # Nested permissions
         compare_results(self.fake_permissions,
                         service='account', name='token:read',
