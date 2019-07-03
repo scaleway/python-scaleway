@@ -295,3 +295,8 @@ class TestAccountAPI(FakeAPITestCase, unittest.TestCase):
         self.assertTrue(self.api.has_quota(self.fake_orga_key, 'invites', 2))
         self.assertFalse(self.api.has_quota(self.fake_orga_key, 'invites', 5))
         self.assertFalse(self.api.has_quota(self.fake_orga_key, 'nope'))
+
+    def test_has_unlimited_quota(self):
+        self.make_fake_quotas({'invites': -1})
+        self.assertTrue(self.api.has_quota(self.fake_orga_key, 'invites', 2))
+        self.assertTrue(self.api.has_quota(self.fake_orga_key, 'invites', 200))
