@@ -1,10 +1,10 @@
 ChangeLog
 =========
 
-`1.8.2 (unreleased) <https://github.com/scaleway/python-scaleway/compare/v1.8.1...develop>`_
+`1.9.0 (2019-07-03) <https://github.com/scaleway/python-scaleway/compare/v1.8.1...v1.9.0>`_
 --------------------------------------------------------------------------------------------
 
-* No changes yet.
+* Add support for unlimited quotas
 
 `1.8.1 (2019-06-18) <https://github.com/scaleway/python-scaleway/compare/v1.8.0...v1.8.1>`_
 --------------------------------------------------------------------------------------------
