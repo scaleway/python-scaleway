@@ -206,6 +206,9 @@ class AccountAPI(API):
         if quota_value is None:
             return False
 
+        # Check if quota is unlimited
+        if quota_value == -1:
+            return True
         # If `used` is not None, check it is lower than `quota_value`
         if used is not None and used >= quota_value:
             return False
