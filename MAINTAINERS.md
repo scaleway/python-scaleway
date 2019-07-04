@@ -86,7 +86,11 @@ $> git push
 
 ### 4. Push new version to pypi
 
-TODO: write this part
-
+```bash
+$> git checkout v42.8.0
+$> git clean -fxd
+$> python setup.py sdist bdist_egg bdist_wheel
+$> twine upload --verbose -u username -p password  dist/*
+```
 
 ![Job done](https://media.giphy.com/media/l0MYw3oeYCUJhj5FC/giphy.gif)
