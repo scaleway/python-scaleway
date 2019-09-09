@@ -1,7 +1,7 @@
 ChangeLog
 =========
 
-`1.9.1 (unreleased) <https://github.com/scaleway/python-scaleway/compare/v1.9.0...develop>`_
+`1.9.1 (2019-09-09) <https://github.com/scaleway/python-scaleway/compare/v1.9.0...v1.9.1>`_
 --------------------------------------------------------------------------------------------
 
 * Add a short (ttl-based) cache to ``AccountAPI.get_quotas()``
