@@ -27,6 +27,7 @@ MODULE_NAME = 'scaleway'
 PACKAGE_NAME = 'scaleway-sdk'
 
 DEPENDENCIES = [
+    'cachetools >= 3.1.1',
     'slumber >= 0.6.2',
     'six']
 

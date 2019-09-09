@@ -10,6 +10,7 @@
 # License at https://opensource.org/licenses/BSD-2-Clause
 
 import slumber
+from cachetools.func import ttl_cache
 from six.moves import zip_longest
 
 from . import API
@@ -179,6 +180,7 @@ class AccountAPI(API):
                                include_locked=include_locked)
         )
 
+    @ttl_cache(maxsize=10, ttl=60)
     def get_quotas(self, organization):
         """ Gets a list of quotas for the given organization.
         """
