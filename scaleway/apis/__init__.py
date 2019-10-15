@@ -33,8 +33,8 @@ except ImportError:  # pragma no cover
 
 # Prevent message "No handlers could be found for logger "scaleway"" to be
 # displayed.
-logging.getLogger(__name__).addHandler(NullHandler())
 logger = logging.getLogger(__name__)
+logger.addHandler(NullHandler())
 
 
 class _CustomHTTPAdapter(requests.adapters.HTTPAdapter):
