@@ -48,7 +48,7 @@ script:
   - coverage run ./setup.py test
   - coverage report -m
   # Check coding style.
-  - pycodestyle
+  - pycodestyle scaleway
   # Test that building packages works.
   - pip install -e .[develop]
   - ./setup.py sdist bdist_egg bdist_wheel
