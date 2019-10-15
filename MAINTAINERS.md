@@ -71,13 +71,13 @@ commit.
 ```
 
 2. setup.cfg: Update the `current_version` key with `42.8.1`
-3. scaleway.__init__.py: Update the `__version__` key with `42.8.1`
+3. scaleway.apis.__init__.py: Update the `__version__` key with `42.8.1`
 
 Then just checkout `develop` add you changes and create a new commit.
 
 ```bash
 $> git checkout develop
-$> git add ./scaleway/__init__.py
+$> git add ./scaleway/apis/__init__.py
 $> git add ./CHANGES.rst
 $> git add ./setup.cfg
 $> git commit -m "Post release version bump."
