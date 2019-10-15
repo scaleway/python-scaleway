@@ -1,10 +1,10 @@
 ChangeLog
 =========
 
-`1.10.0 (unreleased) <https://github.com/scaleway/python-scaleway/compare/v1.9.1...develop>`_
+`1.10.0 (2019-10-15) <https://github.com/scaleway/python-scaleway/compare/v1.9.1...v1.10.0>`_
 --------------------------------------------------------------------------------------------
 
-* No changes yet.
+* Move __init__.py into apis subpackage
 
 `1.9.1 (2019-09-09) <https://github.com/scaleway/python-scaleway/compare/v1.9.0...v1.9.1>`_
 --------------------------------------------------------------------------------------------
