@@ -74,7 +74,7 @@ def version():
     global _version
     if _version:
         return _version
-    init_file = read_file(MODULE_NAME, '__init__.py')
+    init_file = read_file(MODULE_NAME, 'apis/__init__.py')
     matches = re.search(
         r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]', init_file, re.M)
     if not matches:

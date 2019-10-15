@@ -18,9 +18,22 @@ import time
 import requests
 import slumber
 
-from .. import __version__
+__version__ = '1.10.0'
 
 
+# To enable logging, the client application needs to configure the logging std
+# module, by calling for instance logging.basicConfig(level=logging.INFO) or
+# preferably logging.config.dictConfig.
+try:  # Python 2.7+
+    from logging import NullHandler
+except ImportError:  # pragma no cover
+    class NullHandler(logging.Handler):
+        def emit(self, record):
+            pass
+
+# Prevent message "No handlers could be found for logger "scaleway"" to be
+# displayed.
+logging.getLogger(__name__).addHandler(NullHandler())
 logger = logging.getLogger(__name__)
 
 
