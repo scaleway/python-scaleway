@@ -27,7 +27,9 @@ MODULE_NAME = 'scaleway'
 PACKAGE_NAME = 'scaleway-sdk'
 
 DEPENDENCIES = [
-    'cachetools >= 3.1.1',
+    # last cachetools version supporting py2 is 3.1.1
+    'cachetools >= 3.1.1; python_version >= "3.0"',
+    'cachetools == 3.1.1; python_version < "3.0"',
     'slumber >= 0.6.2',
     'six']
 
