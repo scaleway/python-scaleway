@@ -1,10 +1,15 @@
 ChangeLog
 =========
 
-`1.10.1 (2019-12-16) <https://github.com/scaleway/python-scaleway/compare/v1.10.0...v1.10.1>`_
+`1.11.0 (unreleased) <https://github.com/scaleway/python-scaleway/compare/v1.10.1...develop>`_
 --------------------------------------------------------------------------------------------
 
 * No changes yet.
+
+`1.10.1 (2019-12-16) <https://github.com/scaleway/python-scaleway/compare/v1.10.0...v1.10.1>`_
+--------------------------------------------------------------------------------------------
+
+* Keep support for python 2 by fixing cachetools version.
 
 `1.10.0 (2019-10-15) <https://github.com/scaleway/python-scaleway/compare/v1.9.1...v1.10.0>`_
 --------------------------------------------------------------------------------------------
