@@ -1,7 +1,7 @@
 ChangeLog
 =========
 
-`1.11.0 (unreleased) <https://github.com/scaleway/python-scaleway/compare/v1.10.0...develop>`_
+`1.10.1 (2019-12-16) <https://github.com/scaleway/python-scaleway/compare/v1.10.0...v1.10.1>`_
 --------------------------------------------------------------------------------------------
 
 * No changes yet.
