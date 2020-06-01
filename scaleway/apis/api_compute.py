@@ -12,10 +12,10 @@ from . import API
 
 REGIONS = {
     'par1': {
-        'url': 'https://cp-par1.scaleway.com/',
+        'url': 'https://api-fr-par.scaleway.com/instance/v1/zones/fr-par-1/',
     },
     'ams1': {
-        'url': 'https://cp-ams1.scaleway.com/',
+        'url': 'https://api-nl-ams.scaleway.com/instance/v1/zones/nl-ams-1/',
     }
 }
 
