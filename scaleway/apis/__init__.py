@@ -155,8 +155,8 @@ class API(object):
             session.headers.update({
                 'X-Session-Token': self.auth_jwt.encode('latin1')
             })
-        if not self.verify_ssl:
-            session.verify = False
+
+        session.verify = self.verify_ssl
 
         session.mount('https://', _CustomHTTPAdapter())
 
