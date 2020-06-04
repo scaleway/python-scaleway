@@ -1,10 +1,11 @@
 ChangeLog
 =========
 
-`1.11.0 (unreleased) <https://github.com/scaleway/python-scaleway/compare/v1.10.1...develop>`_
+`1.11.0 (2020-06-04) <https://github.com/scaleway/python-scaleway/compare/v1.10.1...v1.11.0>`_
 --------------------------------------------------------------------------------------------
 
-* No changes yet.
+* Let user specify any value for requests.verify field
+* Use new instance api url
 
 `1.10.1 (2019-12-16) <https://github.com/scaleway/python-scaleway/compare/v1.10.0...v1.10.1>`_
 --------------------------------------------------------------------------------------------
