@@ -16,6 +16,18 @@ REGIONS = {
     },
     'ams1': {
         'url': 'https://api-nl-ams.scaleway.com/instance/v1/zones/nl-ams-1/',
+    },
+    'fr-par-1': {
+        'url': 'https://api-fr-par.scaleway.com/instance/v1/zones/fr-par-1/',
+    },
+    'fr-par-2': {
+        'url': 'https://api-fr-par.scaleway.com/instance/v1/zones/fr-par-2/',
+    },
+    'nl-ams-1': {
+        'url': 'https://api-nl-ams.scaleway.com/instance/v1/zones/nl-ams-1/',
+    },
+    'pl-waw-1': {
+        'url': 'https://api-pl-waw.scaleway.com/instance/v1/zones/pl-waw-1/',
     }
 }
 
