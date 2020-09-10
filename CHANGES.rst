@@ -1,10 +1,11 @@
 ChangeLog
 =========
 
-`1.12.0 (unreleased) <https://github.com/scaleway/python-scaleway/compare/v1.11.0...develop>`_
+`1.12.0 (2020-09-10) <https://github.com/scaleway/python-scaleway/compare/v1.11.0...v1.12.0>`_
 --------------------------------------------------------------------------------------------
 
-* No changes yet.
+* Add fr-par-2 and pl-waw-1 AZ
+* Add aliases for fr-par-1 and nl-ams-1
 
 `1.11.0 (2020-06-04) <https://github.com/scaleway/python-scaleway/compare/v1.10.1...v1.11.0>`_
 --------------------------------------------------------------------------------------------
