@@ -1,10 +1,10 @@
 ChangeLog
 =========
 
-`1.13.0 (unreleased) <https://github.com/scaleway/python-scaleway/compare/v1.12.0...develop>`_
+`1.12.1 (2021-06-02) <https://github.com/scaleway/python-scaleway/compare/v1.12.0...v1.12.1>`_
 --------------------------------------------------------------------------------------------
 
-* No changes yet.
+* Add fr-par-3 AZ
 
 `1.12.0 (2020-09-10) <https://github.com/scaleway/python-scaleway/compare/v1.11.0...v1.12.0>`_
 --------------------------------------------------------------------------------------------
