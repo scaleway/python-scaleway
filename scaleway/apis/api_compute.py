@@ -29,6 +29,9 @@ REGIONS = {
     'nl-ams-1': {
         'url': 'https://api-nl-ams.scaleway.com/instance/v1/zones/nl-ams-1/',
     },
+    'nl-ams-2': {
+        'url': 'https://api-nl-ams.scaleway.com/instance/v1/zones/nl-ams-2/',
+    },
     'pl-waw-1': {
         'url': 'https://api-pl-waw.scaleway.com/instance/v1/zones/pl-waw-1/',
     }
