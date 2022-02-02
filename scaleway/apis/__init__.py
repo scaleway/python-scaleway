@@ -18,7 +18,7 @@ import time
 import requests
 import slumber
 
-__version__ = '1.12.1'
+__version__ = '1.13.1'
 
 
 # To enable logging, the client application needs to configure the logging std
