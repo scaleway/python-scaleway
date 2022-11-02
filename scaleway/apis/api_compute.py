@@ -34,6 +34,9 @@ REGIONS = {
     },
     'pl-waw-1': {
         'url': 'https://api-pl-waw.scaleway.com/instance/v1/zones/pl-waw-1/',
+    },
+    'pl-waw-2': {
+        'url': 'https://api-pl-waw.scaleway.com/instance/v1/zones/pl-waw-2/',
     }
 }
 
