@@ -4,7 +4,7 @@ Scaleway SDK
 Python SDK to query `Scaleway <https://scaleway.com>`_'s `APIs
 <https://developer.scaleway.com>`_.
 
-Stable release: |release| |versions| |license| |dependencies|
+Stable release: |release| |versions| |license|
 
 Development: |build| |coverage| |quality|
 
@@ -17,9 +17,6 @@ Development: |build| |coverage| |quality|
 .. |license| image:: https://img.shields.io/pypi/l/scaleway-sdk.svg
     :target: https://opensource.org/licenses/BSD-2-Clause
     :alt: Software license
-.. |dependencies| image:: https://requires.io/github/scaleway/python-scaleway/requirements.svg?branch=master
-    :target: https://requires.io/github/scaleway/python-scaleway/requirements/?branch=master
-    :alt: Requirements freshness
 .. |build| image:: https://travis-ci.org/scaleway/python-scaleway.svg?branch=develop
     :target: https://travis-ci.org/scaleway/python-scaleway
     :alt: Unit-tests status
