@@ -31,7 +31,7 @@ class BadToken(InvalidToken):
 class AccountAPI(API):
     """ Interacts with Scaleway Account API.
     """
-    base_url = 'https://account.scaleway.com/'
+    base_url = 'https://api.scaleway.com/account/v1'
 
     def perm_matches(self, request_perm, effective_perm):
         """ Evaluates whether `request_perm` is granted by `effective_perm`.
