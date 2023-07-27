@@ -9,18 +9,18 @@ class TestComputeAPI(unittest.TestCase):
         # Default region: par1.
         self.assertEqual(
             ComputeAPI().base_url,
-            'https://api-fr-par.scaleway.com/instance/v1/zones/fr-par-1/'
+            'https://api.scaleway.com/instance/v1/zones/fr-par-1/'
         )
 
         # Explicit "region".
         self.assertEqual(
             ComputeAPI(region='par1').base_url,
-            'https://api-fr-par.scaleway.com/instance/v1/zones/fr-par-1/'
+            'https://api.scaleway.com/instance/v1/zones/fr-par-1/'
         )
 
         self.assertEqual(
             ComputeAPI(region='ams1').base_url,
-            'https://api-nl-ams.scaleway.com/instance/v1/zones/nl-ams-1/'
+            'https://api.scaleway.com/instance/v1/zones/nl-ams-1/'
         )
 
         # Explicit "base_url"
