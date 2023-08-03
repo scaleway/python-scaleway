@@ -179,5 +179,6 @@ class API(object):
 
 from .api_account import AccountAPI  # noqa  # isort:skip
 from .api_compute import ComputeAPI  # noqa  # isort:skip
+from .api_baremetal import BaremetalAPI  # noqa  # isort:skip
 from .api_metadata import MetadataAPI  # noqa  # isort:skip
 from .api_billing import BillingAPI  # noqa  # isort:skip
