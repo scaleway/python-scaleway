@@ -120,6 +120,20 @@ Examples
     {u'servers': [...]}
 
 
+- Get bucket informations:
+
+.. code-block:: python
+
+    >>> from scaleway.apis import ObjectStorageAPI
+    >>> api = ObjectStorageAPI(auth_token='')  # Set your token here!
+    >>> params = {'project_id': '12345678-9abc-def0-1234-567899abcdef', 'buckets_name': ['your_bucket_name']}
+    # Tiny hack due to slumber as we cant call directly .buckets-infos.post()
+    >>> print getattr(api.query(), 'buckets-info').post(params)
+    {u'buckets': {...}
+    # Or choose your region, as in apis/api_compute.py
+    >>> api = ComputeAPI(region='nl-ams', auth_token='')  # Set your token here!
+
+
 - Get details of a server:
 
 .. code-block:: python
